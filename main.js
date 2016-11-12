@@ -1,8 +1,9 @@
 var _ = require( 'lodash' );
 var initMemory = require('initMemory');
 var utils = require('utils');
+var roles = require('roles');
 
-utils.cL(`----- TICK:START T:(${Game.time}) CPU Used: ${Game.cpu.getUsed()}, %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed(2) }, Bucket: ${Game.cpu.bucket}`);
+utils.cL(`--START T:(${Game.time}) CPU: ${Game.cpu.getUsed()}, %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed(2) }, Bucket: ${Game.cpu.bucket}, 60fps:${Game.time % 60}`);
 const room = _.head(_.values( Game.rooms ));
 //utils.cL(room);
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
@@ -44,16 +45,20 @@ for (var i in Game.creeps) {
 
 
 roomObjInfo( room );
-if ( mainSpawn.energy >= 200 ) {
-	var result = utils.debugWrap(mainSpawn.createCreep( [ WORK, CARRY, MOVE ] ));
+
+utils.cL(` roles: ${JSON.stringify(roles()['harvester'])}, cost: ${roles()['harvester'].cost}`);
+
+// population create phase
+if ( mainSpawn.energy >= roles()['harvester'].cost ) {
+	var result = utils.debugWrap(mainSpawn.createCreep( roles()['harvester'].parts ));
 	//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
 	utils.cL(result);
-	/*if ( _.isString( result ) ) {
-		console.log( 'The name is: ' + result );
+	if ( _.isString( result ) ) {
+		console.log( '(main.js)The name is: ' + result );
 	}
 	else {
-		console.log( 'Spawn error: ' + result );
-	}*/
+		console.log( '(main.js)Spawn error: ' + result );
+	}
 }
 
 

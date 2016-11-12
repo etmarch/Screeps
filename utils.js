@@ -7,7 +7,7 @@
  */
 
 var _ = require('lodash');
-//var roles = require('roles');
+var roles = require('roles');
 
 // check if value is a real number
 function isNumber(n) {
@@ -29,8 +29,9 @@ Utils = {
 	},
 	// Attach action functions to this wrapper (ex attack, move, etc...)
 	debugWrap: (fnToExec) => {
-		let result = (function(){ fnToExec() });
-		cL(`${typeof result} input: ${fnToExec}  result: ${result}`);
+		cL(fnToExec);
+		let result = fnToExec;
+		cL(`${typeof result} result: ${result}`);
 		// Debugging Helper function
 		if(result != OK) {
 			return console.log(`Error code: ${result} returned!`);
@@ -80,6 +81,26 @@ module.exports.fightersInRange = function(creep, range, bodyParts) {
 
 
 
+
+const errorConstList = {
+	OK: 0,
+	ERR_NOT_OWNER: -1,
+	ERR_NO_PATH: -2,
+	ERR_NAME_EXISTS: -3,
+	ERR_BUSY: -4,
+	ERR_NOT_FOUND: -5,
+	ERR_NOT_ENOUGH_ENERGY: -6,
+	ERR_NOT_ENOUGH_RESOURCES: -6,
+	ERR_INVALID_TARGET: -7,
+	ERR_FULL: -8,
+	ERR_NOT_IN_RANGE: -9,
+	ERR_INVALID_ARGS: -10,
+	ERR_TIRED: -11,
+	ERR_NO_BODYPART: -12,
+	ERR_NOT_ENOUGH_EXTENSIONS: -6,
+	ERR_RCL_NOT_ENOUGH: -14,
+	ERR_GCL_NOT_ENOUGH: -15
+};
 
 /*
 *
