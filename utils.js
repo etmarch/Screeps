@@ -35,6 +35,7 @@ Utils = {
 		if(result != OK) {
 			return console.log(`Error code: ${result} returned!`);
 		}
+		return result;
 	}
 	
 };
