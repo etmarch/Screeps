@@ -6,14 +6,14 @@ var utils = require('utils');
 
 module.exports = function ( creep ) {
 	
-	utils.cL('Inside the harvester code');
+	//utils.cL('Inside the harvester code');
 	// need to get the coordinates of things around
 		// closest spawn
 		// closest mineral node
 		// get in range, load up, go back to spawn, repeat
 	
 	var home = Game.getObjectById(Memory.firstSpawn);
-	utils.cL(home);
+	utils.cL(creep.energy);
 	// Commit suicide if creep can't move or carry
 	if ( creep.getActiveBodyparts(MOVE) == 0 || creep.getActiveBodyparts(CARRY) == 0 || creep.getActiveBodyparts(WORK) == 0 ) {
 		utils.cL(`Fareweel brothers, I am useless! ${creep.name}`);
