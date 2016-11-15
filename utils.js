@@ -43,9 +43,6 @@ const Utils = {
 
 module.exports = Utils;
 
-module.exports.costRole = function(creepRole) {
-	return roles()[creepRole]['cost'];
-};
 
 // Helper function to count amount of creeps of certain role, return number of creeps
 /*

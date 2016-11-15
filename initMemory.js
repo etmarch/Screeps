@@ -32,27 +32,15 @@ module.exports.initMemory = function () {
 			//firstSpawn.memory = firstSpawn.name;
 			//Memory.firstSpawn = firstSpawn.id;
 			
-			// list of sources in that room
-			
-			
-			
-			// automatically pull out closest
-			
-			
-			// need other source too
-			
-			
+			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
 			//console.log(firstSource + ' position '+firstSource.pos);
 			firstSpawn.memory.firstSourceId = firstSource.id;
-			//utils.cL(firstSpawn.room.find( FIND_SOURCES_ACTIVE ));
 			var sourceIds = [];
 			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
 				sourceIds.push( source );
 			} );
-			utils.cL(sourceIds);
 			var filteredIds = _.pull( sourceIds, firstSource );
-			utils.cL(filteredIds);
 			var secondSource = firstSpawn.pos.findClosestByRange( filteredIds );
 			
 			firstSpawn.memory.secondSourceId = secondSource.id;
