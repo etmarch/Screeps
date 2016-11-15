@@ -10,6 +10,11 @@ var utils = require( 'utils' );
 module.exports.initMemory = function () {
 	//utils.cL( `initMem function: ${JSON.stringify( Memory )}, ${_.size( Game.spawns )}` );
 	utils.cL( _.size( Game.rooms ) );
+	utils.cL(JSON.stringify(Game.rooms));
+	utils.cL(JSON.stringify(Game.spawns));
+	utils.cL(JSON.stringify(Game.creeps));
+	utils.cL(JSON.stringify(Game));
+	
 	
 	if ( !Memory.init ) { // Initializer
 		utils.cL('STARTING MEMORY INIT!!')
