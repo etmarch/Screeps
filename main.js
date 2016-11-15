@@ -38,22 +38,6 @@ module.exports.loop = function() {
 		 healer(creep);
 		 }*/
 	}
-
-	
-	roomObj.roomInfo( room );
-
-// population create phase
-	if ( mainSpawn.energy >= roles()[ 'harvester' ].cost ) {
-		var result = pop.spawn(mainSpawn, 'harvester');
-		//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
-		if ( _.isString( result ) ) {
-			console.log( '(main.js)The name is: ' + result );
-		}
-		else {
-			console.log( '(main.js)Spawn error: ' + result );
-		}
-	}
-	
 	// Memory Management
 	if ( !mainSpawn.spawning ) {
 		for ( var name in Memory.creeps ) {
@@ -66,6 +50,22 @@ module.exports.loop = function() {
 		}
 	}
 	
+	
+	roomObj.roomInfo( room );
+
+// population create phase
+	if ( mainSpawn.energy >= roles()[ 'harvester' ].cost && !mainSpawn.spawning ) {
+		var result = pop.spawn(mainSpawn, 'harvester');
+		//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
+		if ( _.isString( result ) ) {
+			console.log( '(main.js)The name is: ' + result );
+		}
+		else {
+			console.log( '(main.js)Spawn error: ' + result );
+		}
+	}
+	
+
 	utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
 };
 
