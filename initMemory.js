@@ -30,7 +30,7 @@ module.exports.initMemory = function () {
 			var firstSpawn = Game.spawns[ name ];
 			utils.cL(firstSpawn);
 			//firstSpawn.memory = firstSpawn.name;
-			//Memory.firstSpawn = firstSpawn.id;
+			Memory.firstSpawn = firstSpawn.id;
 			
 			// list of sources in that room
 			
