@@ -8,7 +8,7 @@ var pop = require('population');
 
 
 
-//module.exports.loop = function() {
+module.exports.loop = function() {
 	
 	utils.cL( `-------  START T:(${Game.time}) USED%: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } --------` );
 	
@@ -67,5 +67,5 @@ var pop = require('population');
 	}
 	
 	utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
-//};
+};
 
