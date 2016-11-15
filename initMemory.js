@@ -30,7 +30,7 @@ module.exports.initMemory = function () {
 			var firstSpawn = Game.spawns[ name ];
 			utils.cL(firstSpawn);
 			//firstSpawn.memory = firstSpawn.name;
-			Memory.firstSpawn = firstSpawn.id;
+			//Memory.firstSpawn = firstSpawn.id;
 			
 			// list of sources in that room
 			
@@ -42,7 +42,7 @@ module.exports.initMemory = function () {
 			// need other source too
 			
 			
-			var firstSource = firstSpawn.pos.findInRange( FIND_SOURCES_ACTIVE );
+			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
 			console.log(firstSource + ' position '+firstSource.pos);
 			firstSpawn.memory.firstSourceId = firstSource.id;
 			var sourceIds = [];
