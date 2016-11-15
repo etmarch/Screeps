@@ -26,7 +26,7 @@ module.exports.loop = function() {
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		if ( creep.memory.role == "harvester" ) {
-			harvester( creep );
+			harvester( creep ).bind(this);
 		}
 		/* else if (creep.memory.role == "builder") {
 		 builder(creep);
