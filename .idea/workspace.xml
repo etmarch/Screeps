@@ -70,8 +70,8 @@
       <file leaf-file-name="tasks.harvester.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -283,12 +283,12 @@
       <updated>1478907479317</updated>
       <workItem from="1478907483369" duration="19820000" />
       <workItem from="1478994215099" duration="1270000" />
-      <workItem from="1479194248130" duration="13572000" />
+      <workItem from="1479194248130" duration="13785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34662000" />
+    <option name="totallyTimeSpent" value="34875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="23" width="1380" height="834" extended-state="0" />
@@ -466,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding />
         </state>
       </provider>

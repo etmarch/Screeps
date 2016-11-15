@@ -1,7 +1,7 @@
 /**
  * Created by evanmarchand on 11/12/16.
  */
-
+var _ = require('lodash');
 var utils = require('utils');
 
 module.exports = function ( creep ) {
@@ -13,7 +13,7 @@ module.exports = function ( creep ) {
 		// get in range, load up, go back to spawn, repeat
 	
 	var home = Game.getObjectById(Memory.firstSpawn);
-	utils.cL(`why dis not working - ${creep} - ${creep.energy}`);
+	utils.cL(`why dis not working - ${creep} - ${_.sum(creep.carry)}`);
 	// Commit suicide if creep can't move or carry
 	if ( creep.getActiveBodyparts(MOVE) == 0 || creep.getActiveBodyparts(CARRY) == 0 || creep.getActiveBodyparts(WORK) == 0 ) {
 		utils.cL(`Fareweel brothers, I am useless! ${creep.name}`);
