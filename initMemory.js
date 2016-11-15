@@ -37,7 +37,7 @@ module.exports.initMemory = function () {
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[room];
-			Memory.rooms[room] = roomI.id;
+			Memory[room] = roomI.id;
 		}
 		
 		// ToDo: This needs to be cleaned up, reused from another module or config file...

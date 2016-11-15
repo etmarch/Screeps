@@ -14,9 +14,6 @@ module.exports.loop = function() {
 	
 	const room = _.head( _.values( Game.rooms ) );
 	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
-	if ( typeof Memory.init == "undefined" ) {
-		utils.cL( 'ayo init not defined!!' );
-	}
 	//utils.cL( `Testing Memory (before): ${Memory.init} typeOf: ${typeof Memory.init}` );
 	
 	initMemory.initMemory();
