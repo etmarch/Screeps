@@ -4,6 +4,8 @@ var utils = require('utils');
 var roles = require('roles');
 var harvester = require('tasks.harvester');
 var roomObj = require('roomObj');
+var pop = require('population');
+
 
 
 module.exports.loop = function() {
@@ -15,7 +17,6 @@ module.exports.loop = function() {
 	if ( typeof Memory.init == "undefined" ) {
 		utils.cL( 'ayo init not defined!!' );
 	}
-//const diagSearchArr = [ 'FIND_SOURCES_ACTIVE', 'FIND_MY_SPAWNS', 'FIND_HOSTILE_CREEPS', 'FIND_MY_CREEPS' ];
 	//utils.cL( `Testing Memory (before): ${Memory.init} typeOf: ${typeof Memory.init}` );
 	
 	initMemory.initMemory();
@@ -59,7 +60,7 @@ module.exports.loop = function() {
 
 // population create phase
 	if ( mainSpawn.energy >= roles()[ 'harvester' ].cost ) {
-		var result = utils.debugWrap( mainSpawn.createCreep( roles()[ 'harvester' ].parts, undefined, _.merge( { role: 'harvester' }, roles()[ 'harvester' ] ) ) );
+		var result = pop.spawn(mainSpawn, 'harvester');
 		//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
 		if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );

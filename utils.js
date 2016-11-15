@@ -43,6 +43,10 @@ const Utils = {
 
 module.exports = Utils;
 
+module.exports.costRole = function(creepRole) {
+	return roles()[creepRole]['cost'];
+};
+
 // Helper function to count amount of creeps of certain role, return number of creeps
 /*
 module.exports.countRole = function(creepRole) {
@@ -75,11 +79,6 @@ module.exports.fightersInRange = function(creep, range, bodyParts) {
 		});
 	}*/
 };
-
-
-
-
-
 
 
 const errorConstList = {
