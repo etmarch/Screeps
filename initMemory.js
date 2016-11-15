@@ -9,11 +9,10 @@ var utils = require( 'utils' );
 // first check to see if memory has been initiated
 module.exports.initMemory = function () {
 	//utils.cL( `initMem function: ${JSON.stringify( Memory )}, ${_.size( Game.spawns )}` );
-	utils.cL( _.size( Game.rooms ) );
-	utils.cL(JSON.stringify(Game.rooms));
+	//utils.cL( _.size( Game.rooms ) );
+	//utils.cL(JSON.stringify(Game.rooms)); // body info, energy avail, energy capacity
 	utils.cL(JSON.stringify(Game.spawns));
-	utils.cL(JSON.stringify(Game.creeps));
-	utils.cL(JSON.stringify(Game));
+	//utils.cL(JSON.stringify(Game));
 	
 	
 	if ( !Memory.init ) { // Initializer
@@ -42,7 +41,8 @@ module.exports.initMemory = function () {
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[room];
-			Memory[room] = roomI.id;
+			utils.cL(roomI);
+			Memory.firstRoom = roomI.name;
 		}
 		
 		// ToDo: This needs to be cleaned up, reused from another module or config file...
