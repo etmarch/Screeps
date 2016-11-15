@@ -19,6 +19,7 @@ module.exports = function ( creep ) {
 		utils.cL(`Fareweel brothers, I am useless! ${creep.name}`);
 		creep.suicide();
 	}
+	creep.moveTo(Game.getObjectById(Memory.spawns.Spawn1.firstSourceId));
 	// Main loop for behaviors
 	if (creep.energy < creep.energyCapacity) {
 		var target = creep.pos.findClosest(FIND_SOURCES_ACTIVE);//Game.getObjectById(creep.memory.sourceId); // Make target source it was assigned
