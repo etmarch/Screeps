@@ -106,8 +106,5 @@ const errorConstList = {
 *
 * IDEAS
 *
-* 1. Build umbrella pseudo game (gme) class, containing custom built commands corresponding to functions...
-* 2. Basic stats and projections, ie. saving the ticks in memory.set(), and calculate average resource rate,
- * production, etc...
 *
 * */
