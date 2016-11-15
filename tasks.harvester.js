@@ -5,6 +5,7 @@
 var utils = require('utils');
 module.exports = function ( creep ) {
 	
+	
 	// need to get the coordinates of things around
 		// closest spawn
 		// closest mineral node

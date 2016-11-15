@@ -27,25 +27,36 @@ module.exports.initMemory = function () {
 		
 		// only start with 1 spawn...
 		for ( var name in Game.spawns ) {
-			var mainSpawn = Game.spawns[ name ];
-			mainSpawn.memory = mainSpawn.name;
-			Memory.mainSpawn = mainSpawn.id;
-			/*var firstSource = mainSpawn.pos.findClosest( FIND_SOURCES_ACTIVE );
+			var firstSpawn = Game.spawns[ name ];
+			//firstSpawn.memory = firstSpawn.name;
+			//Memory.firstSpawn = firstSpawn.id;
+			
+			// list of sources in that room
+			
+			
+			
+			// automatically pull out closest
+			
+			
+			// need other source too
+			
+			
+			var firstSource = firstSpawn.pos.findInRange( FIND_SOURCES_ACTIVE );
 			//console.log(firstSource + ' position '+firstSource.pos);
-			mainSpawn.memory.firstSourceId = firstSource.id;
+			firstSpawn.memory.firstSourceId = firstSource.id;
 			var sourceIds = [];
-			_.forEach( mainSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
+			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
 				sourceIds.push( source );
 			} );
 			var filteredIds = _.pull( sourceIds, firstSource );
-			var secondSource = mainSpawn.pos.findClosest( filteredIds );
+			var secondSource = firstSpawn.pos.findInRange( filteredIds );
 			
-			mainSpawn.memory.secondSourceId = secondSource.id;
+			firstSpawn.memory.secondSourceId = secondSource.id;
 			
-			Memory.mainSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
+			Memory.firstSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
 			
 			
-			utils.cL( `mainSpawn: ${mainSpawn}, Game.spawns: ${Game.spawns}` );
+			
 		}
 		
 		

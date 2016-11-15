@@ -17,6 +17,7 @@ const Pop = {
 		//}
 		// check theres enough energy at spawn, and spawn can do it
 		if (spawn.energy >= roles()[role]['cost'] && spawn.canCreateCreep(roles()[role]['parts']) == OK ) {
+			// todo: error checking and debugging here - make helper function
 			var result = spawn.createCreep(roles()[role]['parts'], (`name-${Game.cpu.getUsed()}`), roles()[role]);
 			utils.cL(result);
 		}
