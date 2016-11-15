@@ -32,7 +32,7 @@ module.exports = function ( creep ) {
 			if (!creep.pos.isNearTo(home)) {
 				creep.moveTo(home);
 			} else {
-				creep.transferEnergy(home);
+				creep.transfer(home, RESOURCE_ENERGY);
 			}
 		}
 	}
