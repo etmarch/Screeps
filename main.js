@@ -39,19 +39,6 @@ module.exports.loop = function() {
 		 }*/
 	}
 
-
-// Memory Management
-	if ( !mainSpawn.spawning ) {
-		for ( var name in Memory.creeps ) {
-			if ( !Game.creeps[ name ] ) {
-				console.log( "DEL: " + name );
-				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
-				Memory.deathsTotal++;
-				delete Memory.creeps[ name ];
-			}
-		}
-	}
-	
 	
 	roomObj.roomInfo( room );
 
@@ -67,6 +54,17 @@ module.exports.loop = function() {
 		}
 	}
 	
+	// Memory Management
+	if ( !mainSpawn.spawning ) {
+		for ( var name in Memory.creeps ) {
+			if ( !Game.creeps[ name ] ) {
+				console.log( "DEL: " + name );
+				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
+				Memory.deathsTotal++;
+				delete Memory.creeps[ name ];
+			}
+		}
+	}
 	
 	utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
 };
