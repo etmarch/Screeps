@@ -43,8 +43,9 @@ module.exports.initMemory = function () {
 			
 			
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
-			console.log(firstSource + ' position '+firstSource.pos);
+			//console.log(firstSource + ' position '+firstSource.pos);
 			firstSpawn.memory.firstSourceId = firstSource.id;
+			utils.cL(firstSpawn.room.find( FIND_SOURCES_ACTIVE ));
 			var sourceIds = [];
 			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
 				sourceIds.push( source );
