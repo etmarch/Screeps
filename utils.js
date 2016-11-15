@@ -16,7 +16,7 @@ function isNumber(n) {
 
 let cL = ( out ) => console.log( out );
 
-Utils = {
+const Utils = {
 	countRole: (creepRole) => {
 		var total = _.filter(Game.creeps, {
 			memory: {role: creepRole}
