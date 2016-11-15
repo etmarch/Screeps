@@ -8,7 +8,7 @@ var pop = require('population');
 
 
 
-module.exports.loop = function() {
+//module.exports.loop = function() {
 	
 	utils.cL( `-------  START T:(${Game.time}) USED%: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } --------` );
 	
@@ -26,7 +26,7 @@ module.exports.loop = function() {
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		if ( creep.memory.role == "harvester" ) {
-			harvester( creep ).bind(this);
+			harvester( creep );
 		}
 		/* else if (creep.memory.role == "builder") {
 		 builder(creep);
@@ -67,5 +67,5 @@ module.exports.loop = function() {
 	
 
 	utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
-};
+//};
 
