@@ -44,6 +44,11 @@ var harv = {
 		}*/
 		
 		run: function(creep) {
+			if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
+				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
+				creep.suicide();
+			}
+			
 			if(creep.carry.energy < creep.carryCapacity) {
 				var sources = creep.room.find(FIND_SOURCES);
 				if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
