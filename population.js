@@ -21,7 +21,7 @@ const Pop = {
 				//throw new Error('Cant create the creep!');
 				
 				// todo: error checking and debugging here - make helper function
-				var result = spawn.createCreep( roles()[ role ][ 'parts' ], (`${role}-${_.size(Memory.role + 1)}`), _.merge( { role: role }, roles()[ role ] ) );
+				var result = spawn.createCreep( roles()[ role ][ 'parts' ], (`${role}-${_.size(Memory[role] + 1)}`), _.merge( { role: role }, roles()[ role ] ) );
 				utils.cL( `result from pop ${result}` );
 				Memory[ role + 'Current' ]++;
 				Memory[ role ]++;
