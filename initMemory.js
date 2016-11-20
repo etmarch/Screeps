@@ -48,6 +48,8 @@ module.exports.initMemory = function () {
 			
 			//Memory.firstSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
 			
+			//ToDO: Get the source closest to the room controller, assign it to any of upgraders
+			
 			
 		}
 		

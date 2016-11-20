@@ -77,8 +77,8 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'guard' ) < 4) {
-			pop.spawn( mainSpawn, 'guard' );
+		if (utils.countRole( 'builder' ) < 4) {
+			pop.spawn( mainSpawn, 'builder' );
 		} else {
 			pop.spawn( mainSpawn, 'upgrader');
 		}
