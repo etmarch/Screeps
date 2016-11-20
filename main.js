@@ -17,8 +17,6 @@ module.exports.loop = function () {
 	utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	
 	
-//utils.cL( `Testing Memory (before): ${Memory.init} typeOf: ${typeof Memory.init}` );
-	
 	initMemory.initMemory();
 	
 	for ( var i in Game.creeps ) {
@@ -59,38 +57,34 @@ module.exports.loop = function () {
 
 // population create phase
 	if ( utils.countRole( 'harvester' ) < 4 ) {
-		if ( mainSpawn.energy >= roles()[ 'harvester' ].cost && !mainSpawn.spawning ) {
-			let result = pop.spawn( mainSpawn, 'harvester' );
-			//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
-			if ( _.isString( result ) ) {
-				console.log( '(main.js)The name is: ' + result );
-			}
-			else {
-				console.log( '(main.js)Spawn error: ' + result );
-			}
+		//utils.cL('harv loop for pop');
+		
+		pop.spawn( mainSpawn, 'harvester' );
+		/*if ( _.isString( result ) ) {
+			console.log( '(main.js)The name is: ' + result );
 		}
+		else {
+			console.log( '(main.js)Spawn error: ' + result );
+		}*/
+		
 	} else if ( (utils.countRole( 'harvester' ) >= 4 && utils.countRole( 'upgrader' ) < 2) ) {
-		if ( mainSpawn.energy >= roles()[ 'upgrader' ].cost && !mainSpawn.spawning ) {
-			let result = pop.spawn( mainSpawn, 'upgrader' );
-			//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
-			if ( _.isString( result ) ) {
-				console.log( '(main.js)The name is: ' + result );
-			}
-			else {
-				console.log( '(main.js)Spawn error: ' + result );
-			}
+		pop.spawn( mainSpawn, 'upgrader' );
+		/*if ( _.isString( result ) ) {
+			console.log( '(main.js)The name is: ' + result );
 		}
+		else {
+			console.log( '(main.js)Spawn error: ' + result );
+		}
+		*/
 	} else {
-		if ( mainSpawn.energy >= roles()[ 'guard' ].cost && !mainSpawn.spawning ) {
-			let result = pop.spawn( mainSpawn, 'guard' );
-			//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
-			if ( _.isString( result ) ) {
-				console.log( '(main.js)The name is: ' + result );
-			}
-			else {
-				console.log( '(main.js)Spawn error: ' + result );
-			}
+		pop.spawn( mainSpawn, 'guard' );
+		/*if ( _.isString( result ) ) {
+			console.log( '(main.js)The name is: ' + result );
 		}
+		else {
+			console.log( '(main.js)Spawn error: ' + result );
+		}*/
+		
 	}
 	
 	
