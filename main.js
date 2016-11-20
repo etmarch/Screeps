@@ -2,7 +2,7 @@ var _ = require( 'lodash' );
 var initMemory = require( 'initMemory' );
 var utils = require( 'utils' );
 var roles = require( 'roles' );
-var harvester = require( 'tasks.harvester' );
+var harv = require( 'tasks.harvester' );
 var roomObj = require( 'roomObj' );
 var pop = require( 'population' );
 
@@ -16,7 +16,22 @@ module.exports.loop = function () {
 //utils.cL( `Testing Memory (before): ${Memory.init} typeOf: ${typeof Memory.init}` );
 	
 	initMemory.initMemory();
-
+	
+	for ( var i in Game.creeps ) {
+		var creep = Game.creeps[ i ];
+		if ( creep.memory.role == 'harvester' ) {
+			harv.run( creep );
+		}
+		/* else if (creep.memory.role == "builder") {
+		 builder(creep);
+		 } else if (creep.memory.role == "guard") {
+		 guard(creep);
+		 } else if (creep.memory.role == "ranger") {
+		 ranger(creep);
+		 } else if (creep.memory.role == "healer") {
+		 healer(creep);
+		 }*/
+	}
 
 //utils.cL( `Testing Memory: ${Memory.init}` );
 
@@ -34,24 +49,10 @@ module.exports.loop = function () {
 
 
 // Assigning roles loop
-	for ( var i in Game.creeps ) {
-		var creep = Game.creeps[ i ];
-		if ( creep.memory.role == "harvester" ) {
-			harvester.run( creep );
-		}
-		/* else if (creep.memory.role == "builder") {
-		 builder(creep);
-		 } else if (creep.memory.role == "guard") {
-		 guard(creep);
-		 } else if (creep.memory.role == "ranger") {
-		 ranger(creep);
-		 } else if (creep.memory.role == "healer") {
-		 healer(creep);
-		 }*/
-	}
 	
 	
-	roomObj.roomInfo( room );
+	
+	//roomObj.roomInfo( room );
 
 // population create phase
 	if ( mainSpawn.energy >= roles()[ 'harvester' ].cost && !mainSpawn.spawning ) {
