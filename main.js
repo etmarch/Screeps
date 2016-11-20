@@ -26,7 +26,7 @@ var pop = require('population');
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		if ( creep.memory.role == "harvester" ) {
-			harvester( creep );
+			harvester.run( creep );
 		}
 		/* else if (creep.memory.role == "builder") {
 		 builder(creep);
