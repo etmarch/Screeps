@@ -45,7 +45,7 @@ var harv = {
 				creep.suicide();
 			}
 			
-			utils.cL(` ${creep.pos.findClosest( FIND_SOURCES_ACTIVE )} `);
+			utils.cL(` ${creep.room.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			
 			if(creep.carry.energy < creep.carryCapacity) {
 				var sources = creep.room.find(FIND_SOURCES);
