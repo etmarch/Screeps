@@ -16,7 +16,7 @@ function isNumber(n) {
 
 let cL = ( out ) => console.log( out );
 
-const BODYPART_COST = {
+const partsCosts = {
 	"move": 50,
 	"work": 100,
 	"attack": 80,
