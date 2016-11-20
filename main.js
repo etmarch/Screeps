@@ -52,7 +52,7 @@ module.exports.loop = function () {
 	
 	
 	
-	//roomObj.roomInfo( room );
+	roomObj.roomInfo( room );
 
 // population create phase
 	if ( mainSpawn.energy >= roles()[ 'harvester' ].cost && !mainSpawn.spawning ) {
