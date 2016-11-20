@@ -54,13 +54,15 @@ module.exports.initMemory = function () {
 		
 		// ToDo: This needs to be cleaned up, reused from another module or config file...
 		Memory.harvester = 0,
-				//Memory.builder = 0,
-				//Memory.guard = 0,
+				Memory.builder = 0,
+				Memory.guard = 0,
+				Memory.upgrader = 0,
 				//Memory.ranger = 0,
 				//Memory.healer = 0;
 				Memory.harvesterCurrent = 0,
-				//Memory.builderCurrent = 0,
-				//Memory.guardCurrent = 0,
+				Memory.builderCurrent = 0,
+				Memory.guardCurrent = 0,
+				Memory.upgraderCurrent = 0,
 				//Memory.rangerCurrent = 0,
 				//Memory.healerCurrent = 0;
 				//Memory.source1Harvs = [],

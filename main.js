@@ -4,17 +4,19 @@ var utils = require( 'utils' );
 var roles = require( 'roles' );
 var harv = require( 'tasks.harvester' );
 var upgrader = require( 'tasks.upgrader' );
-
+let guard = require( 'roles.guard' );
+let builder = require( 'roles.builder' );
 var roomObj = require( 'roomObj' );
 var pop = require( 'population' );
 
+const room = _.head( _.values( Game.rooms ) );
+const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 
 module.exports.loop = function () {
 	
-	utils.cL( `-------  START T:(${Game.time}) USED%: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } --------` );
+	utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	
-	const room = _.head( _.values( Game.rooms ) );
-	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
+	
 //utils.cL( `Testing Memory (before): ${Memory.init} typeOf: ${typeof Memory.init}` );
 	
 	initMemory.initMemory();
@@ -27,11 +29,13 @@ module.exports.loop = function () {
 		else if ( creep.memory.role == 'upgrader' ) {
 			upgrader.run( creep );
 		}
-		/*else if (creep.memory.role == "guard") {
-		 guard(creep);
-		 } else if (creep.memory.role == "ranger") {
-		 ranger(creep);
-		 } else if (creep.memory.role == "healer") {
+		else if ( creep.memory.role == 'guard' ) {
+			guard.run( creep );
+		}
+		else if ( creep.memory.role == 'builder' ) {
+			builder.run( creep );
+		}
+		/*else if (creep.memory.role == "healer") {
 		 healer(creep);
 		 }*/
 	}
@@ -65,9 +69,20 @@ module.exports.loop = function () {
 				console.log( '(main.js)Spawn error: ' + result );
 			}
 		}
-	} else if ( utils.countRole( 'harvester' ) >= 4 && utils.countRole( 'upgrader' ) < 2 ) {
+	} else if ( (utils.countRole( 'harvester' ) >= 4 && utils.countRole( 'upgrader' ) < 2) ) {
 		if ( mainSpawn.energy >= roles()[ 'upgrader' ].cost && !mainSpawn.spawning ) {
 			let result = pop.spawn( mainSpawn, 'upgrader' );
+			//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
+			if ( _.isString( result ) ) {
+				console.log( '(main.js)The name is: ' + result );
+			}
+			else {
+				console.log( '(main.js)Spawn error: ' + result );
+			}
+		}
+	} else {
+		if ( mainSpawn.energy >= roles()[ 'guard' ].cost && !mainSpawn.spawning ) {
+			let result = pop.spawn( mainSpawn, 'guard' );
 			//var result = mainSpawn.createCreep( [ WORK, CARRY, MOVE ] );
 			if ( _.isString( result ) ) {
 				console.log( '(main.js)The name is: ' + result );
