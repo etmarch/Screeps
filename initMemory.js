@@ -17,6 +17,7 @@ module.exports.initMemory = function () {
 	
 	if ( !Memory.init ) { // Initializer
 		utils.cL('STARTING MEMORY INIT!!');
+		Memory = {};
 		//utils.cL(`${Game.rooms}`);
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
