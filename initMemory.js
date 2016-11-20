@@ -21,8 +21,7 @@ module.exports.initMemory = function () {
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[room];
-			Memory.firstRoom = roomI.name;
-			roomI.memory = roomI.name;
+			Memory.firstRoomId = roomI.id;
 		}
 		
 		// only start with 1 spawn...
@@ -45,7 +44,7 @@ module.exports.initMemory = function () {
 			
 			firstSpawn.memory.secondSourceId = secondSource.id;
 			
-			Memory.firstSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
+			//Memory.firstSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
 			
 			
 			

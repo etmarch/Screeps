@@ -6,12 +6,12 @@
  * Helper functions used everywhere
  */
 
-var _ = require('lodash');
-var roles = require('roles');
+var _ = require( 'lodash' );
+var roles = require( 'roles' );
 
 // check if value is a real number
-function isNumber(n) {
-	return !isNaN(parseFloat(n)) && isFinite(n);
+function isNumber( n ) {
+	return !isNaN( parseFloat( n ) ) && isFinite( n );
 }
 
 let cL = ( out ) => console.log( out );
@@ -28,24 +28,24 @@ const partsCosts = {
 };
 
 const Utils = {
-	countRole: (creepRole) => {
-		var total = _.filter(Game.creeps, {
-			memory: {role: creepRole}
-		});
-		return _.size(total);
+	countRole: ( creepRole ) => {
+		var total = _.filter( Game.creeps, {
+			memory: { role: creepRole }
+		} );
+		return _.size( total );
 	},
 	
 	cL: ( out ) => {
-		return cL(out);
+		return cL( out );
 	},
 	// Attach action functions to this wrapper (ex attack, move, etc...)
-	debugWrap: (fnToExec) => {
-		cL(fnToExec);
+	debugWrap: ( fnToExec ) => {
+		cL( fnToExec );
 		let result = fnToExec;
-		cL(`${typeof result} result: ${result}`);
+		cL( `${typeof result} result: ${result}` );
 		// Debugging Helper function
-		if(result != OK) {
-			return console.log(`Error code: ${result} returned!`);
+		if ( result != OK ) {
+			return console.log( `Error code: ${result} returned!` );
 		}
 		return result;
 	}
@@ -57,35 +57,35 @@ module.exports = Utils;
 
 // Helper function to count amount of creeps of certain role, return number of creeps
 /*
-module.exports.countRole = function(creepRole) {
-	var total = _.filter(Game.creeps, {
-		memory: {role: creepRole}
-	});
-	return _.size(total);
-};
-*/
+ module.exports.countRole = function(creepRole) {
+ var total = _.filter(Game.creeps, {
+ memory: {role: creepRole}
+ });
+ return _.size(total);
+ };
+ */
 
 
 
 // Return array of enemy creeps in range, excluding the source Keeper
-module.exports.enemiesInRange = function(creep, range) {
+module.exports.enemiesInRange = function ( creep, range ) {
 	
 };
 
 // Return array of friendly creeps that can attack in range, excluding the source Keeper
-module.exports.fightersInRange = function(creep, range, bodyParts) {
+module.exports.fightersInRange = function ( creep, range, bodyParts ) {
 	/*if (!isNumber(range)) {
-		return "ERR: Range must be number!";
-	} else {
-		
-		
-		
-		return creep.pos.findInRange(FIND_MY_CREEPS, range, {
-			filter: function(c) {
-				return (c.memory.fighter === true);
-			}
-		});
-	}*/
+	 return "ERR: Range must be number!";
+	 } else {
+	 
+	 
+	 
+	 return creep.pos.findInRange(FIND_MY_CREEPS, range, {
+	 filter: function(c) {
+	 return (c.memory.fighter === true);
+	 }
+	 });
+	 }*/
 };
 
 
@@ -110,8 +110,8 @@ const errorConstList = {
 };
 
 /*
-*
-* IDEAS
-*
-*
-* */
+ *
+ * IDEAS
+ *
+ *
+ * */
