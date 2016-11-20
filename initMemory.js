@@ -16,12 +16,12 @@ module.exports.initMemory = function () {
 	
 	
 	if ( !Memory.init ) { // Initializer
-		utils.cL('STARTING MEMORY INIT!!')
-		
+		utils.cL('STARTING MEMORY INIT!!');
+		utils.cL(`${Game.rooms}`);
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[room];
-			Memory.firstRoomId = roomI.id;
+			utils.cL(`${roomI}  ${room}`);
 		}
 		
 		// only start with 1 spawn...
