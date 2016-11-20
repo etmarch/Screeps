@@ -17,7 +17,7 @@ const Pop = {
 		//}
 		// check theres enough energy at spawn, and spawn can do it
 		if (spawn.energy >= roles()[role]['cost'] && !spawn.spawning ) {
-			//if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
+			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
 				//throw new Error('Cant create the creep!');
 				
 				// todo: error checking and debugging here - make helper function
@@ -26,7 +26,7 @@ const Pop = {
 				Memory[ role + 'Current' ]++;
 				Memory[ role ]++;
 				return result;
-			//}
+			}
 		}
 	}
 };
