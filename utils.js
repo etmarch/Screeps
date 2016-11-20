@@ -16,6 +16,17 @@ function isNumber(n) {
 
 let cL = ( out ) => console.log( out );
 
+const BODYPART_COST = {
+	"move": 50,
+	"work": 100,
+	"attack": 80,
+	"carry": 50,
+	"heal": 250,
+	"ranged_attack": 150,
+	"tough": 10,
+	"claim": 600
+};
+
 const Utils = {
 	countRole: (creepRole) => {
 		var total = _.filter(Game.creeps, {
