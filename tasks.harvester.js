@@ -14,12 +14,13 @@ const Harv = {
 		// get in range, load up, go back to spawn, repeat
 		
 		var home = Game.getObjectById( Memory.firstSpawn );
-		utils.cL( `why dis not working - ${creep}` );
+		utils.cL( `why dis not working - ${creep} ${home}` );
 		// Commit suicide if creep can't move or carry
 		if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
 			utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 			creep.suicide();
 		}
+		utils.cL(` ${creep.pos.findClosest( FIND_SOURCES_ACTIVE )} `);
 		creep.moveTo( creep.pos.findClosest( FIND_SOURCES_ACTIVE ) );
 		// Main loop for behaviors
 		if ( creep.energy < creep.energyCapacity ) {
