@@ -77,7 +77,11 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		pop.spawn( mainSpawn, 'guard' );
+		if (utils.countRole( 'guard' ) < 4) {
+			pop.spawn( mainSpawn, 'guard' );
+		} else {
+			pop.spawn( mainSpawn, 'upgrader');
+		}
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
 		}
