@@ -22,7 +22,7 @@ module.exports.initMemory = function () {
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[room];
 			utils.cL(`${roomI}  ${room}`);
-			Memory.rooms += roomI;
+			roomI.memory.availEnergy = roomI.energyAvailable;
 		}
 		
 		// only start with 1 spawn...
