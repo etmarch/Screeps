@@ -14,8 +14,11 @@ const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 
 module.exports.loop = function () {
 	
-	utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
-	
+	if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
+		utils.cL('This is a simulation!');
+	} else {
+		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
+	}
 	
 	initMemory.initMemory();
 	
@@ -56,7 +59,7 @@ module.exports.loop = function () {
 	roomObj.roomInfo( room );
 
 // population create phase
-	if ( utils.countRole( 'harvester' ) < 4 ) {
+	if ( utils.countRole( 'harvester' ) < 3 ) {
 		//utils.cL('harv loop for pop');
 		
 		pop.spawn( mainSpawn, 'harvester' );
@@ -67,7 +70,7 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
-	} else if ( (utils.countRole( 'harvester' ) >= 4 && utils.countRole( 'upgrader' ) < 2) ) {
+	} else if ( (utils.countRole( 'harvester' ) >= 3 && utils.countRole( 'upgrader' ) < 2) ) {
 		pop.spawn( mainSpawn, 'upgrader' );
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
@@ -77,7 +80,7 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 4) {
+		if (utils.countRole( 'builder' ) < 2) {
 			pop.spawn( mainSpawn, 'builder' );
 		} else {
 			pop.spawn( mainSpawn, 'upgrader');

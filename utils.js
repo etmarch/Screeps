@@ -15,6 +15,7 @@ function isNumber( n ) {
 }
 
 let cL = ( out ) => console.log( out );
+let cLJ = ( out ) => cL(JSON.stringify(out));
 
 const partsCosts = {
 	"move": 50,
@@ -37,6 +38,9 @@ const Utils = {
 	
 	cL: ( out ) => {
 		return cL( out );
+	},
+	cLJ: ( out ) => {
+		cL(JSON.stringify(out));
 	},
 	// Attach action functions to this wrapper (ex attack, move, etc...)
 	debugWrap: ( fnToExec ) => {
