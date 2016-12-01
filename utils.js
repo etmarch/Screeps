@@ -40,10 +40,13 @@ const Utils = {
 		const parts = roles()[ roleBod ][ 'parts' ];
 		const partNames = _.keysIn( partsCosts );
 		const costs = _.values(partsCosts);
+		let sumCost = 0;
 		cL( `parts - ${parts}, names - ${partNames} - ${costs}` );
 		_.forEach( parts, function ( part ) {
-			cL( `part - ${part}` );
+			cL( `part - ${part}, ${partsCosts[part]}` );
+			sumCost += partsCosts[part];
 		} );
+		return sumCost;
 	},
 	
 	cL: ( out ) => {
