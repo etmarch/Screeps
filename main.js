@@ -22,6 +22,22 @@ module.exports.loop = function () {
 	
 	initMemory.initMemory();
 	
+	
+
+//utils.cL( `Testing Memory: ${Memory.init}` );
+
+// Memory Management
+	if ( !mainSpawn.spawning ) {
+		for ( var name in Memory.creeps ) {
+			if ( !Game.creeps[ name ] ) {
+				console.log( "DEL: " + name );
+				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
+				Memory.deathsTotal++;
+				delete Memory.creeps[ name ];
+			}
+		}
+	}
+	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		if ( creep.memory.role == 'harvester' ) {
@@ -39,20 +55,6 @@ module.exports.loop = function () {
 		/*else if (creep.memory.role == "healer") {
 		 healer(creep);
 		 }*/
-	}
-
-//utils.cL( `Testing Memory: ${Memory.init}` );
-
-// Memory Management
-	if ( !mainSpawn.spawning ) {
-		for ( var name in Memory.creeps ) {
-			if ( !Game.creeps[ name ] ) {
-				console.log( "DEL: " + name );
-				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
-				Memory.deathsTotal++;
-				delete Memory.creeps[ name ];
-			}
-		}
 	}
 	
 	

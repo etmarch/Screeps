@@ -22,7 +22,7 @@ const Pop = {
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ], (`${role}-${Memory[role] + 1}`), _.merge( { role: role }, roles()[ role ] ) );
-				utils.cL( `result from pop ${result}..... Cost is: ${utils.countBodyCost(role)}` );
+				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
 				if ( _.isString( result ) ) {
 					Memory[ role + 'Current' ]++;
 					Memory[ role ]++;
