@@ -8,7 +8,6 @@
 
 var _ = require( 'lodash' );
 var roles = require( 'roles' );
-var utils = require( 'utils' );
 
 
 // check if value is a real number
