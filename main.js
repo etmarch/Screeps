@@ -14,11 +14,11 @@ const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 
 module.exports.loop = function () {
 	
-	if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
+	/*if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
 		utils.cL('This is a simulation!');
 	} else {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
-	}
+	}*/
 	
 	initMemory.initMemory();
 	
@@ -59,6 +59,7 @@ module.exports.loop = function () {
 	roomObj.roomInfo( room );
 
 // population create phase
+	// todo: handle the whole loop in one shot
 	if ( utils.countRole( 'harvester' ) < 3 ) {
 		//utils.cL('harv loop for pop');
 		
@@ -95,6 +96,6 @@ module.exports.loop = function () {
 	}
 	
 	
-	utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
+	//utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
 };
 

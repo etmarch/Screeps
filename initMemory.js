@@ -19,7 +19,7 @@ module.exports.initMemory = function () {
 		utils.cL( 'STARTING MEMORY INIT!!' );
 		//Memory.isSim = false;
 		let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
-		utils.cL(`Sim Test results: ${simTest}`);
+		//utils.cL(`Sim Test results: ${simTest}`);
 		//Memory = {};
 		//utils.cL(`${Game.rooms}`);
 		// Store the rooms in memory
@@ -77,5 +77,5 @@ module.exports.initMemory = function () {
 				Memory.init = true;
 	}
 	
-	utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
+	//utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
 };

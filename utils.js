@@ -8,6 +8,8 @@
 
 var _ = require( 'lodash' );
 var roles = require( 'roles' );
+var utils = require( 'utils' );
+
 
 // check if value is a real number
 function isNumber( n ) {
@@ -35,6 +37,12 @@ const Utils = {
 		} );
 		return _.size( total );
 	},
+	countBodyCost: (bodyParts) => {
+		_.forEach(bodyParts, function(part) {
+			utils.cL(`part - ${part}`);
+			_.findKey(bodyParts, )
+		});
+	},
 	
 	cL: ( out ) => {
 		return cL( out );
@@ -42,6 +50,10 @@ const Utils = {
 	cLJ: ( out ) => {
 		cL(JSON.stringify(out));
 	},
+	
+	// ToDo: Suicide checker and function
+	
+	
 	// Attach action functions to this wrapper (ex attack, move, etc...)
 	debugWrap: ( fnToExec ) => {
 		cL( fnToExec );
