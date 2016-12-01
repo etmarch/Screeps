@@ -17,7 +17,7 @@ function isNumber( n ) {
 }
 
 let cL = ( out ) => console.log( out );
-let cLJ = ( out ) => cL(JSON.stringify(out));
+let cLJ = ( out ) => cL( JSON.stringify( out ) );
 
 const partsCosts = {
 	"move": 50,
@@ -37,18 +37,21 @@ const Utils = {
 		} );
 		return _.size( total );
 	},
-	countBodyCost: (bodyParts) => {
-		_.forEach(bodyParts, function(part) {
-			utils.cL(`part - ${part}`);
-			_.findKey(bodyParts, )
-		});
+	countBodyCost: ( roleBod ) => {
+		const parts = roles()[ roleBod ][ 'parts' ];
+		const partNames = _.keysIn( partsCosts );
+		const costs = _.values(partsCosts);
+		cL( `parts - ${parts}, names - ${partNames} - ${costs}` );
+		_.forEach( parts, function ( part ) {
+			cL( `part - ${part}` );
+		} );
 	},
 	
 	cL: ( out ) => {
 		return cL( out );
 	},
 	cLJ: ( out ) => {
-		cL(JSON.stringify(out));
+		cL( JSON.stringify( out ) );
 	},
 	
 	// ToDo: Suicide checker and function
