@@ -18,7 +18,7 @@ const Pop = {
 		// check theres enough energy at spawn, and spawn can do it
 		if (spawn.energy >= utils.countBodyCost(role) && !spawn.spawning ) {
 			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
-				//throw new Error('Cant create the creep!');
+				//throw new Error('Cant create the creep!')
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ], (`${role}-${Memory[role] + 1}`), _.merge( { role: role }, roles()[ role ] ) );
