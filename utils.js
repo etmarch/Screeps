@@ -10,11 +10,6 @@ var _ = require( 'lodash' );
 var roles = require( 'roles' );
 
 
-// check if value is a real number
-function isNumber( n ) {
-	return !isNaN( parseFloat( n ) ) && isFinite( n );
-}
-
 let cL = ( out ) => console.log( out );
 
 const partsCosts = {
