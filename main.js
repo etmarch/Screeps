@@ -20,7 +20,6 @@ module.exports.loop = function () {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
 	if (Memory.init != true) {
-		utils.cL('Memory init from main');
 		initMemory.initMemory();
 	}
 

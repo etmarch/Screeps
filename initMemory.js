@@ -15,7 +15,7 @@ module.exports.initMemory = function () {
 	//utils.cL(JSON.stringify(Game));
 	
 	
-	if ( !Memory.init ) { // Initializer
+	/*if ( !Memory.init ) {*/ // Initializer
 		utils.cL( 'STARTING MEMORY INIT!!' );
 		//Memory.isSim = false;
 		let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
@@ -75,7 +75,7 @@ module.exports.initMemory = function () {
 				Memory.deathsTotal = 0,
 				Memory.isSim = simTest,
 				Memory.init = true;
-	}
+	//}
 	
 	//utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
 };
