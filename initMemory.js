@@ -22,12 +22,14 @@ module.exports.initMemory = function () {
 			roomI.memory.level = 0;
 		}
 		
+		Memory.initialSpawn = '';
+		
 		// only start with 1 spawn...
 		for ( var name in Game.spawns ) {
 			var firstSpawn = Game.spawns[ name ];
 			utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
-			Memory.initialSpawn = firstSpawn.id;
+			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
 			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
