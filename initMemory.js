@@ -38,13 +38,14 @@ module.exports.initMemory = function () {
 				sourceIds.push( source );
 			} );
 			var filteredIds = _.pull( sourceIds, firstSource );
-			var secondSource = firstSpawn.pos.findClosestByRange( filteredIds );
+			let secondSource = firstSpawn.pos.findClosestByRange( filteredIds );
+			let secondFilteredIds = _.pull(filteredIds, secondSource);
+			utils.cL(secondFilteredIds);
+			if (_.size(secondFilteredIds) > 0) {
+				let thirdSource = firstSpawn.pos.findClosestByRange( secondFilteredIds );
+				firstSpawn.memory.secondSourceId = thirdSource.id;
+			}
 			
-			firstSpawn.memory.secondSourceId = secondSource.id;
-			
-			//Memory.firstSpawn = Game.spawns[ name ].id; // store main spawn in memory*/
-			
-			//ToDO: Get the source closest to the room controller, assign it to any of upgraders
 			
 			
 		}
