@@ -8,25 +8,18 @@ var utils = require( 'utils' );
 
 // first check to see if memory has been initiated
 module.exports.initMemory = function () {
-	//utils.cL( `initMem function: ${JSON.stringify( Memory )}, ${_.size( Game.spawns )}` );
-	//utils.cL( _.size( Game.rooms ) );
-	//utils.cL(JSON.stringify(Game.rooms)); // body info, energy avail, energy capacity
-	//utils.cL(JSON.stringify(Game.spawns));
 	//utils.cL(JSON.stringify(Game));
 	
-	
 	/*if ( !Memory.init ) {*/ // Initializer
-		utils.cL( 'STARTING MEMORY INIT!!' );
+		utils.cL( 'STARTING MEMORY INIT!' );
 		//Memory.isSim = false;
 		let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
-		//utils.cL(`Sim Test results: ${simTest}`);
-		//Memory = {};
-		//utils.cL(`${Game.rooms}`);
+		
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[ room ];
 			utils.cL( `${roomI}  ${room}` );
-			roomI.memory.availEnergy = roomI.energyAvailable;
+			roomI.memory.level = 0;
 		}
 		
 		// only start with 1 spawn...

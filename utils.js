@@ -52,8 +52,8 @@ const Utils = {
 	cL: ( out ) => {
 		return cL( out );
 	},
-	cLJ: ( out ) => {
-		cL( JSON.stringify( out ) );
+	jS: (out) => {
+		return JSON.stringify(out);
 	},
 	
 	// ToDo: Suicide checker and function
