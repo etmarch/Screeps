@@ -97,6 +97,8 @@ module.exports.loop = function () {
 		
 	}
 	
+	//Testing Dog!
+	
 	
 	//utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
 };
