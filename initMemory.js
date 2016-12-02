@@ -25,9 +25,9 @@ module.exports.initMemory = function () {
 		// only start with 1 spawn...
 		for ( var name in Game.spawns ) {
 			var firstSpawn = Game.spawns[ name ];
-			utils.cL(firstSpawn);
+			utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
-			//Memory.firstSpawn = firstSpawn.id;
+			Memory.firstSpawn = firstSpawn.id;
 			
 			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
