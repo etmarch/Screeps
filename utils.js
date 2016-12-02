@@ -76,18 +76,6 @@ const Utils = {
 module.exports = Utils;
 
 
-// Helper function to count amount of creeps of certain role, return number of creeps
-/*
- module.exports.countRole = function(creepRole) {
- var total = _.filter(Game.creeps, {
- memory: {role: creepRole}
- });
- return _.size(total);
- };
- */
-
-
-
 // Return array of enemy creeps in range, excluding the source Keeper
 module.exports.enemiesInRange = function ( creep, range ) {
 	
