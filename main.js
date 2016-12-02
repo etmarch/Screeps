@@ -97,7 +97,7 @@ module.exports.loop = function () {
 	//Testing Dog!
 	
 	if (Game.time % 5 === 0) {
-		utils.cL( `----- TICK:END T:(${Game.time}) %: ${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) }--------------` );
+		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
 	}
 };
 

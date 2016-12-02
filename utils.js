@@ -63,6 +63,10 @@ const Utils = {
 			return console.log( `Error code: ${result} returned!` );
 		}
 		return result;
+	},
+	
+	getCPUPercent: () => {
+		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
 	}
 	
 };
