@@ -7,6 +7,7 @@ var utils = require('utils');
 var harv = {
 	
 		run: function(creep) {
+			// ToDo: helper function for Suicides
 			if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
 				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 				creep.suicide();
