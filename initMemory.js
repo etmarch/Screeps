@@ -40,7 +40,7 @@ module.exports.initMemory = function () {
 			var filteredIds = _.pull( sourceIds, firstSource );
 			let secondSource = firstSpawn.pos.findClosestByRange( filteredIds );
 			
-			firstSpawn.memory.secondSourceId = secondSourceSource.id;
+			firstSpawn.memory.secondSourceId = secondSource.id;
 			
 			let secondFilteredIds = _.pull(filteredIds, secondSource);
 			utils.cL(secondFilteredIds);
