@@ -21,13 +21,11 @@ module.exports.initMemory = function () {
 			utils.cL( `${roomI}  ${room}` );
 			roomI.memory.level = 0;
 		}
-		
-		Memory.initialSpawn = '';
-		
+	
 		// only start with 1 spawn...
 		for ( var name in Game.spawns ) {
 			var firstSpawn = Game.spawns[ name ];
-			utils.cL(utils.jS(firstSpawn));
+			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
