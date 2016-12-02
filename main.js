@@ -21,10 +21,6 @@ module.exports.loop = function () {
 	}*/
 	
 	initMemory.initMemory();
-	
-	
-
-//utils.cL( `Testing Memory: ${Memory.init}` );
 
 // Memory Management
 	if ( !mainSpawn.spawning ) {
