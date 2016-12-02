@@ -16,7 +16,6 @@ function isNumber( n ) {
 }
 
 let cL = ( out ) => console.log( out );
-let cLJ = ( out ) => cL( JSON.stringify( out ) );
 
 const partsCosts = {
 	"move": 50,
