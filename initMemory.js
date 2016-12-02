@@ -43,14 +43,16 @@ module.exports.initMemory = function () {
 			firstSpawn.memory.secondSourceId = secondSource.id;
 			
 			let secondFilteredIds = _.pull(filteredIds, secondSource);
-			utils.cL(secondFilteredIds);
+			//utils.cL(secondFilteredIds);
 			if (_.size(secondFilteredIds) > 0) {
 				let thirdSource = firstSpawn.pos.findClosestByRange( secondFilteredIds );
-				utils.cL(`inside if cond ${thirdSource}, count left: ${_.size(secondFilteredIds)}`);
+				//utils.cL(`inside if cond ${thirdSource}, count left: ${_.size(secondFilteredIds)}`);
 				firstSpawn.memory.thirdSourceId = thirdSource.id;
+				firstSpawn.memory.source3Harvs = [];
 			}
 			
-			
+			firstSpawn.memory.source1Harvs = [];
+			firstSpawn.memory.source2Harvs = [];
 			
 		}
 		
