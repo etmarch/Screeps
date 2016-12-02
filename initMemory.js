@@ -43,6 +43,7 @@ module.exports.initMemory = function () {
 			utils.cL(secondFilteredIds);
 			if (_.size(secondFilteredIds) > 0) {
 				let thirdSource = firstSpawn.pos.findClosestByRange( secondFilteredIds );
+				utils.cL(thirdSource);
 				firstSpawn.memory.secondSourceId = thirdSource.id;
 			}
 			
