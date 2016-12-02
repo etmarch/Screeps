@@ -19,8 +19,9 @@ module.exports.loop = function () {
 	} else {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
-	
-	initMemory.initMemory();
+	if (Memory.init != true) {
+		initMemory.initMemory();
+	}
 
 // Memory Management
 	if ( !mainSpawn.spawning ) {
@@ -59,7 +60,7 @@ module.exports.loop = function () {
 // population create phase
 	// todo: handle the whole loop in one shot
 	if ( utils.countRole( 'harvester' ) < 3 ) {
-		//utils.cL('harv loop for pop');
+	
 		
 		pop.spawn( mainSpawn, 'harvester' );
 		/*if ( _.isString( result ) ) {
