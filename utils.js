@@ -67,7 +67,9 @@ const Utils = {
 	
 	getCPUPercent: () => {
 		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
-	}
+	},
+	
+	
 	
 };
 

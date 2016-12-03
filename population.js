@@ -30,6 +30,11 @@ const Pop = {
 				}
 			}
 		}
+	},
+	
+	//
+	assignHarvToSource: function( creep, ) {
+		
 	}
 };
 module.exports = Pop;
