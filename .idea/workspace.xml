@@ -34,8 +34,8 @@
       <file leaf-file-name="initMemory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/initMemory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+            <state relative-caret-position="298">
+              <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -339,14 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="19605000" />
-    </task>
-    <task id="LOCAL-00023" summary="Init Memory Updates">
-      <created>1481192069553</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1481192069553</updated>
+      <workItem from="1480796200491" duration="19695000" />
     </task>
     <task id="LOCAL-00024" summary="Init Memory Updates">
       <created>1481192095864</created>
@@ -684,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481207100619</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Init Memory Updates">
+      <created>1481207221752</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1481207221752</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95227000" />
+    <option name="totallyTimeSpent" value="95317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,8 +1188,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/initMemory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        <state relative-caret-position="298">
+          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

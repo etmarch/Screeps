@@ -55,7 +55,7 @@ module.exports.initMemory = function () {
 					safeSourceIdList.push(sourceObj);
 					//roomMem.safeSourceIds.push(source.id);
 				} else {
-					roomMem.unsafeSourceIds.push(source.id);
+					roomMem.unsafeSourceIds.push(source);
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIdList)}`);
