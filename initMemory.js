@@ -34,6 +34,9 @@ module.exports.initMemory = function () {
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
+			
+			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES);
+			utils.cL(keeperLair);
 			utils.cL(`sourceIds: ${unfilteredSourceIds}`);
 			_.forEach(unfilteredSourceIds, function ( sourceId ) {
 				let outTargs = utils.enemiesInRange(sourceId, 5);
