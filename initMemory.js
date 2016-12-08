@@ -64,42 +64,17 @@ module.exports.initMemory = function () {
 			
 			_.forEach(sortedIds, function(value, index, collection) {
 				//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
-				//roomMem[`source${index}Id`] = value.id;
-				//roomMem[`source${index}Harvs`] = [];
-				let name = `source${index}`;
-				let sourceD = {};
-				
-				
 				let sourceData = {
 					id: value.id,
 					harvs: []
 				};
-				sourceD[value.id] = sourceData;
 				roomMem.safeSourceIds[`source${index}`] = sourceData;
 			});
-			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			roomMem.numActiveSafeSources = _.size(safeSourceIdList);
-			
-			
-			// Get closest source to the spawn
-			/*let closestSource = firstSpawn.pos.findClosestByRange( safeSourceIds );
-			utils.cL(`closest source: ${closestSource}`);
-			roomMem.source1Id = closestSource.id;
-			roomMem.source1Harvs = [];
-			
-			let firstFilterSafeSources = _.pull( safeSourceIds, closestSource);
-			utils.cL(`second closest source: ${firstSpawn.pos.findClosestByRange(firstFilterSafeSources)}`);
-			let secondClosestSource = firstSpawn.pos.findClosestByRange(firstFilterSafeSources);
-			
-			if (firstFilterSafeSources.length) {
-				let secondFilterSafeSources = _.pull( firstFilterSafeSources, secondClosestSource);
-				utils.cL(`third closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
-			}*/
-			
 		}
 		
-		
+	
 		// ToDo: This needs to be cleaned up, reused from another module or config file...
 		Memory.harvester = 0,
 				Memory.builder = 0,

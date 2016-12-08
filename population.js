@@ -18,6 +18,7 @@ const Pop = {
 		// check theres enough energy at spawn, and spawn can do it
 		if (spawn.energy >= utils.countBodyCost(role) && !spawn.spawning ) {
 			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
+				Pop.assignHarvToSource();
 				//throw new Error('Cant create the creep!')
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
@@ -35,18 +36,19 @@ const Pop = {
 	//
 	assignHarvToSource: function( creep ) {
 		// Get number of harvs in closest source
-		let room = Game.rooms[creep.room];
-		utils.cL(`${_.size(room.memory.source1Harvs)}`);
+		let room = Game.rooms[0];
+		utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
+		utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
 		// loop through each of the sources
-		_.forEach(room.memory.safeSourceIds, function(sourceId, index) {
+		/*_.forEach(room.memory.safeSourceIds, function(sourceId, index) {
 			let sourceCount = _.size();
 		});
 		let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
 		if (firstSourceCount < 3) {
 			creep.memory.assignedSourceId = Game.rooms[creep.room].memory.source1Id;
 			Game.rooms[creep.room].memory.source1Harvs.push(creep.id);
-		}
+		}*/
 		//    else check if second closest source has 4
 		
 		//      if not, assign to second closest
