@@ -49,7 +49,7 @@ const Pop = {
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
 		// loop through each of the sources
-		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
+		let nameToGo = _.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
 			let sourceCount = _.size(collection[index].harvs);
 			utils.cL(sourceId);
 			utils.cL(sourceCount+'  '+index);
@@ -61,6 +61,9 @@ const Pop = {
 			
 			
 		});
+		
+		utils.cL(nameToGo);
+		return nameToGo;
 		/*let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
 		if (firstSourceCount < 3) {
 			creep.memory.assignedSourceId = Game.rooms[creep.room].memory.source1Id;
