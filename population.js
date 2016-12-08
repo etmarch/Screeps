@@ -22,7 +22,10 @@ const Pop = {
 				//throw new Error('Cant create the creep!')
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
-				var result = spawn.createCreep( roles()[ role ][ 'parts' ], (`${role}-${Memory[role] + 1}`), _.merge( { role: role }, roles()[ role ] ) );
+				var result = spawn.createCreep( roles()[ role ][ 'parts' ],
+						(`${role}-${Memory[role] + 1}`),
+						_.merge( { role: role }, roles()[ role ] ), {assignedSource: Pop.assignHarvToSource()}
+				);
 				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
 				if ( _.isString( result ) ) {
 					Memory[ role + 'Current' ]++;
@@ -37,8 +40,8 @@ const Pop = {
 	assignHarvToSource: function( ) {
 		// Get number of harvs in closest source
 		let room = Game.rooms[Memory.startRoom];
-		utils.cL(utils.jS(room.memory));
-		utils.cL(_.size(room.memory.safeSourceIds));
+		//utils.cL(utils.jS(room.memory));
+		//utils.cL(_.size(room.memory.safeSourceIds));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
@@ -46,7 +49,11 @@ const Pop = {
 		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
 			let sourceCount = _.size(collection[index].harvs);
 			utils.cL(sourceCount);
-			utils.cL(collection[index].harvs);
+			utils.cL(collection[index]);
+			if (sourceCount < 3) {
+				//room.memory.safeSourceIds[`source${index}`].harvs.push(creep.id);
+				return collection[index];
+			}
 			
 			
 		});
