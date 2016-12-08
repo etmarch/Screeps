@@ -57,7 +57,7 @@ module.exports.initMemory = function () {
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIds)}`);
-			let sortedIds = _.sortBy(safeSourceIds, ['distance']);
+			let sortedIds = _.orderBy(safeSourceIds, Number, ['desc']);
 			utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
 			utils.cL(`safe again - ${JSON.stringify(safeSourceIds)}`);
 			
