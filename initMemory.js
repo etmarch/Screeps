@@ -54,8 +54,10 @@ module.exports.initMemory = function () {
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIds)}`);
-			let sortedIds = _.sortBy(safeSourceIds, [function(o) { return o.distance; }]);
+			let sortedIds = _.orderBy(safeSourceIds, ['distance']);
 			utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
+			utils.cL(`safe again - ${JSON.stringify(safeSourceIds)}`);
+			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			roomMem.numActiveSafeSources = _.size(safeSourceIds);
 			
