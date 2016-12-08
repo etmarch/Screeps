@@ -30,6 +30,7 @@ module.exports.initMemory = function () {
 			
 			roomMem.spawnId = firstSpawn.id;
 			roomMem.unsafeSourceIds = [];
+			roomMem.safeSourceIds = [];
 			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
@@ -52,6 +53,7 @@ module.exports.initMemory = function () {
 						id:source.id,
 					};
 					safeSourceIds.push(sourceObj);
+					//roomMem.safeSourceIds.push(source.id);
 				} else {
 					roomMem.unsafeSourceIds.push(source.id);
 				}
@@ -62,8 +64,13 @@ module.exports.initMemory = function () {
 			
 			_.forEach(sortedIds, function(value, index, collection) {
 				//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
-				roomMem[`source${index}Id`] = value.id;
-				roomMem[`source${index}Harvs`] = [];
+				//roomMem[`source${index}Id`] = value.id;
+				//roomMem[`source${index}Harvs`] = [];
+				let sourceData = {
+					id: value.id,
+					harvs: []
+				};
+				roomMem.safeSourceIds[`source${index}`].push(sourceData);
 			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
