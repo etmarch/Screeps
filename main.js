@@ -96,7 +96,7 @@ module.exports.loop = function () {
 		}*/
 		
 	}
-	Pop.assignHarvToSource();
+	pop.assignHarvToSource();
 	//Testing Dog!
 	
 	if (Game.time % 5 === 0) {
