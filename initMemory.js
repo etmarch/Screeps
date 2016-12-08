@@ -26,15 +26,20 @@ module.exports.initMemory = function () {
 		for ( var name in Game.spawns ) {
 			var firstSpawn = Game.spawns[ name ];
 			
-			Memory.rooms[firstSpawn.room.name].spawnId = firstSpawn.id;
+			let roomMem = Memory.rooms[firstSpawn.room.name];
+			
+			roomMem.spawnId = firstSpawn.id;
 			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
+			roomMem.numActiveSources = _.size(firstSpawn.room.find(FIND_SOURCES_ACTIVE));
 			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
+			
 			//console.log(firstSource + ' position '+firstSource.pos);
 			firstSpawn.memory.firstSourceId = firstSource.id;
+			
 			var sourceIds = [];
 			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
 				sourceIds.push( source );
