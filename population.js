@@ -25,7 +25,8 @@ const Pop = {
 				let name = `${role}-${Memory[role] + 1}`;
 				let creepMemory = {
 					role: role,
-					assignedSource: Pop.assignHarvToSource()
+					assignedSource: Pop.assignHarvToSource(),
+					roomId: spawn.room.id
 				};
 				
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ], name, creepMemory );
@@ -48,50 +49,21 @@ const Pop = {
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
-		// loop through each of the sources
 		let nameToGo = '';
-		/*_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
-			let sourceCount = _.size(collection[index].harvs);
-			utils.cL(utils.jS(sourceId));
-			utils.cL(sourceCount+'  '+index);
-			utils.cL(`index: ${utils.jS(room.memory.safeSourceIds[index])} and whole: ${utils.jS(collection)}`);
-			if (sourceCount < 3) {
-				//room.memory.safeSourceIds[`source${index}`].harvs.push(creep.id);
-				let nameToGo = index;
-				//return nameToGo;
-			}
-			
-			
-		});*/
 		
 		for (let i = 0; i < _.size(room.memory.safeSourceIds); i++) {
 			let nameInd = `source${i}`;
-			utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
+			//utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
-			utils.cL(`source count: ${sourceCount}`);
+			//utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
 				nameToGo = room.memory.safeSourceIds[nameInd].id;
-				utils.cL(`name: ---  ${nameToGo}`);
-				//return nameToGo;
+				//utils.cL(`name: ---  ${nameToGo}`);
 				break;
 			}
 		}
-		
 		utils.cL(`name: ---  ${nameToGo}`);
 		return nameToGo;
-		/*let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
-		if (firstSourceCount < 3) {
-			creep.memory.assignedSourceId = Game.rooms[creep.room].memory.source1Id;
-			Game.rooms[creep.room].memory.source1Harvs.push(creep.id);
-		}*/
-		//    else check if second closest source has 4
-		
-		//      if not, assign to second closest
-		
-		// repeat process until all sources are accounted for
-		
-		// return sourceId.
-		
 	},
 	
 	removeHarvFromSource: function( harvester ) {

@@ -29,6 +29,11 @@ module.exports.loop = function () {
 	if ( !mainSpawn.spawning ) {
 		for ( var name in Memory.creeps ) {
 			if ( !Game.creeps[ name ] ) {
+				
+				if ( Memory.creeps[ name ].role === 'harvester') {
+					utils.cL('harvester dying!');
+					// ToDo: Remove this creep from the room.memory source assignment
+				}
 				console.log( "DEL: " + name );
 				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
 				Memory.deathsTotal++;
