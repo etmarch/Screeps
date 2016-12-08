@@ -57,11 +57,12 @@ module.exports.initMemory = function () {
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIds)}`);
-			//utils.cL( JSON.stringify(_.sortBy(safeSourceIds, ['distance'])));
-			let sortedIds =  _.sortBy(safeSourceIds, 'distance'); //_.sortBy(safeSourceIds, function(item) { return
-			// [item.distance]});
-			utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
-			utils.cL(`safe again - ${JSON.stringify(safeSourceIds)}`);
+			let sortedIds =  _.sortBy(safeSourceIds, 'distance');
+			//utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
+			
+			_.forEach(sortedIds, function(value, index, collection) {
+				utils.cL(`val: ${value} --- index:  ${index}`);
+			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			roomMem.numActiveSafeSources = _.size(safeSourceIds);
@@ -101,8 +102,6 @@ module.exports.initMemory = function () {
 				Memory.upgraderCurrent = 0,
 				Memory.rangerCurrent = 0,
 				Memory.healerCurrent = 0,
-				Memory.source1Harvs = [],
-				Memory.source2Harvs = [],
 				Memory.deathsTotal = 0,
 				Memory.isSim = simTest,
 				Memory.init = true;
