@@ -29,6 +29,7 @@ module.exports.initMemory = function () {
 			let roomMem = Memory.rooms[firstSpawn.room.name];
 			
 			roomMem.spawnId = firstSpawn.id;
+			roomMem.unsafeSourceIds = [];
 			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
@@ -36,24 +37,42 @@ module.exports.initMemory = function () {
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
 			
 			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES); // check for source keeper
-			utils.cL(`keeper stuff: ${keeperLair[0]}`);
-			//utils.cL(`sourceIds: ${unfilteredSourceIds}`);
+			// utils.cL(`keeper stuff: ${keeperLair[0]}`);
 			let safeSourceIds = [];
 			_.forEach(unfilteredSourceIds, function ( source ) {
 				//utils.cL(source.pos);
-				let inRange = source.pos.inRangeTo(keeperLair[0], 10);
-				utils.cL(`source: ${source} in range? ${inRange}`);
+				let inRange = source.pos.inRangeTo(keeperLair[0], 5);
+				// utils.cL(`source: ${source} in range? ${inRange}`);
 				if (!inRange) {
 					safeSourceIds.push(source);
+				} else {
+					roomMem.unsafeSourceIds.push(source.id);
 				}
 			});
-			utils.cL(`safe sources - ${safeSourceIds}`);
+			//utils.cL(`safe sources - ${safeSourceIds}`);
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
-			// Store closest 2 sources for first Spawn
-			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
+			roomMem.numActiveSafeSources = _.size(safeSourceIds);
 			
-			//console.log(firstSource + ' position '+firstSource.pos);
-			firstSpawn.memory.firstSourceId = firstSource.id;
+			// Loop over each of the safe sources
+			/*for (let i = 0; i < safeSourceIds; i++) {
+				roomMem[`source${i}`]
+			}*/
+				//
+			
+			// Get closest source to the spawn
+			let closestSource = firstSpawn.pos.findClosestByRange( safeSourceIds );
+			utils.cL(`closest source: ${closestSource}`);
+			roomMem.source1Id = closestSource.id;
+			roomMem.source1Harvs = [];
+			
+			let firstFilterSafeSources = _.pull( safeSourceIds, closestSource);
+			utils.cL(`second closest source: ${firstSpawn.pos.findClosestByRange(firstFilterSafeSources)}`);
+			let secondClosestSource = firstSpawn.pos.findClosestByRange(firstFilterSafeSources);
+			
+			if (firstFilterSafeSources.length) {
+				let secondFilterSafeSources = _.pull( firstFilterSafeSources, secondClosestSource);
+				utils.cL(`second closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
+			}
 			
 			var sourceIds = [];
 			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
