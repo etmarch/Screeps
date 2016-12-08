@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/population.js" afterPath="$PROJECT_DIR$/population.js" />
     </list>
     <ignored path="default.iws" />
@@ -58,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/population.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+              <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -340,14 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="27272000" />
-    </task>
-    <task id="LOCAL-00059" summary="Init Memory Updates">
-      <created>1481202656301</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1481202656301</updated>
+      <workItem from="1480796200491" duration="27393000" />
     </task>
     <task id="LOCAL-00060" summary="Init Memory Updates">
       <created>1481203118258</created>
@@ -685,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481214331204</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Init Memory Updates">
+      <created>1481215028889</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1481215028890</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102894000" />
+    <option name="totallyTimeSpent" value="103015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1192,7 +1191,7 @@
     <entry file="file://$PROJECT_DIR$/population.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
           <folding />
         </state>
       </provider>

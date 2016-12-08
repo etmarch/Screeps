@@ -20,7 +20,8 @@ const Pop = {
 			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
 				//Pop.assignHarvToSource();
 				//throw new Error('Cant create the creep!')
-				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
+				utils.cL(` ${spawn.room}`);
+				utils.cL(` big  - ${utils.jS(spawn)}`);
 				// todo: error checking and debugging here - make helper function
 				let name = `${role}-${Memory[role] + 1}`;
 				let creepMemory = {
