@@ -44,20 +44,19 @@ module.exports.initMemory = function () {
 				let inRange = source.pos.inRangeTo(keeperLair[0], 5);
 				// utils.cL(`source: ${source} in range? ${inRange}`);
 				if (!inRange) {
-					safeSourceIds.push(source);
+					// get distance of source to spawn
+					let distanceToSpawn = source.pos.getRangeTo(firstSpawn);
+					utils.cL(`distance - ${distanceToSpawn}`);
+					let sourceObj = {id:source.id, distance: distanceToSpawn};
+					safeSourceIds.push(sourceObj);
 				} else {
 					roomMem.unsafeSourceIds.push(source.id);
 				}
 			});
-			//utils.cL(`safe sources - ${safeSourceIds}`);
+			utils.cL(`safe sources - ${safeSourceIds}`);
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			roomMem.numActiveSafeSources = _.size(safeSourceIds);
 			
-			// Loop over each of the safe sources
-			/*for (let i = 0; i < safeSourceIds; i++) {
-				roomMem[`source${i}`]
-			}*/
-				//
 			
 			// Get closest source to the spawn
 			let closestSource = firstSpawn.pos.findClosestByRange( safeSourceIds );
@@ -73,24 +72,6 @@ module.exports.initMemory = function () {
 				let secondFilterSafeSources = _.pull( firstFilterSafeSources, secondClosestSource);
 				utils.cL(`third closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
 			}
-			
-			/*var sourceIds = [];
-			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
-				sourceIds.push( source );
-			} );
-			var filteredIds = _.pull( sourceIds, firstSource );
-			let secondSource = firstSpawn.pos.findClosestByRange( filteredIds );
-			
-			firstSpawn.memory.secondSourceId = secondSource.id;
-			
-			let secondFilteredIds = _.pull(filteredIds, secondSource);
-			//utils.cL(secondFilteredIds);
-			if (_.size(secondFilteredIds) > 0) {
-				let thirdSource = firstSpawn.pos.findClosestByRange( secondFilteredIds );
-				//utils.cL(`inside if cond ${thirdSource}, count left: ${_.size(secondFilteredIds)}`);
-				firstSpawn.memory.thirdSourceId = thirdSource.id;
-				firstSpawn.memory.source3Harvs = [];
-			}*/
 			
 			firstSpawn.memory.source1Harvs = [];
 			firstSpawn.memory.source2Harvs = [];
