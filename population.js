@@ -23,14 +23,14 @@ const Pop = {
 				utils.cL(` ${spawn.room}`);
 				utils.cL(` big  - ${utils.jS(spawn)}`);
 				// todo: error checking and debugging here - make helper function
-				let name = `${role}-${Memory[role] + 1}`;
+				let creepName = `${role}-${Memory[role] + 1}`;
 				let creepMemory = {
 					role: role,
 					assignedSource: Pop.assignHarvToSource(),
-					roomId: spawn.room.id
+					roomName: spawn.room.name
 				};
 				
-				var result = spawn.createCreep( roles()[ role ][ 'parts' ], name, creepMemory );
+				var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
 				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
 				if ( _.isString( result ) ) {
 					Memory[ role + 'Current' ]++;
