@@ -36,11 +36,12 @@ module.exports.initMemory = function () {
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
 			
 			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES); // check for source keeper
-			//utils.cL(keeperLair);
+			utils.cL(keeperLair.room);
 			//utils.cL(`sourceIds: ${unfilteredSourceIds}`);
 			let safeSourceIds = [];
 			_.forEach(unfilteredSourceIds, function ( source ) {
-				let inRange = source.pos.inRangeTo(keeperLair, 5);
+				utils.cL(source.pos);
+				let inRange = source.pos.inRangeTo(keeperLair.pos, 10);
 				utils.cL(`source: ${source} in range? ${inRange}`);
 				if (!inRange) {
 					safeSourceIds.push(source);
