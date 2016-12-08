@@ -25,6 +25,8 @@ module.exports.initMemory = function () {
 		// only start with 1 spawn...
 		for ( var name in Game.spawns ) {
 			var firstSpawn = Game.spawns[ name ];
+			
+			Memory.rooms[firstSpawn.room.name].spawnId = firstSpawn.id;
 			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
