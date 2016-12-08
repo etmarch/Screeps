@@ -36,7 +36,7 @@ module.exports.initMemory = function () {
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
 			
 			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES); // check for source keeper
-			utils.cL(`keeper stuff: ${keeperLair.pos}`);
+			utils.cL(`keeper stuff: ${keeperLair.room.pos}`);
 			//utils.cL(`sourceIds: ${unfilteredSourceIds}`);
 			let safeSourceIds = [];
 			_.forEach(unfilteredSourceIds, function ( source ) {
