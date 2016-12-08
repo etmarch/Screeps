@@ -47,14 +47,17 @@ module.exports.initMemory = function () {
 					// get distance of source to spawn
 					let distanceToSpawn = source.pos.getRangeTo(firstSpawn);
 					utils.cL(`distance - ${distanceToSpawn}`);
-					let sourceObj = {id:source.id, distance: distanceToSpawn};
+					let sourceObj = {
+						id:source.id,
+						distance: distanceToSpawn
+					};
 					safeSourceIds.push(sourceObj);
 				} else {
 					roomMem.unsafeSourceIds.push(source.id);
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIds)}`);
-			let sortedIds = _.orderBy(safeSourceIds, ['distance']);
+			let sortedIds = _.sortBy(safeSourceIds, ['distance']);
 			utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
 			utils.cL(`safe again - ${JSON.stringify(safeSourceIds)}`);
 			
