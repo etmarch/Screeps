@@ -41,7 +41,7 @@ module.exports.initMemory = function () {
 			let safeSourceIds = [];
 			_.forEach(unfilteredSourceIds, function ( source ) {
 				utils.cL(source.pos);
-				let inRange = source.pos.inRangeTo(keeperLair., 10);
+				let inRange = source.pos.inRangeTo(keeperLair.pos, 10);
 				utils.cL(`source: ${source} in range? ${inRange}`);
 				if (!inRange) {
 					safeSourceIds.push(source);
