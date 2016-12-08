@@ -78,7 +78,11 @@ module.exports = Utils;
 
 // Return array of enemy creeps in range, excluding the source Keeper
 module.exports.enemiesInRange = function ( creep, range ) {
-	
+	/*var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+		filter: function(object) {
+			return object.getActiveBodyparts(ATTACK) == 0;
+		}
+	});*/
 };
 
 // Return array of friendly creeps that can attack in range, excluding the source Keeper
