@@ -39,7 +39,7 @@ module.exports.initMemory = function () {
 			
 			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES); // check for source keeper
 			// utils.cL(`keeper stuff: ${keeperLair[0]}`);
-			let safeSourceIds = [];
+			let safeSourceIdList = [];
 			_.forEach(unfilteredSourceIds, function ( source ) {
 				//utils.cL(source.pos);
 				let inRange = source.pos.inRangeTo(keeperLair[0], 5);
@@ -52,14 +52,14 @@ module.exports.initMemory = function () {
 						distance: distanceToSpawn,
 						id:source.id,
 					};
-					safeSourceIds.push(sourceObj);
+					safeSourceIdList.push(sourceObj);
 					//roomMem.safeSourceIds.push(source.id);
 				} else {
 					roomMem.unsafeSourceIds.push(source.id);
 				}
 			});
-			utils.cL(`safe sources - ${JSON.stringify(safeSourceIds)}`);
-			let sortedIds =  _.sortBy(safeSourceIds, 'distance');
+			utils.cL(`safe sources - ${JSON.stringify(safeSourceIdList)}`);
+			let sortedIds =  _.sortBy(safeSourceIdList, 'distance');
 			//utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
 			
 			_.forEach(sortedIds, function(value, index, collection) {
@@ -74,7 +74,7 @@ module.exports.initMemory = function () {
 					id: value.id,
 					harvs: []
 				};
-				sourceD[name] = sourceData;
+				sourceD[collection[index]] = sourceData;
 				roomMem.safeSourceIds.push(sourceD);
 			});
 			
