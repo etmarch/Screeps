@@ -74,7 +74,7 @@ module.exports.initMemory = function () {
 					id: value.id,
 					harvs: []
 				};
-				sourceD[collection[index]] = sourceData;
+				sourceD[value.id] = sourceData;
 				roomMem.safeSourceIds.push(sourceD);
 			});
 			
