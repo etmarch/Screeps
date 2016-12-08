@@ -69,11 +69,12 @@ module.exports.initMemory = function () {
 				let name = `source${index}`;
 				let sourceD = {};
 				
-				sourceD[name] = value.id;
+				
 				let sourceData = {
 					id: value.id,
 					harvs: []
 				};
+				sourceD[name] = sourceData;
 				roomMem.safeSourceIds.push(sourceD);
 			});
 			
