@@ -66,13 +66,12 @@ module.exports.initMemory = function () {
 				//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
 				//roomMem[`source${index}Id`] = value.id;
 				//roomMem[`source${index}Harvs`] = [];
-				let sourceName = `source${index}`;
-				roomMem.safeSourceIds[sourceName] = [];
+				let name = `source${index}`;
 				let sourceData = {
 					id: value.id,
 					harvs: []
 				};
-				roomMem.safeSourceIds[sourceName].push(sourceData);
+				roomMem.safeSourceIds.push({[`source${index}`]: sourceData});
 			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
