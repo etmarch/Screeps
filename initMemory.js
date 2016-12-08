@@ -71,10 +71,10 @@ module.exports.initMemory = function () {
 			
 			if (firstFilterSafeSources.length) {
 				let secondFilterSafeSources = _.pull( firstFilterSafeSources, secondClosestSource);
-				utils.cL(`second closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
+				utils.cL(`third closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
 			}
 			
-			var sourceIds = [];
+			/*var sourceIds = [];
 			_.forEach( firstSpawn.room.find( FIND_SOURCES_ACTIVE ), function ( source ) {
 				sourceIds.push( source );
 			} );
@@ -90,7 +90,7 @@ module.exports.initMemory = function () {
 				//utils.cL(`inside if cond ${thirdSource}, count left: ${_.size(secondFilteredIds)}`);
 				firstSpawn.memory.thirdSourceId = thirdSource.id;
 				firstSpawn.memory.source3Harvs = [];
-			}
+			}*/
 			
 			firstSpawn.memory.source1Harvs = [];
 			firstSpawn.memory.source2Harvs = [];
