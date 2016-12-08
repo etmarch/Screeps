@@ -46,9 +46,7 @@ const Utils = {
 	cL: ( out ) => {
 		return cL( out );
 	},
-	jS: (out) => {
-		return JSON.stringify(out);
-	},
+	jS: (out) => JSON.stringify(out),
 	
 	findEnemies: (obj) => {
 		let target = obj.room.find(FIND_HOSTILE_CREEPS, {

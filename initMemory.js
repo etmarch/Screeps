@@ -61,7 +61,8 @@ module.exports.initMemory = function () {
 			//utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
 			
 			_.forEach(sortedIds, function(value, index, collection) {
-				utils.cL(`val: ${value} --- index:  ${index}`);
+				utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
+				roomMem[`source${index}Id`] = value.id;
 			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
@@ -69,7 +70,7 @@ module.exports.initMemory = function () {
 			
 			
 			// Get closest source to the spawn
-			let closestSource = firstSpawn.pos.findClosestByRange( safeSourceIds );
+			/*let closestSource = firstSpawn.pos.findClosestByRange( safeSourceIds );
 			utils.cL(`closest source: ${closestSource}`);
 			roomMem.source1Id = closestSource.id;
 			roomMem.source1Harvs = [];
@@ -81,7 +82,7 @@ module.exports.initMemory = function () {
 			if (firstFilterSafeSources.length) {
 				let secondFilterSafeSources = _.pull( firstFilterSafeSources, secondClosestSource);
 				utils.cL(`third closest source: ${firstSpawn.pos.findClosestByRange(secondFilterSafeSources)}`);
-			}
+			}*/
 			
 			firstSpawn.memory.source1Harvs = [];
 			firstSpawn.memory.source2Harvs = [];
