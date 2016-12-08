@@ -64,7 +64,7 @@ const Pop = {
 			
 		});*/
 		
-		for (let i = 0; i < room.memory.safeSourceIds; i++) {
+		for (let i = 0; i < room.memory.safeSourceIds.length; i++) {
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
 			utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
