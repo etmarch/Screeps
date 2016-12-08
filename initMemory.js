@@ -20,6 +20,7 @@ module.exports.initMemory = function () {
 			var roomI = Game.rooms[ room ];
 			utils.cL( `${roomI}  ${room}` );
 			roomI.memory.level = 0;
+			Memory.startRoom = roomI.name;
 		}
 	
 		// only start with 1 spawn...

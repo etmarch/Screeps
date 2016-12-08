@@ -34,10 +34,10 @@ const Pop = {
 	},
 	
 	//
-	assignHarvToSource: function( creep ) {
+	assignHarvToSource: function( ) {
 		// Get number of harvs in closest source
-		let room = Memory.rooms[0];
-		utils.cL(utils.jS(Game.rooms));
+		let room = Game.rooms[Memory.startRoom];
+		utils.cL(utils.jS(room));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
@@ -55,6 +55,8 @@ const Pop = {
 		//      if not, assign to second closest
 		
 		// repeat process until all sources are accounted for
+		
+		// return sourceId.
 		
 	},
 	
