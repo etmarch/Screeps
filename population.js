@@ -50,7 +50,7 @@ const Pop = {
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
-		let nameToGo = '';
+		let nameToGo = {};
 		
 		for (let i = 0; i < _.size(room.memory.safeSourceIds); i++) {
 			let nameInd = `source${i}`;
@@ -58,7 +58,7 @@ const Pop = {
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
 			//utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
-				nameToGo = room.memory.safeSourceIds[nameInd].id;
+				nameToGo[nameInd] = room.memory.safeSourceIds[nameInd].id;
 				//utils.cL(`name: ---  ${nameToGo}`);
 				break;
 			}
