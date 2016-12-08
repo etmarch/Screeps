@@ -18,7 +18,7 @@ const Pop = {
 		// check theres enough energy at spawn, and spawn can do it
 		if (spawn.energy >= utils.countBodyCost(role) && !spawn.spawning ) {
 			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
-				Pop.assignHarvToSource();
+				//Pop.assignHarvToSource();
 				//throw new Error('Cant create the creep!')
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
@@ -43,10 +43,14 @@ const Pop = {
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
 		// loop through each of the sources
-		/*_.forEach(room.memory.safeSourceIds, function(sourceId, index) {
-			let sourceCount = _.size();
+		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
+			let sourceCount = _.size(collection[index].harvs);
+			utils.cL(sourceCount);
+			utils.cL(collection[index].harvs);
+			
+			
 		});
-		let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
+		/*let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
 		if (firstSourceCount < 3) {
 			creep.memory.assignedSourceId = Game.rooms[creep.room].memory.source1Id;
 			Game.rooms[creep.room].memory.source1Harvs.push(creep.id);

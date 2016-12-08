@@ -22,6 +22,8 @@ module.exports.loop = function () {
 	if (Memory.init != true) {
 		initMemory.initMemory();
 	}
+	
+	
 
 // Memory Management
 	if ( !mainSpawn.spawning ) {
@@ -94,7 +96,7 @@ module.exports.loop = function () {
 		}*/
 		
 	}
-	
+	Pop.assignHarvToSource();
 	//Testing Dog!
 	
 	if (Game.time % 5 === 0) {
