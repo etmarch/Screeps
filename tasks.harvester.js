@@ -16,9 +16,9 @@ var harv = {
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			
 			// get assigned target from memory
-			utils.cL(creep.memory.assignedSource);
+			//utils.cL(creep.memory.assignedSource);
 			let sourceTarget = Game.getObjectById(creep.memory.assignedSource);
-			utils.cL(utils.jS(sourceTarget));
+			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
 				//var sources = creep.room.find(FIND_SOURCES);
 				if(creep.harvest(sourceTarget) == ERR_NOT_IN_RANGE) {
