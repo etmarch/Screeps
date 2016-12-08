@@ -50,19 +50,29 @@ const Pop = {
 		
 		// loop through each of the sources
 		let nameToGo = '';
-		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
+		/*_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
 			let sourceCount = _.size(collection[index].harvs);
-			utils.cL(sourceId);
+			utils.cL(utils.jS(sourceId));
 			utils.cL(sourceCount+'  '+index);
 			utils.cL(`index: ${utils.jS(room.memory.safeSourceIds[index])} and whole: ${utils.jS(collection)}`);
 			if (sourceCount < 3) {
 				//room.memory.safeSourceIds[`source${index}`].harvs.push(creep.id);
 				let nameToGo = index;
-				return nameToGo;
+				//return nameToGo;
 			}
 			
 			
-		});
+		});*/
+		
+		for (let i = 0; i < room.memory.safeSourceIds; i++) {
+			let sourceCount = _.size(room.memory.safeSourceIds[i]);
+			utils.cL(sourceCount);
+			if (sourceCount < 3) {
+				let nameToGo = room.memory.safeSourceIds[i];
+				utils.cL(nameToGo);
+				return nameToGo;
+			}
+		}
 		
 		utils.cL(nameToGo);
 		return nameToGo;
