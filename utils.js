@@ -69,10 +69,11 @@ const Utils = {
 		cL(obj);
 		cL(Game.getObjectById(obj));
 		let target = obj.pos.findInRange(FIND_HOSTILE_CREEPS, distance);
-		utils.cL(`target in enemiesInRange: ${target}`);
+		cL(`target in enemiesInRange: ${target}`);
 		if (target.length) {
 			return target;
-		}
+		} else {}
+			return -1;
 	},
 	// ToDo: Suicide checker and function
 	
