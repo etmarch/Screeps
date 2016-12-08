@@ -33,7 +33,20 @@ const Pop = {
 	},
 	
 	//
-	assignHarvToSource: function( creep, ) {
+	assignHarvToSource: function( harvester ) {
+		// Get number of harvs in closest source
+		
+		//    if less than 4, assign the closest
+		
+		//    else check if second closest source has 4
+		
+		//      if not, assign to second closest
+		
+		// repeat process until all sources are accounted for
+		
+	},
+	
+	removeHarvFromSource: function( harvester ) {
 		
 	}
 };
