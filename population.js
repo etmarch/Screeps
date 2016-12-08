@@ -65,7 +65,8 @@ const Pop = {
 		});*/
 		
 		for (let i = 0; i < _.size(room.memory.safeSourceIds); i++) {
-			utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds)}`);
+			let nameInd = `source${i}`;
+			utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
 			utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
