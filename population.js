@@ -66,15 +66,16 @@ const Pop = {
 		
 		for (let i = 0; i < room.memory.safeSourceIds; i++) {
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
-			utils.cL(sourceCount);
+			utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
 				nameToGo = room.memory.safeSourceIds[i];
-				utils.cL(nameToGo);
-				return nameToGo;
+				utils.cL(`name: ---  ${nameToGo}`);
+				//return nameToGo;
+				break;
 			}
 		}
 		
-		utils.cL(nameToGo);
+		utils.cL(`name: ---  ${nameToGo}`);
 		return nameToGo;
 		/*let firstSourceCount = _.size(Game.rooms[creep.room].memory.source1Harvs);
 		if (firstSourceCount < 3) {
