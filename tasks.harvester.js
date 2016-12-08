@@ -15,10 +15,13 @@ var harv = {
 			
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			
+			// get assigned target from memory
+			let sourceTarget = Game.getObjectById(creep.memory.assignedSource).pos;
+			
 			if(creep.carry.energy < creep.carryCapacity) {
-				var sources = creep.room.find(FIND_SOURCES);
-				if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-					creep.moveTo(sources[0]);
+				//var sources = creep.room.find(FIND_SOURCES);
+				if(creep.harvest(sourceTarget) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(sourceTarget);
 				}
 			}
 			else if(Game.spawns['Spawn1'].energy < Game.spawns['Spawn1'].energyCapacity) {

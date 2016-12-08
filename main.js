@@ -33,6 +33,9 @@ module.exports.loop = function () {
 				if ( Memory.creeps[ name ].role === 'harvester') {
 					utils.cL('harvester dying!');
 					// ToDo: Remove this creep from the room.memory source assignment
+					let room = Game.rooms[Memory.creeps[ name ].roomName];
+					utils.cL(`room info - ${utils.jS(room)}`);
+					
 				}
 				console.log( "DEL: " + name );
 				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
@@ -104,8 +107,8 @@ module.exports.loop = function () {
 	//pop.assignHarvToSource();
 	//Testing Dog!
 	
-	if (Game.time % 5 === 0) {
+	/*if (Game.time % 5 === 0) {
 		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
-	}
+	}*/
 };
 
