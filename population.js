@@ -22,16 +22,13 @@ const Pop = {
 				//throw new Error('Cant create the creep!')
 				//utils.cL(` ${Memory[role]} Number since start: ${_.size(Memory[role])}`);
 				// todo: error checking and debugging here - make helper function
-			/*	let creepMemory = {
+				let name = `${role}-${Memory[role] + 1}`;
+				let creepMemory = {
 					role: role,
-					
-					roles()[ role ]
-					
-				}*/
+					assignedSource: Pop.assignHarvToSource()
+				};
 				
-				var result = spawn.createCreep( roles()[ role ][ 'parts' ],
-						(`${role}-${Memory[role] + 1}`), _.merge( { role: role }, roles()[ role ] )
-				);
+				var result = spawn.createCreep( roles()[ role ][ 'parts' ], name, creepMemory );
 				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
 				if ( _.isString( result ) ) {
 					Memory[ role + 'Current' ]++;
