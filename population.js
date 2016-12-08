@@ -68,7 +68,7 @@ const Pop = {
 			let sourceCount = _.size(room.memory.safeSourceIds[i]);
 			utils.cL(sourceCount);
 			if (sourceCount < 3) {
-				let nameToGo = room.memory.safeSourceIds[i];
+				nameToGo = room.memory.safeSourceIds[i];
 				utils.cL(nameToGo);
 				return nameToGo;
 			}
