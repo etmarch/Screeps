@@ -24,7 +24,7 @@ const Pop = {
 				// todo: error checking and debugging here - make helper function
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ],
 						(`${role}-${Memory[role] + 1}`),
-						_.merge( { role: role }, roles()[ role ] ), {assignedSource: Pop.assignHarvToSource()}
+						_.merge( { role: role }, roles()[ role ], {assignedSource: Pop.assignHarvToSource()} )
 				);
 				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
 				if ( _.isString( result ) ) {
@@ -49,7 +49,7 @@ const Pop = {
 		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
 			let sourceCount = _.size(collection[index].harvs);
 			utils.cL(sourceCount);
-			utils.cL(`index: ${collection[index]} and whole: ${utils.jS(collection)}`);
+			utils.cL(`index: ${collection[`source${index}`].harvs} and whole: ${utils.jS(collection)}`);
 			if (sourceCount < 3) {
 				//room.memory.safeSourceIds[`source${index}`].harvs.push(creep.id);
 				return collection[index];

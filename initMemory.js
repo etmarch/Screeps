@@ -33,7 +33,7 @@ module.exports.initMemory = function () {
 			roomMem.unsafeSourceIds = [];
 			roomMem.safeSourceIds = {};
 			//utils.cL(utils.jS(firstSpawn));
-			//firstSpawn.memory = firstSpawn.name;
+			firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
