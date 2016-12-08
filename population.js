@@ -33,9 +33,9 @@ const Pop = {
 	},
 	
 	//
-	assignHarvToSource: function( harvester ) {
+	assignHarvToSource: function( creep ) {
 		// Get number of harvs in closest source
-		
+		utils.cL(`${_.size(Game.rooms[creep.room].memory.source1Harvs)}`);
 		//    if less than 4, assign the closest
 		
 		//    else check if second closest source has 4
