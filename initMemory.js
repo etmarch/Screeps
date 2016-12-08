@@ -48,8 +48,8 @@ module.exports.initMemory = function () {
 					let distanceToSpawn = source.pos.getRangeTo(firstSpawn);
 					utils.cL(`distance - ${distanceToSpawn}`);
 					let sourceObj = {
+						distance: distanceToSpawn,
 						id:source.id,
-						distance: distanceToSpawn
 					};
 					safeSourceIds.push(sourceObj);
 				} else {
