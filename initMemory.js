@@ -79,7 +79,7 @@ module.exports.initMemory = function () {
 			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
-			roomMem.numActiveSafeSources = _.size(safeSourceIds);
+			roomMem.numActiveSafeSources = _.size(safeSourceIdList);
 			
 			
 			// Get closest source to the spawn
