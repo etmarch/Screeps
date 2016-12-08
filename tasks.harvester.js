@@ -17,7 +17,7 @@ var harv = {
 			
 			// get assigned target from memory
 			//utils.cL(creep.memory.assignedSource);
-			let sourceTarget = Game.getObjectById(creep.memory.assignedSource);
+			let sourceTarget = Game.getObjectById(creep.memory.assignedSource[0]);
 			utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
 				//var sources = creep.room.find(FIND_SOURCES);
