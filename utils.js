@@ -66,7 +66,8 @@ const Utils = {
 	
 	enemiesInRange: (obj, distance) => {
 		// Get the room pos of the object being checked
-		
+		cL(obj.pos);
+		cL(Game.getObjectById(obj));
 		let target = obj.pos.findInRange(FIND_HOSTILE_CREEPS, distance);
 		utils.cL(`target in enemiesInRange: ${target}`);
 		if (target.length) {

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/initMemory.js" afterPath="$PROJECT_DIR$/initMemory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.js" afterPath="$PROJECT_DIR$/utils.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="initMemory.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="initMemory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/initMemory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="95" column="2" lean-forward="true" selection-start-line="95" selection-start-column="2" selection-end-line="95" selection-end-column="2" />
+            <state relative-caret-position="118">
+              <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -163,8 +163,8 @@
         <option value="$PROJECT_DIR$/roomObj.js" />
         <option value="$PROJECT_DIR$/population.js" />
         <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/utils.js" />
         <option value="$PROJECT_DIR$/initMemory.js" />
+        <option value="$PROJECT_DIR$/utils.js" />
       </list>
     </option>
   </component>
@@ -339,7 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="7828000" />
+      <workItem from="1480796200491" duration="7951000" />
     </task>
     <task id="LOCAL-00001" summary="testing Webstorms commit">
       <created>1480671921542</created>
@@ -537,11 +537,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481194702013</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Init Memory Updates">
+      <created>1481195143908</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1481195143908</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83450000" />
+    <option name="totallyTimeSpent" value="83573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1031,14 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="95" column="2" lean-forward="true" selection-start-line="95" selection-start-column="2" selection-end-line="95" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/initMemory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1046,6 +1045,14 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
