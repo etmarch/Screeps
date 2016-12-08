@@ -52,8 +52,8 @@ const Pop = {
 		_.forEach(room.memory.safeSourceIds, function(sourceId, index, collection) {
 			let sourceCount = _.size(collection[index].harvs);
 			utils.cL(sourceId);
-			utils.cL(sourceCount+'  '+[`source${index}`]);
-			utils.cL(`index: ${utils.jS(room.memory.safeSourceIds)} and whole: ${utils.jS(collection)}`);
+			utils.cL(sourceCount+'  '+index);
+			utils.cL(`index: ${utils.jS(room.memory.safeSourceIds[index])} and whole: ${utils.jS(collection)}`);
 			if (sourceCount < 3) {
 				//room.memory.safeSourceIds[`source${index}`].harvs.push(creep.id);
 				return collection[index];
