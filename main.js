@@ -34,7 +34,7 @@ module.exports.loop = function () {
 					utils.cL('harvester dying!');
 					// ToDo: Remove this creep from the room.memory source assignment
 					let room = Game.rooms[Memory.creeps[ name ].roomName];
-					utils.cL(`room info - ${utils.jS(room)}`);
+					utils.cL(`room info - ${utils.jS(room.memory)}`);
 					
 				}
 				console.log( "DEL: " + name );
