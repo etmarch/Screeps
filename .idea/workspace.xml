@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/population.js" afterPath="$PROJECT_DIR$/population.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles.js" afterPath="$PROJECT_DIR$/roles.js" />
     </list>
     <ignored path="default.iws" />
@@ -54,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="population.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="population.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/population.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="748">
               <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
               <folding />
             </state>
@@ -104,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roles.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roles.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+            <state relative-caret-position="90">
+              <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -164,8 +163,8 @@
         <option value="$PROJECT_DIR$/utils.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/initMemory.js" />
-        <option value="$PROJECT_DIR$/roles.js" />
         <option value="$PROJECT_DIR$/population.js" />
+        <option value="$PROJECT_DIR$/roles.js" />
       </list>
     </option>
   </component>
@@ -340,14 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="23314000" />
-    </task>
-    <task id="LOCAL-00040" summary="Init Memory Updates">
-      <created>1481196847401</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1481196847401</updated>
+      <workItem from="1480796200491" duration="23361000" />
     </task>
     <task id="LOCAL-00041" summary="Init Memory Updates">
       <created>1481197044633</created>
@@ -685,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481210662430</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Init Memory Updates">
+      <created>1481211001635</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1481211001635</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98936000" />
+    <option name="totallyTimeSpent" value="98983000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1181,18 +1180,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles.js">
+    <entry file="file://$PROJECT_DIR$/population.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+        <state relative-caret-position="748">
+          <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/population.js">
+    <entry file="file://$PROJECT_DIR$/roles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
           <folding />
         </state>
       </provider>

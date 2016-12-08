@@ -4,7 +4,7 @@
  *
  */
 
-let pop = require('population.js');
+let pop = require('population');
 
 module.exports = function () {
 	return {
