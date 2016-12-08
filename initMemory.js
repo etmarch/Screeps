@@ -70,7 +70,7 @@ module.exports.initMemory = function () {
 					id: value.id,
 					harvs: []
 				};
-				roomMem.safeSourceIds[`source${index}`].push(sourceData);
+				roomMem.safeSourceIds.push({[`source${index}`]: sourceData});
 			});
 			
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
