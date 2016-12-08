@@ -35,13 +35,18 @@ module.exports.initMemory = function () {
 			
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
 			
-			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES);
-			utils.cL(keeperLair);
-			utils.cL(`sourceIds: ${unfilteredSourceIds}`);
-			_.forEach(unfilteredSourceIds, function ( sourceId ) {
-				let outTargs = utils.enemiesInRange(sourceId, 5);
-				utils.cL(outTargs);
+			let keeperLair = firstSpawn.room.find(FIND_HOSTILE_STRUCTURES); // check for source keeper
+			//utils.cL(keeperLair);
+			//utils.cL(`sourceIds: ${unfilteredSourceIds}`);
+			let safeSourceIds = [];
+			_.forEach(unfilteredSourceIds, function ( source ) {
+				let inRange = source.pos.inRangeTo(keeperLair, 5);
+				utils.cL(`source: ${source} in range? ${inRange}`);
+				if (!inRange) {
+					safeSourceIds.push(source);
+				}
 			});
+			utils.cL(`safe sources - ${safeSourceIds}`);
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );

@@ -67,14 +67,15 @@ const Utils = {
 	enemiesInRange: (obj, distance) => {
 		// Get the room pos of the object being checked
 		cL(obj);
-		cL(Game.getObjectById(obj));
+	//cL(Game.getObjectById(obj));
 		let target = obj.pos.findInRange(FIND_HOSTILE_CREEPS, distance);
 		cL(`target in enemiesInRange: ${target}`);
 		if (target.length) {
 			return target;
-		} else {}
-			return -1;
+		}
 	},
+	
+	
 	// ToDo: Suicide checker and function
 	
 	
