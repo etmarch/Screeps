@@ -35,6 +35,10 @@ module.exports.initMemory = function () {
 			
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
 			utils.cL(`sourceIds: ${unfilteredSourceIds}`);
+			_.forEach(unfilteredSourceIds, function ( sourceId ) {
+				let outTargs = utils.enemiesInRange(Game.getObjectById(sourceId), 5);
+				utils.cL(outTargs);
+			});
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			// Store closest 2 sources for first Spawn
 			var firstSource = firstSpawn.pos.findClosestByRange( FIND_SOURCES_ACTIVE );
