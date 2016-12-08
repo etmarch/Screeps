@@ -50,6 +50,29 @@ const Utils = {
 		return JSON.stringify(out);
 	},
 	
+	findEnemies: (obj) => {
+		let target = obj.room.find(FIND_HOSTILE_CREEPS, {
+			filter: function(object) {
+				return (object.getActiveBodyparts(ATTACK) == 0 || object.getActiveBodyparts(RANGED_ATTACK) == 0);
+			}
+		});
+		if (target.length) {
+			utils.cL(`target from findEnemies: ${target}`);
+			return target;
+		} else {
+			return -1;
+		}
+	},
+	
+	enemiesInRange: (obj, distance) => {
+		// Get the room pos of the object being checked
+		
+		let target = obj.pos.findInRange(FIND_HOSTILE_CREEPS, distance);
+		utils.cL(`target in enemiesInRange: ${target}`);
+		if (target.length) {
+			return target;
+		}
+	},
 	// ToDo: Suicide checker and function
 	
 	
@@ -75,15 +98,6 @@ const Utils = {
 
 module.exports = Utils;
 
-
-// Return array of enemy creeps in range, excluding the source Keeper
-module.exports.enemiesInRange = function ( creep, range ) {
-	/*var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
-		filter: function(object) {
-			return object.getActiveBodyparts(ATTACK) == 0;
-		}
-	});*/
-};
 
 // Return array of friendly creeps that can attack in range, excluding the source Keeper
 module.exports.fightersInRange = function ( creep, range, bodyParts ) {
