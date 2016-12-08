@@ -59,7 +59,7 @@ const Pop = {
 			//utils.cL(`source count: ${sourceCount}`);
 			if (sourceCount < 3) {
 				nameToGo[nameInd] = room.memory.safeSourceIds[nameInd].id;
-				//utils.cL(`name: ---  ${nameToGo}`);
+				utils.cL(`name: ---  ${nameToGo}`);
 				break;
 			}
 		}
