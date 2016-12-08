@@ -30,7 +30,7 @@ module.exports.initMemory = function () {
 			
 			roomMem.spawnId = firstSpawn.id;
 			roomMem.unsafeSourceIds = [];
-			roomMem.safeSourceIds = [];
+			roomMem.safeSourceIds = {};
 			//utils.cL(utils.jS(firstSpawn));
 			//firstSpawn.memory = firstSpawn.name;
 			Memory.initialSpawnId = Game.spawns[ name ].id;
@@ -55,7 +55,7 @@ module.exports.initMemory = function () {
 					safeSourceIdList.push(sourceObj);
 					//roomMem.safeSourceIds.push(source.id);
 				} else {
-					roomMem.unsafeSourceIds.push(source);
+					roomMem.unsafeSourceIds.push(source.id);
 				}
 			});
 			utils.cL(`safe sources - ${JSON.stringify(safeSourceIdList)}`);
