@@ -82,7 +82,7 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
-	} else if ( (utils.countRole( 'harvester' ) >= 3 && utils.countRole( 'upgrader' ) < 2) ) {
+	} else if ( (utils.countRole( 'harvester' ) >= 3 && utils.countRole( 'upgrader' ) < 1) ) {
 		pop.spawn( mainSpawn, 'upgrader' );
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
@@ -94,8 +94,10 @@ module.exports.loop = function () {
 	} else {
 		if (utils.countRole( 'builder' ) < 2) {
 			pop.spawn( mainSpawn, 'builder' );
-		} else {
+		} else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
+		} else {
+			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
