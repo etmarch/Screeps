@@ -25,27 +25,6 @@ module.exports.loop = function () {
 	}
 	
 	
-
-// Memory Management
-	/*if ( !mainSpawn.spawning ) {
-		for ( var name in Memory.creeps ) {
-			if ( !Game.creeps[ name ] ) {
-				
-				if ( Memory.creeps[ name ].role === 'harvester') {
-					utils.cL('harvester dying!');
-					// ToDo: Remove this creep from the room.memory source assignment
-					let room = Game.rooms[Memory.creeps[ name ].roomName];
-					utils.cL(`room info - ${utils.jS(room.memory)}`);
-					// room.memory.safeSourceIds
-					
-				}
-				console.log( "DEL: " + name );
-				Memory[ Memory.creeps[ name ].role + 'Current' ]--;
-				Memory.deathsTotal++;
-				delete Memory.creeps[ name ];
-			}
-		}
-	}*/
 	
 	memoryController.cleanUp(mainSpawn);
 	
@@ -98,7 +77,7 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 2 && room.memory.level === 2) {
+		if (utils.countRole( 'builder' ) < 2 && room.memory.level === 2 && harvCount >= 9) {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
