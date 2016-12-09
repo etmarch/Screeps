@@ -26,7 +26,13 @@ const memoryController = {
 				}
 			}
 		}
+	},
+	
+	cycle: function( room ) {
+		room.memory.level = room.controller.level;
+		//if (room.memory.level )
 	}
+	
 	
 };
 

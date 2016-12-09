@@ -49,6 +49,8 @@ module.exports.loop = function () {
 	
 	memoryController.cleanUp(mainSpawn);
 	
+	memoryController.cycle(room);
+	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		//utils.cL(`room: ${creep.room.name}   or   ${JSON.stringify(Memory.rooms[creep.room.name])}`);
@@ -95,7 +97,7 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 2) {
+		if (utils.countRole( 'builder' ) < 2 && room.memory.level === 2) {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');

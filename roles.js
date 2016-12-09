@@ -4,6 +4,17 @@
  *
  */
 
+const partsCosts = {
+	[MOVE] : 50,
+	[WORK] : 100,
+	[ATTACK] : 80,
+	[CARRY] : 50,
+	[HEAL] : 250,
+	[RANGED_ATTACK] : 150,
+	[TOUGH] : 10,
+	[CLAIM] : 600
+};
+
 module.exports = function () {
 	return {
 		'harvester': { "parts": [ WORK, CARRY, MOVE, MOVE ], "fighter": false },
