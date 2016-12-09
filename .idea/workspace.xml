@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.harvester.js" afterPath="$PROJECT_DIR$/tasks.harvester.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.upgrader.js" afterPath="$PROJECT_DIR$/tasks.upgrader.js" />
     </list>
     <ignored path="default.iws" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="tasks.upgrader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="568">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -340,14 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="32553000" />
-    </task>
-    <task id="LOCAL-00077" summary="Init Memory Updates">
-      <created>1481208190379</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1481208190379</updated>
+      <workItem from="1480796200491" duration="33116000" />
     </task>
     <task id="LOCAL-00078" summary="Init Memory Updates">
       <created>1481208334058</created>
@@ -685,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481223236225</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Init Memory Updates">
+      <created>1481280002114</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1481280002114</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108175000" />
+    <option name="totallyTimeSpent" value="108738000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1191,8 +1190,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        <state relative-caret-position="568">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding />
         </state>
       </provider>
