@@ -8,6 +8,7 @@ let guard = require( 'roles.guard' );
 let builder = require( 'roles.builder' );
 var roomObj = require( 'roomObj' );
 var pop = require( 'population' );
+let memoryController = require('memoryController');
 
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
@@ -26,7 +27,7 @@ module.exports.loop = function () {
 	
 
 // Memory Management
-	if ( !mainSpawn.spawning ) {
+	/*if ( !mainSpawn.spawning ) {
 		for ( var name in Memory.creeps ) {
 			if ( !Game.creeps[ name ] ) {
 				
@@ -44,7 +45,9 @@ module.exports.loop = function () {
 				delete Memory.creeps[ name ];
 			}
 		}
-	}
+	}*/
+	
+	memoryController.cleanUp(mainSpawn);
 	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
@@ -94,9 +97,9 @@ module.exports.loop = function () {
 	} else {
 		if (utils.countRole( 'builder' ) < 2) {
 			pop.spawn( mainSpawn, 'builder' );
-		} else if (utils.countRole( 'upgrader' ) < 3){
+		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
-		} else {
+		}*/ else {
 			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {
