@@ -18,7 +18,7 @@ const memoryController = {
 						// ToDo: Remove this creep from the room.memory source assignment
 						let room = Game.rooms[Memory.creeps[ name ].roomName];
 						utils.cL(`room info - ${utils.jS(room.memory)}`);
-						let sourceName = _.keys(Memory.creeps[ name ].assignedSource);
+						let sourceName = _.keys(Memory.creeps[ name ].assignedSource)[0];
 						utils.cL(sourceName);
 						room.memory.safeSourceIds[sourceName].harvs = _.pull(room.memory.safeSourceIds[sourceName].harvs, name);
 					}
