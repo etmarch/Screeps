@@ -10,6 +10,7 @@ const memoryController = {
 	cleanUp: function( spawn ) {
 		if ( !spawn.spawning ) {
 			for ( var name in Memory.creeps ) {
+				utils.cL(utils.jS((Memory.creeps[ name ].assignedSource));
 				if ( !Game.creeps[ name ] ) {
 					
 					if ( Memory.creeps[ name ].role === 'harvester') {
@@ -17,7 +18,7 @@ const memoryController = {
 						// ToDo: Remove this creep from the room.memory source assignment
 						let room = Game.rooms[Memory.creeps[ name ].roomName];
 						utils.cL(`room info - ${utils.jS(room.memory)}`);
-						let sourceName = _.keys(Memory.creeps[ name ].memory.assignedSource);
+						let sourceName = _.keys(Memory.creeps[ name ].assignedSource);
 						utils.cL(sourceName);
 						//room.memory.safeSourceIds
 					}
