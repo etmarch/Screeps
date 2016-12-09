@@ -26,9 +26,12 @@ const Pop = {
 				let creepName = `${role}-${Memory[role] + 1}`;
 				let creepMemory = {
 					role: role,
-					assignedSource: Pop.assignHarvToSource(),
 					roomName: spawn.room.name
 				};
+				
+				if (role === 'harvester') {
+					creepMemory = _.merge(creepMemory, {assignedSource: Pop.assignHarvToSource()});
+				}
 				
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
 				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
