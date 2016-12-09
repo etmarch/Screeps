@@ -75,8 +75,9 @@ module.exports.loop = function () {
 	roomObj.roomInfo( room );
 
 // population create phase
+	let harvCount = utils.countRole( 'harvester' );
 	// todo: handle the whole loop in one shot
-	if ( utils.countRole( 'harvester' ) < 3 ) {
+	if ( harvCount < 3 ) {
 	
 		
 		pop.spawn( mainSpawn, 'harvester' );
@@ -87,7 +88,7 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
-	} else if ( (utils.countRole( 'harvester' ) >= 3 && utils.countRole( 'upgrader' ) < 1) ) {
+	} else if ( (harvCount >= 3 && utils.countRole( 'upgrader' ) < 1) ) {
 		pop.spawn( mainSpawn, 'upgrader' );
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
@@ -101,7 +102,7 @@ module.exports.loop = function () {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
-		}*/ else {
+		}*/ else if ( harvCount < 9 ){
 			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {
@@ -112,8 +113,6 @@ module.exports.loop = function () {
 		}*/
 		
 	}
-	//pop.assignHarvToSource();
-	//Testing Dog!
 	
 	/*if (Game.time % 5 === 0) {
 		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );

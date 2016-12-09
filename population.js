@@ -70,6 +70,10 @@ const Pop = {
 		//utils.cL(`name: ---  ${nameToGo}`);
 		return nameToGo;
 	},
+	//ToDo: Count through all creeps and return object with key:role val:count
+	getAllCounts: function (  ) {
+		
+	},
 	
 	removeHarvFromSource: function( harvester ) {
 		
