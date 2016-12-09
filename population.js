@@ -58,9 +58,9 @@ const Pop = {
 		for (let i = 0; i < _.size(room.memory.safeSourceIds); i++) {
 			let nameInd = `source${i}`;
 			//utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
-			let sourceCount = _.size(room.memory.safeSourceIds[i].harvs);
-			//utils.cL(`source count: ${sourceCount}`);
-			if (sourceCount < 3) {
+			let harvCount = _.size(room.memory.safeSourceIds[nameInd].harvs);
+			utils.cL(`source count: ${harvCount}`);
+			if (harvCount < 3) {
 				nameToGo[nameInd] = room.memory.safeSourceIds[nameInd].id;
 				utils.cL(`name: ---  ${nameToGo}`);
 				break;
