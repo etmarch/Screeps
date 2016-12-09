@@ -56,7 +56,7 @@ module.exports.loop = function () {
 // population create phase
 	let harvCount = utils.countRole( 'harvester' );
 	// todo: handle the whole loop in one shot
-	if ( harvCount < 3 ) {
+	if ( harvCount < 6 ) {
 	
 		
 		pop.spawn( mainSpawn, 'harvester' );
