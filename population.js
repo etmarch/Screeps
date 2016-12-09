@@ -30,7 +30,7 @@ const Pop = {
 				};
 				
 				if (role === 'harvester') {
-					creepMemory = _.merge(creepMemory, {assignedSource: Pop.assignHarvToSource()});
+					creepMemory = _.merge(creepMemory, {assignedSource: Pop.assignHarvToSource(creepName)});
 				}
 				
 				var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
