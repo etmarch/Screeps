@@ -2,8 +2,8 @@
  * Created by evanmarchand on 12/9/16.
  */
 
-let _ = require('lodash');
-let utils = require('utils');
+var _ = require('lodash');
+var utils = require('utils');
 
 const memoryController = {
 	

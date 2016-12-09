@@ -8,7 +8,7 @@ let guard = require( 'roles.guard' );
 let builder = require( 'roles.builder' );
 var roomObj = require( 'roomObj' );
 var pop = require( 'population' );
-let memoryController = require('memoryController');
+var memoryController = require('memoryController');
 
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
