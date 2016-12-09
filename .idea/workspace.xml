@@ -96,8 +96,8 @@
       <file leaf-file-name="tasks.upgrader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="463">
+              <caret line="35" column="49" lean-forward="false" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -339,14 +339,7 @@
       <workItem from="1479652634875" duration="4861000" />
       <workItem from="1480484399805" duration="6466000" />
       <workItem from="1480554805634" duration="15702000" />
-      <workItem from="1480796200491" duration="33116000" />
-    </task>
-    <task id="LOCAL-00078" summary="Init Memory Updates">
-      <created>1481208334058</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1481208334058</updated>
+      <workItem from="1480796200491" duration="33136000" />
     </task>
     <task id="LOCAL-00079" summary="Init Memory Updates">
       <created>1481208379451</created>
@@ -684,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481280002114</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Init Memory Updates">
+      <created>1481280567564</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1481280567564</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108738000" />
+    <option name="totallyTimeSpent" value="108758000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1190,8 +1190,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="463">
+          <caret line="35" column="49" lean-forward="false" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding />
         </state>
       </provider>

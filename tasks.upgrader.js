@@ -33,7 +33,7 @@ var upgrader = {
 		else {
 			//var sources = creep.room.find( FIND_SOURCES );
 			let spawn = Game.getObjectById(Memory.initialSpawnId);
-			if ( creep.withdraw( spawn, energy ) == ERR_NOT_IN_RANGE ) {
+			if ( creep.withdraw( spawn, RESOURCE_ENERGY ) == ERR_NOT_IN_RANGE ) {
 				creep.moveTo( spawn );
 			}
 		}
