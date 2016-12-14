@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger.js" afterPath="$PROJECT_DIR$/logger.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +46,8 @@
       <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+            <state relative-caret-position="90">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -103,21 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="45">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logger.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="logger.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="60">
+              <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -195,8 +195,8 @@
         <option value="$PROJECT_DIR$/population.js" />
         <option value="$PROJECT_DIR$/tasks.harvester.js" />
         <option value="$PROJECT_DIR$/roomController.js" />
-        <option value="$PROJECT_DIR$/logger.js" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/logger.js" />
       </list>
     </option>
   </component>
@@ -373,14 +373,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="22798000" />
-    </task>
-    <task id="LOCAL-00181" summary="Init Memory Updates">
-      <created>1481713518850</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1481713518850</updated>
+      <workItem from="1481697476003" duration="22865000" />
     </task>
     <task id="LOCAL-00182" summary="Init Memory Updates">
       <created>1481713567375</created>
@@ -718,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481723194633</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="Init Memory Updates">
+      <created>1481723268069</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1481723268069</updated>
+    </task>
+    <option name="localTasksCounter" value="231" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144624000" />
+    <option name="totallyTimeSpent" value="144691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1212,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roomController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1230,18 +1222,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger.js">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="45">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        <state relative-caret-position="90">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding />
         </state>
       </provider>

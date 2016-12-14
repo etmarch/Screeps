@@ -2,7 +2,7 @@
  * Logging functionality
  */
 
-let _ = require('lodash');
+//let _ = require('lodash');
 let utils = require('utils');
 
 
