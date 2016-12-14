@@ -38,6 +38,7 @@ module.exports.initMemory = function () {
 			
 			
 			Memory.spawns[name].extensionSpots = [];
+			Memory.spawns[name].id = firstSpawn.id;
 			
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
