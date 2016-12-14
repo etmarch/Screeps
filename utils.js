@@ -86,7 +86,7 @@ const Utils = {
 		let testSort = _.sortBy(plainArray, function(){
 			spawn.pos.getRangeTo(plainArray[1].x, plainArray[1].y);
 		});
-		Utils.cL(`test sort - ${_.pluck(testSort, ['x', 'y']) }`);
+		Utils.cL(`test sort - ${_.pluck(testSort, ['x']) }`);
 		Utils.cL(spawn.pos.getRangeTo(plainArray[1].x, plainArray[1].y));
 		
 	},
