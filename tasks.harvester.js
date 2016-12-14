@@ -17,7 +17,7 @@ var harv = {
 				//creep.say('I got no job!!');
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
 				//utils.cL(droppedEnergy);
-				if (!!droppedEnergy) {
+				if (_.size(droppedEnergy) >= 1) {
 					utils.cL(`Dropped E - ${utils.jS(droppedEnergy)}`);
 				}
 			}
