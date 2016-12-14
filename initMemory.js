@@ -18,7 +18,7 @@ module.exports.initMemory = function () {
 		// Store the rooms in memory
 		for ( var room in Game.rooms ) {
 			var roomI = Game.rooms[ room ];
-			utils.cL( `${roomI}  ${room}` );
+			//utils.cL( `${roomI}  ${room}` );
 			roomI.memory.level = 0;
 			Memory.startRoom = roomI.name;
 		}
