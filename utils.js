@@ -48,6 +48,14 @@ const Utils = {
 	},
 	jS: (out) => JSON.stringify(out),
 	
+	isAreaAllPlains: (topY, leftX, bottomY, rightX)=> {
+		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, topY, leftX, bottomY, rightX, {asArray:true});
+		utils.cL(_.isArray(terrainArray));
+		if (_.isArray(terrainArray)) {
+			return _.every(terrainArray, 'terrain', 'plain');
+		}
+	},
+	
 	findEnemies: (obj) => {
 		let target = obj.room.find(FIND_HOSTILE_CREEPS, {
 			filter: function(object) {
