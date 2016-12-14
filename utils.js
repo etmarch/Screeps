@@ -23,6 +23,9 @@ const partsCosts = {
 	"claim": 600
 };
 
+// Cache the spawn to be used
+const spawn = Game.getObjectById(Memory.initialSpawnId);
+
 const Utils = {
 	countRole: ( creepRole ) => {
 		var total = _.filter( Game.creeps, {
@@ -48,13 +51,22 @@ const Utils = {
 	},
 	jS: (out) => JSON.stringify(out),
 	
-	isAreaAllPlains: (topY, leftX, bottomY, rightX)=> {
-		let spawn = Game.getObjectById(Memory.initialSpawnId);
+	isAreaAllPlains: (topY, leftX, bottomY, rightX) => {
 		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, topY, leftX, bottomY, rightX, {asArray:true});
-		cL(_.isArray(terrainArray));
 		if (_.isArray(terrainArray)) {
 			return _.every(terrainArray, 'terrain', 'plain');
 		}
+	},
+	
+	countPlainsAroundSource: (source) => { // Searches immediate tiles around the source
+		const sourceY = source.pos.y;
+		const sourceX = source.pos.x;
+		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY+1, sourceX+1, sourceY-1, sourceX-1, {asArray:true});
+		cL(terrainArray.length);
+		// Array should be equal to 8
+		// filter out terrain of plain
+		const plainArray = _.filter(terrainArray, 'terrain', 'plain');
+		cL(`${plainArray.length} - ${plainArray}`);
 	},
 	
 	findEnemies: (obj) => {
@@ -146,6 +158,48 @@ const errorConstList = {
 	ERR_GCL_NOT_ENOUGH: -15
 };
 
+
+const lookList = {
+	LOOK_CREEPS: "creep",
+	LOOK_ENERGY: "energy",
+	LOOK_RESOURCES: "resource",
+	LOOK_SOURCES: "source",
+	LOOK_MINERALS: "mineral",
+	LOOK_STRUCTURES: "structure",
+	LOOK_FLAGS: "flag",
+	LOOK_CONSTRUCTION_SITES: "constructionSite",
+	LOOK_NUKES: "nuke",
+	LOOK_TERRAIN: "terrain"
+};
+
+const findList = {
+	FIND_EXIT_TOP: 1,
+	FIND_EXIT_RIGHT: 3,
+	FIND_EXIT_BOTTOM: 5,
+	FIND_EXIT_LEFT: 7,
+	FIND_EXIT: 10,
+	FIND_CREEPS: 101,
+	FIND_MY_CREEPS: 102,
+	FIND_HOSTILE_CREEPS: 103,
+	FIND_SOURCES_ACTIVE: 104,
+	FIND_SOURCES: 105,
+	FIND_DROPPED_ENERGY: 106,
+	FIND_DROPPED_RESOURCES: 106,
+	FIND_STRUCTURES: 107,
+	FIND_MY_STRUCTURES: 108,
+	FIND_HOSTILE_STRUCTURES: 109,
+	FIND_FLAGS: 110,
+	FIND_CONSTRUCTION_SITES: 111,
+	FIND_MY_SPAWNS: 112,
+	FIND_HOSTILE_SPAWNS: 113,
+	FIND_MY_CONSTRUCTION_SITES: 114,
+	FIND_HOSTILE_CONSTRUCTION_SITES: 115,
+	FIND_MINERALS: 116,
+	FIND_NUKES: 117,
+};
+
+		
+const OBSTACLE_OBJECT_TYPES = ["spawn", "creep", "wall", "source", "constructedWall", "extension", "link", "storage", "tower", "observer", "powerSpawn", "powerBank", "lab", "terminal","nuker"];
 /*
  *
  * IDEAS
