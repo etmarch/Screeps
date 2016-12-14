@@ -32,7 +32,7 @@ module.exports.loop = function () {
 	
 	roomController.getEmptyTilesSpawn(mainSpawn.id);
 	utils.cL(Game.getObjectId(room.memory.safeSourceIds.source0.id));
-	utils.countPlainsAroundSource(Game.getObjectId(room.memory.safeSourceIds.source0.id));
+	utils.countPlainsAroundSource(Game.getObjectById(room.memory.safeSourceIds.source0.id));
 	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
