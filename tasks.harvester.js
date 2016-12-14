@@ -18,7 +18,13 @@ var harv = {
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
 				//utils.cL(droppedEnergy);
 				if (_.size(droppedEnergy) >= 1) {
-					utils.cL(`Dropped E - ${utils.jS(droppedEnergy)}`);
+					const target = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
+					if(target) {
+						if(creep.pickup(target) == ERR_NOT_IN_RANGE) {
+							creep.moveTo(target);
+						}
+					}
+					
 				}
 			}
 			

@@ -67,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -362,14 +362,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="21566000" />
-    </task>
-    <task id="LOCAL-00176" summary="Init Memory Updates">
-      <created>1481713188896</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1481713188896</updated>
+      <workItem from="1481697476003" duration="21720000" />
     </task>
     <task id="LOCAL-00177" summary="Init Memory Updates">
       <created>1481713387576</created>
@@ -707,11 +700,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481721976542</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="Init Memory Updates">
+      <created>1481722033637</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1481722033637</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143392000" />
+    <option name="totallyTimeSpent" value="143546000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1230,7 +1230,7 @@
     <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding />
         </state>
       </provider>
