@@ -59,7 +59,7 @@ const Utils = {
 	},
 	
 	countPlainsAroundSource: (source) => { // Searches immediate tiles around the source
-		cL(`source: ${source} -- ${utils.jS(source)}`);
+		cL(`source: ${source} -- ${this.jS(source)}`);
 		const sourceY = source.pos.y;
 		const sourceX = source.pos.x;
 		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY+1, sourceX+1, sourceY-1, sourceX-1, {asArray:true});
