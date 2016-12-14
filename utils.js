@@ -59,15 +59,14 @@ const Utils = {
 	},
 	
 	countPlainsAroundSource: (source) => { // Searches immediate tiles around the source
-		cL(`source: ${source} -- ${Utils.jS(source.pos)}`);
-		const sourceY = source.pos.y;
-		const sourceX = source.pos.x;
+		//cL(`source: ${source} -- ${Utils.jS(source.pos)}`);
+		const sourceY = source.pos.y, sourceX = source.pos.x;
 		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY-1, sourceX-1, sourceY+1, sourceX+1, {asArray:true});
-		cL(`pre edit length: ${terrainArray.length}`);
-		// Array should be equal to 8
-		// filter out terrain of plain
 		const plainArray = _.filter(terrainArray, 'terrain', 'plain');
-		cL(`${plainArray.length} - ${plainArray}`);
+		if (plainArray.length > 0) {
+			return plainArray.length;
+		}
+		//cL(`${plainArray.length} - ${plainArray}`);
 	},
 	
 	findEnemies: (obj) => {
