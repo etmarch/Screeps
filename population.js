@@ -17,10 +17,8 @@ const Pop = {
 		//}
 		// check theres enough energy at spawn, and spawn can do it
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
-			//Pop.assignHarvToSource();
 			//throw new Error('Cant create the creep!')
-			//utils.cL(` ${spawn.room}`);
-			//utils.cL(` big  - ${utils.jS(spawn)}`);
+			//utils.cL(` ${spawn.room}`);  utils.cL(` big  - ${utils.jS(spawn)}`);
 			// todo: error checking and debugging here - make helper function
 			let creepName = `${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {

@@ -39,11 +39,9 @@ module.exports.loop = function () {
 		var creep = Game.creeps[ i ];
 		//utils.cL(`room: ${creep.room.name}   or   ${JSON.stringify(Memory.rooms[creep.room.name])}`);
 		if ( creep.memory.role == 'harvester' ) {
-			if (_.size(creep.memory.assignedSource) < 1) {
-				creep.say('I got no job!!')
-			} else {
+			
 				harv.run( creep );
-			}
+			
 		}
 		else if ( creep.memory.role == 'upgrader' ) {
 			upgrader.run( creep );
