@@ -72,7 +72,7 @@ const Utils = {
 	
 	countConstructionInRoom: function ( room ) {
 		const allSites = room.find(FIND_MY_CONSTRUCTION_SITES);
-		Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
+		//Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
 		return _.size(allSites);
 	},
 	
