@@ -62,7 +62,7 @@ const Utils = {
 		cL(`source: ${source} -- ${Utils.jS(source.pos)}`);
 		const sourceY = source.pos.y;
 		const sourceX = source.pos.x;
-		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY-1, sourceX+1, sourceY+1, sourceX-1, {asArray:true});
+		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY-1, sourceX-1, sourceY+1, sourceX+1, {asArray:true});
 		cL(`pre edit length: ${terrainArray.length}`);
 		// Array should be equal to 8
 		// filter out terrain of plain
