@@ -48,10 +48,11 @@ const memoryController = {
 		
 		const spawn = Game.getObjectById(room.memory.spawnId);
 		// use findPath(fromPos, toPos, [opts]) to map out paths to sources
-		let fastestPath = room.findPath(spawn.pos, room.memory.safeSourceIds['source0'].pos);
+		let fastestPath = spawn.pos.findPathTo(room.memory.safeSourceIds['source0'].pos);
 		let fastestPathSerial = room.findPath(spawn.pos, room.memory.safeSourceIds['source0'].pos, {serialize:true});
 		utils.cL(`fastest path: ${fastestPath}`);
 		utils.cL(`fastest path serial: ${fastestPathSerial}`);
+		utils.cL(`serialized:  ${Room.serializePath(fastestPath)}`);
 		
 	}
 	

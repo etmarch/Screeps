@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memoryController.js" afterPath="$PROJECT_DIR$/memoryController.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,8 +126,8 @@
       <file leaf-file-name="memoryController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memoryController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="525">
+              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -360,14 +361,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="3998000" />
-    </task>
-    <task id="LOCAL-00106" summary="Init Memory Updates">
-      <created>1481214255486</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1481214255486</updated>
+      <workItem from="1481697476003" duration="4286000" />
     </task>
     <task id="LOCAL-00107" summary="Init Memory Updates">
       <created>1481214331203</created>
@@ -705,11 +699,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481702872134</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Init Memory Updates">
+      <created>1481702955551</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1481702955551</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125824000" />
+    <option name="totallyTimeSpent" value="126112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1209,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/memoryController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state relative-caret-position="525">
+          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding />
         </state>
       </provider>
