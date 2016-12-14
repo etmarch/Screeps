@@ -25,7 +25,7 @@ var harv = {
 						}
 					}
 					
-				} else if (!!Game.flags[0]) {
+				} else if (Game.flags[0]) {
 					creep.moveTo(Game.flags[0]);
 				}
 			}
