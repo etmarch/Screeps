@@ -12,7 +12,7 @@ var harv = {
 				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 				creep.suicide();
 			}
-			utils.cL(_.size(Game.flags));
+			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1) { // no sources assigned!
 				//creep.say('I got no job!!');
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
@@ -25,8 +25,8 @@ var harv = {
 						}
 					}
 					
-				} else if (Game.flags) {
-					creep.moveTo(Game.flags[0]);
+				} else if (_.size(Game.flags) > 0) {
+					creep.moveTo(Game.flags['Flag1']);
 				}
 			}
 			
