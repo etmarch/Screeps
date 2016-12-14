@@ -106,8 +106,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="435">
+              <caret line="85" column="104" lean-forward="false" selection-start-line="85" selection-start-column="104" selection-end-line="85" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -373,14 +373,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="23139000" />
-    </task>
-    <task id="LOCAL-00183" summary="Init Memory Updates">
-      <created>1481713637877</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1481713637877</updated>
+      <workItem from="1481697476003" duration="23359000" />
     </task>
     <task id="LOCAL-00184" summary="Init Memory Updates">
       <created>1481713843198</created>
@@ -718,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481723334317</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="Init Memory Updates">
+      <created>1481723668969</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1481723668969</updated>
+    </task>
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144965000" />
+    <option name="totallyTimeSpent" value="145185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1222,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="435">
+          <caret line="85" column="104" lean-forward="false" selection-start-line="85" selection-start-column="104" selection-end-line="85" selection-end-column="104" />
           <folding />
         </state>
       </provider>

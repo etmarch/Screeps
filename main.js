@@ -83,7 +83,7 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 2 && room.memory.level === 2 && harvCount >= room.memory.maxHarvsTotal) {
+		if (utils.countRole( 'builder' ) < 2 && room.memory.level === 2 && harvCount >= room.memory.maxHarvs) {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
