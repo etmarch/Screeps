@@ -18,7 +18,7 @@ var harv = {
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
 				//utils.cL(droppedEnergy);
 				if (!!droppedEnergy) {
-					utils.cL(droppedEnergy);
+					utils.cL(`Dropped E - ${droppedEnergy}`);
 				}
 			}
 			
