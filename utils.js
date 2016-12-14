@@ -51,9 +51,9 @@ const Utils = {
 	},
 	jS: (out) => JSON.stringify(out),
 	
-	isAreaAllPlains: (topY, leftX, bottomY, rightX) => {
+	isAreaAllPlains: (...cords) => { //topY, leftX, bottomY, rightX
 		const spawn = Game.getObjectById(Memory.initialSpawnId);
-		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, topY, leftX, bottomY, rightX, {asArray:true});
+		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, ...cords, {asArray:true});
 		if (_.isArray(terrainArray)) {
 			return _.every(terrainArray, 'terrain', 'plain');
 		}

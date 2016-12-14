@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roomController.js" afterPath="$PROJECT_DIR$/roomController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.js" afterPath="$PROJECT_DIR$/utils.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +47,8 @@
       <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state relative-caret-position="418">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -103,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+            <state relative-caret-position="568">
+              <caret line="69" column="4" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -133,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roomController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roomController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roomController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="390">
+              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -181,11 +182,11 @@
         <option value="$PROJECT_DIR$/controllerConstruction.js" />
         <option value="$PROJECT_DIR$/roomObj.js" />
         <option value="$PROJECT_DIR$/memoryController.js" />
-        <option value="$PROJECT_DIR$/utils.js" />
         <option value="$PROJECT_DIR$/initMemory.js" />
         <option value="$PROJECT_DIR$/population.js" />
-        <option value="$PROJECT_DIR$/roomController.js" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/utils.js" />
+        <option value="$PROJECT_DIR$/roomController.js" />
       </list>
     </option>
   </component>
@@ -362,14 +363,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="15393000" />
-    </task>
-    <task id="LOCAL-00151" summary="Init Memory Updates">
-      <created>1481700992022</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1481700992022</updated>
+      <workItem from="1481697476003" duration="15772000" />
     </task>
     <task id="LOCAL-00152" summary="Init Memory Updates">
       <created>1481701094465</created>
@@ -707,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481715605517</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="Init Memory Updates">
+      <created>1481715829322</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1481715829322</updated>
+    </task>
+    <option name="localTasksCounter" value="201" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137219000" />
+    <option name="totallyTimeSpent" value="137598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1193,29 +1194,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roomController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1229,9 +1212,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        <state relative-caret-position="568">
+          <caret line="69" column="4" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roomController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
