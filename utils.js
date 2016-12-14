@@ -24,7 +24,7 @@ const partsCosts = {
 };
 
 // Cache the spawn to be used
-const spawn = Game.getObjectById(Memory.initialSpawnId);
+const spawn = Game.getObjectById( Memory.initialSpawnId );
 
 const Utils = {
 	countRole: ( creepRole ) => {
@@ -41,7 +41,7 @@ const Utils = {
 		//cL( `parts - ${parts}, names - ${partNames} - ${costs}` );
 		_.forEach( parts, function ( part ) {
 			//cL( `part - ${part}, ${partsCosts[part]}` );
-			sumCost += partsCosts[part];
+			sumCost += partsCosts[ part ];
 		} );
 		return sumCost;
 	},
@@ -49,54 +49,62 @@ const Utils = {
 	cL: ( out ) => {
 		return cL( out );
 	},
-	jS: (out) => JSON.stringify(out),
+	jS: ( out ) => JSON.stringify( out ),
 	
-	isAreaAllPlains: (...cords) => { //topY, leftX, bottomY, rightX
-		const spawn = Game.getObjectById(Memory.initialSpawnId);
-		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, ...cords, {asArray:true});
-		if (_.isArray(terrainArray)) {
-			return _.every(terrainArray, 'terrain', 'plain');
+	isAreaAllPlains: ( ...cords ) => { //topY, leftX, bottomY, rightX
+		const spawn = Game.getObjectById( Memory.initialSpawnId );
+		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, ...cords, { asArray: true } );
+		if ( _.isArray( terrainArray ) ) {
+			return _.every( terrainArray, 'terrain', 'plain' );
 		}
 	},
 	
-	countPlainsAroundSource: (source) => { // Searches immediate tiles around the source
+	countPlainsAroundSource: ( source ) => { // Searches immediate tiles around the source
 		//cL(`source: ${source} -- ${Utils.jS(source.pos)}`);
 		const sourceY = source.pos.y, sourceX = source.pos.x;
-		const terrainArray = source.room.lookForAtArea(LOOK_TERRAIN, sourceY-1, sourceX-1, sourceY+1, sourceX+1, {asArray:true});
-		const plainArray = _.filter(terrainArray, 'terrain', 'plain');
-		if (plainArray.length > 0) {
+		const terrainArray = source.room.lookForAtArea( LOOK_TERRAIN, sourceY - 1, sourceX - 1, sourceY + 1, sourceX + 1, { asArray: true } );
+		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
+		if ( plainArray.length > 0 ) {
 			return plainArray.length;
 		}
 		//cL(`${plainArray.length} - ${plainArray}`);
 	},
 	
 	countConstructionInRoom: function ( room ) {
-		const allSites = room.find(FIND_MY_CONSTRUCTION_SITES);
+		const allSites = room.find( FIND_MY_CONSTRUCTION_SITES );
 		//Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
-		return _.size(allSites);
+		return _.size( allSites );
 	},
 	
-	findEnemies: (obj) => {
-		let target = obj.room.find(FIND_HOSTILE_CREEPS, {
-			filter: function(object) {
-				return (object.getActiveBodyparts(ATTACK) == 0 || object.getActiveBodyparts(RANGED_ATTACK) == 0);
+	getTilesCloseToSpawn: function ( spawn, sizeOffset ) {
+		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, sourceY - sizeOffset, sourceX - sizeOffset, sourceY + sizeOffset, sourceX + sizeOffset, { asArray: true } );
+		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
+		utils.cL(utils.jS(plainArray));
+		// sort by distance to spawn (so it starts from inside and goes out
+		
+	},
+	
+	findEnemies: ( obj ) => {
+		let target = obj.room.find( FIND_HOSTILE_CREEPS, {
+			filter: function ( object ) {
+				return (object.getActiveBodyparts( ATTACK ) == 0 || object.getActiveBodyparts( RANGED_ATTACK ) == 0);
 			}
-		});
-		if (target.length) {
-			utils.cL(`target from findEnemies: ${target}`);
+		} );
+		if ( target.length ) {
+			utils.cL( `target from findEnemies: ${target}` );
 			return target;
 		} else {
 			return -1;
 		}
 	},
 	
-	enemiesInRange: (obj, distance) => {
+	enemiesInRange: ( obj, distance ) => {
 		// Get the room pos of the object being checked
-		cL(obj);
-	//cL(Game.getObjectById(obj));
-		let target = obj.pos.findInRange(FIND_HOSTILE_CREEPS, distance);
-		cL(`target in enemiesInRange: ${target}`);
-		if (target.length) {
+		cL( obj );
+		//cL(Game.getObjectById(obj));
+		let target = obj.pos.findInRange( FIND_HOSTILE_CREEPS, distance );
+		cL( `target in enemiesInRange: ${target}` );
+		if ( target.length ) {
 			return target;
 		}
 	},
@@ -120,7 +128,6 @@ const Utils = {
 	getCPUPercent: () => {
 		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
 	},
-	
 	
 	
 };
@@ -205,8 +212,8 @@ const findList = {
 	FIND_NUKES: 117,
 };
 
-		
-const obstacleObjectTypes = ["spawn", "creep", "wall", "source", "constructedWall", "extension", "link", "storage", "tower", "observer", "powerSpawn", "powerBank", "lab", "terminal","nuker"];
+
+const obstacleObjectTypes = [ "spawn", "creep", "wall", "source", "constructedWall", "extension", "link", "storage", "tower", "observer", "powerSpawn", "powerBank", "lab", "terminal", "nuker" ];
 /*
  *
  * IDEAS
