@@ -41,7 +41,7 @@ const memoryController = {
 		
 		// get room total capacity for storage
 		let totalEnergyCapacity = room.energyCapacityAvailable;
-		utils.cL(totalEnergyCapacity);
+		
 		
 		
 	}
