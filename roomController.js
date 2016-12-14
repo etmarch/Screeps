@@ -6,7 +6,14 @@ var _ = require( 'lodash' );
 var utils = require( 'utils' );
 
 const roomController = {
-	
+	getEmptyTilesSpawn: function ( spawnId ) {
+		let spawn = Game.getObjectById(spawnId);
+		if (spawn === null) {
+			utils.cL(`No Spawn found!!`);
+			throw new Error(`No Spawn found for ID: ${spawnId}`);
+		}
+		// get the tiles around the spawn, check if they are empty
+	}
 	
 };
 
