@@ -56,17 +56,17 @@ const Pop = {
 		
 		for ( let i = 0; i < _.size( room.memory.safeSourceIds ); i++ ) {
 			let nameInd = `source${i}`;
-			utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
+			//utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
 			let harvCount = _.size( room.memory.safeSourceIds[ nameInd ].harvs );
-			utils.cL( `source count: ${harvCount}` );
+			//utils.cL( `source count: ${harvCount}` );
 			if ( harvCount < room.memory.safeSourceIds[ nameInd ].maxHarvs ) {
-				utils.cL( `Assigning Harv ti souurce!` );
+				//utils.cL( `Assigning Harv ti souurce!` );
 				nameToGo[ nameInd ] = room.memory.safeSourceIds[ nameInd ].id;
 				room.memory.safeSourceIds[ nameInd ].harvs.push( name );
 				break;
 			}
 		}
-		utils.cL(`name: ---  ${utils.jS(nameToGo)}`);
+		//utils.cL(`name: ---  ${utils.jS(nameToGo)}`);
 		return nameToGo;
 	},
 	//ToDo: Count through all creeps and return object with key:role val:count
