@@ -13,7 +13,7 @@ var harv = {
 				creep.suicide();
 			}
 			
-			if (_.size(creep.memory.assignedSource) < 1) {
+			if (_.size(creep.memory.assignedSource) < 1) { // no sources assigned!
 				//creep.say('I got no job!!');
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
 				//utils.cL(droppedEnergy);
@@ -25,6 +25,8 @@ var harv = {
 						}
 					}
 					
+				} else if (!!Game.flags[0]) {
+					creep.moveTo(Game.flags[0]);
 				}
 			}
 			
