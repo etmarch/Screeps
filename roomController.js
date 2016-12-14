@@ -37,7 +37,7 @@ const roomController = {
 	*/
 	buildExtension: function ( room ) {
 		const countActiveSites = utils.countConstructionInRoom(room);
-		utils.cL(countActiveSites);
+		//utils.cL(countActiveSites);
 		const spawnX = room.memory.spawnPos.x, spawnY = room.memory.spawnPos.y;
 		if (countActiveSites === 0 && room.memory.level >= 2) {
 			// first check coordinates to make sure no sites are there
