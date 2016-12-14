@@ -17,7 +17,7 @@ const roomController = {
 		let spawnX = spawn.pos.x;
 		let spawnY = spawn.pos.y;
 		
-		utils.cL((spawnX+2, spawnY-2, spawnX-2, spawnY+2));
+		console.log(spawnX+2, spawnY-2, spawnX-2, spawnY+2);
 		
 		let terrainArray = spawn.room.lookAtArea(spawnX+2, spawnY-2, spawnX-2, spawnY+2, {asArray: true});
 		utils.cL(terrainArray);
