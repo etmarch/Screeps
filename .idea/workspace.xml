@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.js" afterPath="$PROJECT_DIR$/utils.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -373,14 +372,7 @@
       <workItem from="1480554805634" duration="15702000" />
       <workItem from="1480796200491" duration="45965000" />
       <workItem from="1481379933368" duration="239000" />
-      <workItem from="1481697476003" duration="26684000" />
-    </task>
-    <task id="LOCAL-00198" summary="Init Memory Updates">
-      <created>1481715428748</created>
-      <option name="number" value="00198" />
-      <option name="presentableId" value="LOCAL-00198" />
-      <option name="project" value="LOCAL" />
-      <updated>1481715428748</updated>
+      <workItem from="1481697476003" duration="26690000" />
     </task>
     <task id="LOCAL-00199" summary="Init Memory Updates">
       <created>1481715605516</created>
@@ -718,11 +710,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481726491909</updated>
     </task>
-    <option name="localTasksCounter" value="247" />
+    <task id="LOCAL-00247" summary="Init Memory Updates">
+      <created>1481727243493</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1481727243493</updated>
+    </task>
+    <option name="localTasksCounter" value="248" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148510000" />
+    <option name="totallyTimeSpent" value="148516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
