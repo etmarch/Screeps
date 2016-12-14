@@ -87,7 +87,7 @@ module.exports.loop = function () {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
-		}*/ else {
+		}*/ else if (harvCount < room.memory.maxHarvs){
 			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {
