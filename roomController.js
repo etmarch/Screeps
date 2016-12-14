@@ -48,6 +48,8 @@ const roomController = {
 			const result = room.createConstructionSite(spawnX-2, spawnY, STRUCTURE_EXTENSION);
 			if (result === 0) {
 				utils.cL(`Con site is working`);
+			} else if (result === -7) {
+				const result = room.createConstructionSite(spawnX-2, spawnY+2, STRUCTURE_EXTENSION);
 			} else {
 				utils.cL(` Error!! - ${result}`);
 			}
