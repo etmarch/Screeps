@@ -84,7 +84,8 @@ const Utils = {
 		
 		// sort by distance to spawn (so it starts from inside and goes out
 		let testSort = _.map(plainArray, function(value, index, collection){
-			return spawn.pos.getRangeTo(plainArray[index].x, plainArray[index].y);
+			const distance = spawn.pos.getRangeTo(plainArray[index].x, plainArray[index].y);
+			
 		});
 		Utils.cL(`test sort - ${(testSort) }`);
 		Utils.cL(Utils.jS(testSort));
