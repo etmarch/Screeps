@@ -2,8 +2,8 @@
  * Logging functionality
  */
 
-const _ = require('lodash');
-const utils = require('utils');
+let _ = require('lodash');
+let utils = require('utils');
 
 
 const log = {
