@@ -5,8 +5,8 @@
  *  -Eventually: calculate the math for what to spawn...
  */
 
-var _ = require('lodash');
-var roles = require('roles');
+var _ = require( 'lodash' );
+var roles = require( 'roles' );
 var utils = require( 'utils' );
 
 const Pop = {
@@ -16,38 +16,37 @@ const Pop = {
 		//
 		//}
 		// check theres enough energy at spawn, and spawn can do it
-		if (spawn.energy >= utils.countBodyCost(role) && !spawn.spawning ) {
-			if (spawn.canCreateCreep(roles()[role]['parts']) == OK) {
-				//Pop.assignHarvToSource();
-				//throw new Error('Cant create the creep!')
-				//utils.cL(` ${spawn.room}`);
-				//utils.cL(` big  - ${utils.jS(spawn)}`);
-				// todo: error checking and debugging here - make helper function
-				let creepName = `${role}-${Memory[role] + 1}`;
-				let creepMemory = {
-					role: role,
-					roomName: spawn.room.name
-				};
-				
-				if (role === 'harvester') {
-					creepMemory = _.merge(creepMemory, {assignedSource: Pop.assignHarvToSource(creepName)});
-				}
-				
-				var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
-				utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost(role)}` );
-				if ( _.isString( result ) ) {
-					Memory[ role + 'Current' ]++;
-					Memory[ role ]++;
-					return result;
-				}
+		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
+			//Pop.assignHarvToSource();
+			//throw new Error('Cant create the creep!')
+			//utils.cL(` ${spawn.room}`);
+			//utils.cL(` big  - ${utils.jS(spawn)}`);
+			// todo: error checking and debugging here - make helper function
+			let creepName = `${role}-${Memory[ role ] + 1}`;
+			let creepMemory = {
+				role: role,
+				roomName: spawn.room.name
+			};
+			
+			if ( role === 'harvester' ) {
+				creepMemory = _.merge( creepMemory, { assignedSource: Pop.assignHarvToSource( creepName ) } );
+			}
+			
+			var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
+			utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost( role )}` );
+			if ( _.isString( result ) ) {
+				Memory[ role + 'Current' ]++;
+				Memory[ role ]++;
+				return result;
 			}
 		}
+		
 	},
 	
 	//
-	assignHarvToSource: function( name ) {
+	assignHarvToSource: function ( name ) {
 		// Get number of harvs in closest source
-		let room = Game.rooms[Memory.startRoom];
+		let room = Game.rooms[ Memory.startRoom ];
 		//utils.cL(utils.jS(room.memory));
 		//utils.cL(_.size(room.memory.safeSourceIds));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
@@ -55,15 +54,15 @@ const Pop = {
 		
 		let nameToGo = {};
 		
-		for (let i = 0; i < _.size(room.memory.safeSourceIds); i++) {
+		for ( let i = 0; i < _.size( room.memory.safeSourceIds ); i++ ) {
 			let nameInd = `source${i}`;
 			//utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
-			let harvCount = _.size(room.memory.safeSourceIds[nameInd].harvs);
-			utils.cL(`source count: ${harvCount}`);
-			if (harvCount < 3) {
-				nameToGo[nameInd] = room.memory.safeSourceIds[nameInd].id;
-				room.memory.safeSourceIds[nameInd].harvs.push(name);
-				utils.cL(`name: ---  ${nameToGo}`);
+			let harvCount = _.size( room.memory.safeSourceIds[ nameInd ].harvs );
+			utils.cL( `source count: ${harvCount}` );
+			if ( harvCount < 3 ) {
+				nameToGo[ nameInd ] = room.memory.safeSourceIds[ nameInd ].id;
+				room.memory.safeSourceIds[ nameInd ].harvs.push( name );
+				utils.cL( `name: ---  ${nameToGo}` );
 				break;
 			}
 		}
@@ -71,11 +70,11 @@ const Pop = {
 		return nameToGo;
 	},
 	//ToDo: Count through all creeps and return object with key:role val:count
-	getAllCounts: function (  ) {
+	getAllCounts: function () {
 		
 	},
 	
-	removeHarvFromSource: function( harvester ) {
+	removeHarvFromSource: function ( harvester ) {
 		
 	}
 };

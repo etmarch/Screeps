@@ -84,7 +84,7 @@ module.exports.initMemory = function () {
 				x: firstSpawn.pos.x,
 				y: firstSpawn.pos.y
 			};
-			utils.cL(maxRoomHarvs);
+			//utils.cL(maxRoomHarvs);
 			roomMem.maxHarvsTotal = maxRoomHarvs;
 			
 		}
