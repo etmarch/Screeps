@@ -57,6 +57,7 @@ module.exports.loop = function () {
 
 // population create phase
 	let harvCount = utils.countRole( 'harvester' );
+	let upgraderCount = utils.countRole( 'upgrader' );
 	// todo: handle the whole loop in one shot
 	if ( harvCount < room.memory.maxHarvsTotal ) {
 	
@@ -69,7 +70,7 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
-	} else if ( (harvCount >= room.memory.maxHarvsTotal && utils.countRole( 'upgrader' ) < 1) ) {
+	} else if ( (harvCount >= room.memory.maxHarvsTotal && upgraderCount < 1) ) {
 		pop.spawn( mainSpawn, 'upgrader' );
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
@@ -93,6 +94,10 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
+	}
+	
+	if (harvCount >= 7 && room.controller.level >= 2 ) {
+		roomController.buildExtension(room);
 	}
 	
 	/*if (Game.time % 5 === 0) {
