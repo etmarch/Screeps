@@ -30,6 +30,8 @@ module.exports.loop = function () {
 	
 	memoryController.cycle(room);
 	
+	roomController.getEmptyTilesSpawn(mainSpawn.id);
+	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		//utils.cL(`room: ${creep.room.name}   or   ${JSON.stringify(Memory.rooms[creep.room.name])}`);

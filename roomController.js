@@ -13,7 +13,16 @@ const roomController = {
 			throw new Error(`No Spawn found for ID: ${spawnId}`);
 		}
 		// get the tiles around the spawn, check if they are empty
-	}
+		// Start with just the 4 corners for now
+		let spawnX = spawn.pos.x;
+		let spawnY = spawn.pos.y;
+		
+		let terrainArray = spawn.room.lookAtArea(spawnX+2, spawnY-2, spawnX-2, spawnY+2, {asArray: true});
+		utils.cL(terrainArray);
+	},
+	/*
+	*  Should be upgrading controller? or prioritize building....
+	*/
 	
 };
 
