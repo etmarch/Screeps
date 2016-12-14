@@ -6,7 +6,7 @@ var harv = require( 'tasks.harvester' );
 var upgrader = require( 'tasks.upgrader' );
 let guard = require( 'roles.guard' );
 let builder = require( 'roles.builder' );
-var roomObj = require( 'roomObj' );
+var roomController = require( 'roomController' );
 var pop = require( 'population' );
 var memoryController = require('memoryController');
 
@@ -49,9 +49,6 @@ module.exports.loop = function () {
 		 healer(creep);
 		 }*/
 	}
-	
-	
-	roomObj.roomInfo( room );
 
 // population create phase
 	let harvCount = utils.countRole( 'harvester' );

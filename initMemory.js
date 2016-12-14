@@ -49,6 +49,8 @@ module.exports.initMemory = function () {
 					// get distance of source to spawn
 					let distanceToSpawn = source.pos.getRangeTo(firstSpawn);
 					utils.cL(`distance - ${distanceToSpawn}`);
+					
+					//todo: we need to get number of open spaces around source, to know how many to assign to harvest it
 					let sourceObj = {
 						distance: distanceToSpawn,
 						id:source.id,
@@ -76,7 +78,8 @@ module.exports.initMemory = function () {
 			roomMem.spawnPos = {
 				x: firstSpawn.pos.x,
 				y: firstSpawn.pos.y
-			}
+			};
+			
 		}
 		
 	
