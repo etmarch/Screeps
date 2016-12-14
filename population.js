@@ -59,7 +59,7 @@ const Pop = {
 			//utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
 			let harvCount = _.size( room.memory.safeSourceIds[ nameInd ].harvs );
 			utils.cL( `source count: ${harvCount}` );
-			if ( harvCount < 3 ) {
+			if ( harvCount < room.memory.safeSourceIds[ nameInd ].maxHarvsTotal ) {
 				nameToGo[ nameInd ] = room.memory.safeSourceIds[ nameInd ].id;
 				room.memory.safeSourceIds[ nameInd ].harvs.push( name );
 				break;
