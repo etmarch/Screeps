@@ -19,10 +19,12 @@ const roomController = {
 		
 		console.log(spawnX+2, spawnY-2, spawnX-2, spawnY+2);
 		
-		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray: true});
-		let isAreaClear = _.every(terrainArray, 'terrain', 'plain');
+		//const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray:
+		// true});
+		//let isAreaClear = _.every(terrainArray, 'terrain', 'plain');
 		//console.log(utils.jS(terrainArray));
 		//utils.cL(isAreaClear);
+		utils.cL(utils.isAreaAllPlains(spawnY-2, spawnX-2, spawnY+2, spawnX+2));
 	},
 	/*
 	*  Should be upgrading controller? or prioritize building....
