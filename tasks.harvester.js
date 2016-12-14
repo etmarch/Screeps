@@ -14,8 +14,10 @@ var harv = {
 			}
 			
 			if (_.size(creep.memory.assignedSource) < 1) {
-				creep.say('I got no job!!');
+				//creep.say('I got no job!!');
 			}
+			
+			// Check for any dropped energy on floor
 			
 			// first check what level the room is
 			
