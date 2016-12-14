@@ -66,7 +66,7 @@ const Pop = {
 				break;
 			}
 		}
-		utils.cL(`name: ---  ${nameToGo}`);
+		utils.cL(`name: ---  ${utils.jS(nameToGo)}`);
 		return nameToGo;
 	},
 	//ToDo: Count through all creeps and return object with key:role val:count
