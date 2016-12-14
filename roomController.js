@@ -35,7 +35,24 @@ const roomController = {
 	/*
 	*  Create extension -- check to make sure proper time to build them
 	*/
-	buildExtension: function (  ) {
+	buildExtension: function ( room ) {
+		const countActiveSites = utils.countConstructionInRoom(room);
+		utils.cL(countActiveSites);
+		const spawnX = room.memory.spawnPos.x, spawnY = room.memory.spawnPos.y;
+		if (countActiveSites === 0 && room.memory.level >= 2) {
+			// first check coordinates to make sure no sites are there
+			const isTaken = room.lookForAt(LOOK_CONSTRUCTION_SITES, spawnX, spawnY);
+			if (isTaken.length > 0) {
+				utils.cL(`This tile is already being built!`);
+			}
+			const result = room.createConstructionSite(spawnX-2, spawnY, STRUCTURE_EXTENSION);
+			if (result === 0) {
+				utils.cL(`Con site is working`);
+			} else {
+				utils.cL(` Error!! - ${result}`);
+			}
+			
+		}
 		
 	}
 	
