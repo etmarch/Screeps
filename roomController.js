@@ -21,7 +21,7 @@ const roomController = {
 		
 		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray: true});
 		//utils.cL(`terrain array: ${utils.jS(terrainArray)}`);
-		console.log(typeof terrainArray);
+		console.log(utils.jS(terrainArray));
 	},
 	/*
 	*  Should be upgrading controller? or prioritize building....
