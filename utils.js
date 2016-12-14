@@ -88,8 +88,10 @@ const Utils = {
 			plainArray[index].distance = distance;
 			return plainArray[index];
 		});
+		
+		let sorted = _.sortByOrder(plainArray, ['distance'], ['asc']);
 		Utils.cL(`test sort - ${(testSort) }`);
-		Utils.cL(Utils.jS(testSort));
+		Utils.cL(Utils.jS(sorted));
 		
 		
 		
