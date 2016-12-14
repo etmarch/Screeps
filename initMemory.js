@@ -73,6 +73,10 @@ module.exports.initMemory = function () {
 			});
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
 			roomMem.numActiveSafeSources = _.size(safeSourceIdList);
+			roomMem.spawnPos = {
+				x: firstSpawn.pos.x,
+				y: firstSpawn.pos.y
+			}
 		}
 		
 	
