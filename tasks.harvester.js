@@ -13,6 +13,10 @@ var harv = {
 				creep.suicide();
 			}
 			
+			if (_.size(creep.memory.assignedSource) < 1) {
+				creep.say('I got no job!!');
+			}
+			
 			// first check what level the room is
 			
 			// level 1 = standard delivery
