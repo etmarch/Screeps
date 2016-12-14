@@ -31,7 +31,8 @@ module.exports.loop = function () {
 	memoryController.cycle(room);
 	
 	roomController.getEmptyTilesSpawn(mainSpawn.id);
-	const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
+	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
+	utils.countConstructionInRoom(room);
 	//utils.cL(utils.countPlainsAroundSource(firstSource));
 	
 	for ( var i in Game.creeps ) {

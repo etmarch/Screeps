@@ -70,6 +70,12 @@ const Utils = {
 		//cL(`${plainArray.length} - ${plainArray}`);
 	},
 	
+	countConstructionInRoom: function ( room ) {
+		const allSites = room.find(FIND_MY_CONSTRUCTION_SITES);
+		Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
+		return _.count(allSites);
+	},
+	
 	findEnemies: (obj) => {
 		let target = obj.room.find(FIND_HOSTILE_CREEPS, {
 			filter: function(object) {
