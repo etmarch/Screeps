@@ -77,6 +77,7 @@ const Utils = {
 	},
 	
 	getTilesCloseToSpawn: function ( spawn, sizeOffset ) {
+		const sourceY = spawn.pos.y, sourceX = spawn.pos.x;
 		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, sourceY - sizeOffset, sourceX - sizeOffset, sourceY + sizeOffset, sourceX + sizeOffset, { asArray: true } );
 		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
 		utils.cL(utils.jS(plainArray));
