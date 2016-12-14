@@ -87,7 +87,7 @@ const Utils = {
 			spawn.pos.getRangeTo(plainArray[1].x, plainArray[1].y);
 		})
 		
-		Utils.cL(spawn.getRangeTo(plainArray[1].x, plainArray[1].y));
+		Utils.cL(spawn.pos.getRangeTo(plainArray[1].x, plainArray[1].y));
 		
 	},
 	
