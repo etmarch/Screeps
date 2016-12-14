@@ -91,7 +91,7 @@ const Utils = {
 		
 		let sorted = _.sortByOrder(plainArray, ['distance'], ['asc']); // Sorting correctly!
 		let sortedList = _.rest(sorted); // removed location of spawn itself
-		Utils.cL(`test sort - ${(testSort) }`);
+		//Utils.cL(`test sort - ${(testSort) }`);
 		Utils.cL(Utils.jS(sortedList));
 		
 		
