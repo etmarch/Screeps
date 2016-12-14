@@ -25,7 +25,7 @@ module.exports.loop = function () {
 		initMemory.initMemory();
 	}
 	
-	log.roomEnergy(room);
+	log.roomEnergy(room, 5);
 	
 	memoryController.cleanUp(mainSpawn);
 	
