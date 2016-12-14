@@ -49,6 +49,7 @@ const Utils = {
 	jS: (out) => JSON.stringify(out),
 	
 	isAreaAllPlains: (topY, leftX, bottomY, rightX)=> {
+		let spawn = Game.getObjectById(Memory.initialSpawnId);
 		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, topY, leftX, bottomY, rightX, {asArray:true});
 		utils.cL(_.isArray(terrainArray));
 		if (_.isArray(terrainArray)) {
