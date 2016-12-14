@@ -6,7 +6,9 @@ var _ = require('lodash');
 var utils = require('utils');
 
 const memoryController = {
-	
+	/*
+	*  Handles removing dead creeps
+	*/
 	cleanUp: function( spawn ) {
 		if ( !spawn.spawning ) {
 			for ( var name in Memory.creeps ) {
@@ -17,7 +19,7 @@ const memoryController = {
 						utils.cL('harvester dying!');
 						// ToDo: Remove this creep from the room.memory source assignment
 						let room = Game.rooms[Memory.creeps[ name ].roomName];
-						utils.cL(`room info - ${utils.jS(room.memory)}`);
+						//utils.cL(`room info - ${utils.jS(room.memory)}`);
 						let sourceName = _.keys(Memory.creeps[ name ].assignedSource)[0];
 						utils.cL(sourceName);
 						room.memory.safeSourceIds[sourceName].harvs = _.pull(room.memory.safeSourceIds[sourceName].harvs, name);
@@ -30,10 +32,18 @@ const memoryController = {
 			}
 		}
 	},
-	
+	/*
+	* Any memory stuff that needs to be updated in real time
+	*/
 	cycle: function( room ) {
 		room.memory.level = room.controller.level;
 		//if (room.memory.level )
+		
+		// get room total capacity for storage
+		let totalEnergyCapacity = room.energyCapacityAvailable;
+		utils.cL(totalEnergyCapacity);
+		
+		
 	}
 	
 	
