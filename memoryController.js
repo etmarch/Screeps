@@ -21,8 +21,10 @@ const memoryController = {
 						let room = Game.rooms[Memory.creeps[ name ].roomName];
 						//utils.cL(`room info - ${utils.jS(room.memory)}`);
 						let sourceName = _.keys(Memory.creeps[ name ].assignedSource)[0];
-						utils.cL(sourceName);
-						room.memory.safeSourceIds[sourceName].harvs = _.pull(room.memory.safeSourceIds[sourceName].harvs, name);
+						if (sourceName !== undefined) {
+							utils.cL( sourceName );
+							room.memory.safeSourceIds[ sourceName ].harvs = _.pull( room.memory.safeSourceIds[ sourceName ].harvs, name );
+						}
 					}
 					console.log( "DEL: " + name );
 					Memory[ Memory.creeps[ name ].role + 'Current' ]--;
