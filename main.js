@@ -9,7 +9,7 @@ let builder = require( 'roles.builder' );
 var roomController = require( 'roomController' );
 var pop = require( 'population' );
 var memoryController = require('memoryController');
-let log = require('logger');
+var log = require('logger');
 
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
