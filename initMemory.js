@@ -54,6 +54,7 @@ module.exports.initMemory = function () {
 					let sourceObj = {
 						distance: distanceToSpawn,
 						id:source.id,
+						maxHarvs: utils.countPlainsAroundSource(source)
 					};
 					safeSourceIdList.push(sourceObj);
 					//roomMem.safeSourceIds.push(source.id);
@@ -69,7 +70,8 @@ module.exports.initMemory = function () {
 				//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
 				let sourceData = {
 					id: value.id,
-					harvs: []
+					harvs: [],
+					maxHarvs: value.maxHarvs
 				};
 				roomMem.safeSourceIds[`source${index}`] = sourceData;
 			});
