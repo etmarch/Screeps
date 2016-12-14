@@ -66,6 +66,8 @@ module.exports.initMemory = function () {
 			let sortedIds =  _.sortBy(safeSourceIdList, 'distance');
 			//utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
 			
+			let maxRoomHarvs = 0;
+			
 			_.forEach(sortedIds, function(value, index, collection) {
 				//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
 				let sourceData = {
@@ -73,6 +75,7 @@ module.exports.initMemory = function () {
 					harvs: [],
 					maxHarvs: value.maxHarvs
 				};
+				maxRoomHarvs += value.maxHarvs;
 				roomMem.safeSourceIds[`source${index}`] = sourceData;
 			});
 			roomMem.numActiveSources = _.size(unfilteredSourceIds);
@@ -81,6 +84,8 @@ module.exports.initMemory = function () {
 				x: firstSpawn.pos.x,
 				y: firstSpawn.pos.y
 			};
+			utils.cL(maxRoomHarvs);
+			roomMem.maxHarvsTotal = maxRoomHarvs;
 			
 		}
 		
