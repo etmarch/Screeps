@@ -45,7 +45,7 @@ const memoryController = {
 		let totalEnergyCapacity = room.energyCapacityAvailable;
 		
 		
-		
+		//todo check that all sources full, if not, assign an idle harv
 	}
 	
 	

@@ -14,6 +14,12 @@ var harv = {
 			}
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1) { // no sources assigned!
+				
+				if (creep.carry['RESOURCE_ENERGY'] > 0) {
+					if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(Game.spawns['Spawn1']);
+					}
+				}
 				//creep.say('I got no job!!');
 				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
 				//utils.cL(droppedEnergy);
