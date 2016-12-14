@@ -80,13 +80,15 @@ const Utils = {
 		const sourceY = spawn.pos.y, sourceX = spawn.pos.x;
 		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, sourceY - sizeOffset, sourceX - sizeOffset, sourceY + sizeOffset, sourceX + sizeOffset, { asArray: true } );
 		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
-		Utils.cL(/*Utils.jS*/(plainArray));
+		//Utils.cL(Utils.jS(plainArray));
 		
 		// sort by distance to spawn (so it starts from inside and goes out
 		let testSort = _.map(plainArray, function(value, index, collection){
 			return spawn.pos.getRangeTo(plainArray[index].x, plainArray[index].y);
 		});
 		Utils.cL(`test sort - ${(testSort) }`);
+		Utils.cL(Utils.jS(testSort));
+		
 		
 		
 	},
