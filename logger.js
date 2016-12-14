@@ -10,7 +10,8 @@ const log = {
 	roomEnergy: (room, tickInterval) => {
 		if (Game.time % tickInterval === 0) {
 			let eAvail = room.energyAvailable, eCap = room.energyCapacityAvailable;
-			utils.cL(`We have ${eAvail} E, from total of ${eCap}. Full % = ${ ((eAvail/eCap) * 100).toFixed(2) }`)
+			const droppedEnergy = room.find
+			utils.cL(`E: ${eAvail}, cap: ${eCap}, %: ${ ((eAvail/eCap) * 100).toFixed(2) }`)
 		}
 	}
 };

@@ -33,7 +33,12 @@ module.exports.initMemory = function () {
 			roomMem.unsafeSourceIds = [];
 			roomMem.safeSourceIds = {};
 			//utils.cL(utils.jS(firstSpawn));
+			
 			firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id;
+			
+			
+			Memory.spawns[name].extensionSpots = [];
+			
 			Memory.initialSpawnId = Game.spawns[ name ].id;
 			
 			let unfilteredSourceIds = firstSpawn.room.find(FIND_SOURCES_ACTIVE);
@@ -86,6 +91,8 @@ module.exports.initMemory = function () {
 			};
 			//utils.cL(maxRoomHarvs);
 			roomMem.maxHarvsTotal = maxRoomHarvs;
+			
+			//ToDo:
 			
 		}
 		
