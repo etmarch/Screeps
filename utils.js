@@ -51,7 +51,7 @@ const Utils = {
 	isAreaAllPlains: (topY, leftX, bottomY, rightX)=> {
 		let spawn = Game.getObjectById(Memory.initialSpawnId);
 		const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, topY, leftX, bottomY, rightX, {asArray:true});
-		utils.cL(_.isArray(terrainArray));
+		cL(_.isArray(terrainArray));
 		if (_.isArray(terrainArray)) {
 			return _.every(terrainArray, 'terrain', 'plain');
 		}
