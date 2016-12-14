@@ -13,6 +13,12 @@ var harv = {
 				creep.suicide();
 			}
 			
+			// first check what level the room is
+			
+			// level 1 = standard delivery
+			
+			// level 2 = drop energy in place, spawn miners to come and gather
+			
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			let sourceId = Object.values(creep.memory.assignedSource)[0];
 			//utils.cL(utils.jS(Object.values(creep.memory.assignedSource)[0]));
@@ -28,6 +34,9 @@ var harv = {
 				if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(Game.spawns['Spawn1']);
 				}
+			} else {
+				creep.say(`Spawn full, dropping here!`);
+				creep.drop(RESOURCE_ENERGY);
 			}
 		}
 		
