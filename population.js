@@ -62,7 +62,6 @@ const Pop = {
 			if ( harvCount < 3 ) {
 				nameToGo[ nameInd ] = room.memory.safeSourceIds[ nameInd ].id;
 				room.memory.safeSourceIds[ nameInd ].harvs.push( name );
-				utils.cL( `name: ---  ${nameToGo}` );
 				break;
 			}
 		}
