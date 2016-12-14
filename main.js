@@ -83,11 +83,11 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 2 && room.memory.level >= 2 && harvCount >= room.memory.maxHarvs) {
+		if (utils.countRole( 'builder' ) < 2 && room.memory.level >= 2 && harvCount >= room.memory.maxHarvsTotal) {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
-		}*/ else if (harvCount < room.memory.maxHarvs){
+		}*/ else if (harvCount < room.memory.maxHarvsTotal){
 			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {
