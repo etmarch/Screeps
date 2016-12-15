@@ -93,9 +93,11 @@ const Utils = {
 		let sortedList = _.rest(sorted); // removed location of spawn itself
 		//Utils.cL(`test sort - ${(testSort) }`);
 		Utils.cL(Utils.jS(sortedList));
-		
-		
-		
+	},
+	
+	findNearestStorage (creep) {
+		// get list of containers, extensions, and the spawn of the room.
+		const room = creep.room;
 	},
 	
 	findEnemies: ( obj ) => {
