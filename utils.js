@@ -23,6 +23,10 @@ const partsCosts = {
 	"claim": 600
 };
 
+const blueWrap = (content) => {
+	console.log(`<span style="color:rgba(39, 174, 96,1.0);">${content}</span>`);
+};
+
 // Cache the spawn to be used
 const spawn = Game.getObjectById( Memory.initialSpawnId );
 
@@ -98,6 +102,11 @@ const Utils = {
 	findNearestStorage (creep) {
 		// get list of containers, extensions, and the spawn of the room.
 		const room = creep.room;
+	},
+	
+	cLB (content) {
+		blueWrap(content);
+		return 0;
 	},
 	
 	findEnemies: ( obj ) => {

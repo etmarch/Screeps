@@ -62,6 +62,7 @@ module.exports.loop = function () {
 // population create phase
 	let harvCount = utils.countRole( 'harvester' );
 	let upgraderCount = utils.countRole( 'upgrader' );
+	utils.cLB(`harv count: ${harvCount}`);
 	// todo: handle the whole loop in one shot
 	if ( harvCount < room.memory.maxHarvsTotal ) {
 	
