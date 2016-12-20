@@ -23,8 +23,10 @@ const partsCosts = {
 	"claim": 600
 };
 
-const blueWrap = (content) => {
-	console.log(`<span style="color:rgba(39, 174, 96,1.0);">${content}</span>`);
+const greenLog = `rgba(39, 174, 96,1.0)`, blueLog = `rgba(52, 152, 219,1.0)`;
+
+const colorLog = (content, color) => {
+	console.log(`<span style="color:${color};">${content}</span>`);
 };
 
 // Cache the spawn to be used
@@ -104,8 +106,12 @@ const Utils = {
 		const room = creep.room;
 	},
 	
-	cLB (content) {
-		blueWrap(content);
+	cLC (content, color = greenLog) {
+		if (color === 'blue') {
+			colorLog(content, blueLog);
+		} else {
+			colorLog( content, color );
+		}
 		return 0;
 	},
 	

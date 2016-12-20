@@ -35,8 +35,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="67" column="2" lean-forward="true" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+            <state relative-caret-position="330">
+              <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -87,12 +87,12 @@
       <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="102" column="40" lean-forward="false" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+            <state relative-caret-position="405">
+              <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1482252449000" expanded="true" signature="410:438" ph="..." />
-                <marker date="1482252449000" expanded="true" signature="439:903" ph="..." />
+                <marker date="1482253000000" expanded="true" signature="496:511" ph="..." />
+                <marker date="1482253000000" expanded="true" signature="512:976" ph="..." />
               </folding>
             </state>
           </provider>
@@ -318,14 +318,7 @@
       <workItem from="1481379933368" duration="239000" />
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
-      <workItem from="1482252064156" duration="464000" />
-    </task>
-    <task id="LOCAL-00227" summary="Init Memory Updates">
-      <created>1481722884659</created>
-      <option name="number" value="00227" />
-      <option name="presentableId" value="LOCAL-00227" />
-      <option name="project" value="LOCAL" />
-      <updated>1481722884659</updated>
+      <workItem from="1482252064156" duration="991000" />
     </task>
     <task id="LOCAL-00228" summary="Init Memory Updates">
       <created>1481723166556</created>
@@ -663,11 +656,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481776126911</updated>
     </task>
-    <option name="localTasksCounter" value="276" />
+    <task id="LOCAL-00276" summary="Init Memory Updates">
+      <created>1482252532567</created>
+      <option name="number" value="00276" />
+      <option name="presentableId" value="LOCAL-00276" />
+      <option name="project" value="LOCAL" />
+      <updated>1482252532568</updated>
+    </task>
+    <option name="localTasksCounter" value="277" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154560000" />
+    <option name="totallyTimeSpent" value="155087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,20 +825,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="102" column="40" lean-forward="false" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+        <state relative-caret-position="405">
+          <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1482252449000" expanded="true" signature="410:438" ph="..." />
-            <marker date="1482252449000" expanded="true" signature="439:903" ph="..." />
+            <marker date="1482253000000" expanded="true" signature="496:511" ph="..." />
+            <marker date="1482253000000" expanded="true" signature="512:976" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="67" column="2" lean-forward="true" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+        <state relative-caret-position="330">
+          <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
           <folding />
         </state>
       </provider>
