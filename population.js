@@ -11,7 +11,7 @@ var utils = require( 'utils' );
 
 const Pop = {
 	spawn: function ( spawn, role ) {
-		
+		// ToDo: THis is being called every tick, need to set params in main, wasteful
 		// first, check both are good
 		//if (/*check that role is string and spawn is object*/) {
 		//
@@ -22,7 +22,8 @@ const Pop = {
 			//throw new Error('Cant create the creep!')
 			utils.cL(` ${spawn.room}`);  utils.cL(` big  - ${utils.jS(spawn)}`);
 			// todo: error checking and debugging here - make helper function
-			let creepName = undefined;//`${role}-${Memory[ role ] + 1}`;
+		
+			let creepName = `${role}-${Game.time}`;//`${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {
 				role: role,
 				roomName: spawn.room.name
