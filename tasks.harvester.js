@@ -20,7 +20,7 @@ var harv = {
 				//(utils.cL(JSON.stringify(sourceArr[i])));
 				let maxHarvs = sourceArr[i].maxHarvs;
 				let currentHarvs = _.size(sourceArr[i].harvs);
-				utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
+				//utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
 				if (currentHarvs < maxHarvs) {
 					// Assign the harvester to this source;
 				}
