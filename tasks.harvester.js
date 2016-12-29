@@ -47,7 +47,7 @@ var harv = {
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			utils.cL(creep.memory.assignedSource);
 			//let sourceId = Object.values(creep.memory.assignedSource)[0];
-			utils.cL(utils.jS(Object.values(creep.memory.assignedSource)[0]));
+			//utils.cL(utils.jS(Object.values(creep.memory.assignedSource)[0]));
 			let sourceTarget = Game.getObjectById('5864a5e1c04c074e4f18d869');
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
