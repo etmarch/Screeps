@@ -71,7 +71,7 @@ const Pop = {
 		
 	},
 	
-	//
+	//ToDO: convert to ID based lookup now
 	assignHarvToSource: function ( name, spawn ) {
 		// Get number of harvs in closest source
 		let room = spawn.room;
