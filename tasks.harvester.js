@@ -21,6 +21,9 @@ var harv = {
 				let maxHarvs = sourceArr[i].maxHarvs;
 				let currentHarvs = _.size(sourceArr[i].harvs);
 				utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
+				if (currentHarvs < maxHarvs) {
+					// Assign the harvester to this source;
+				}
 			}
 			
 			//utils.cL(_.size(Game.flags));
