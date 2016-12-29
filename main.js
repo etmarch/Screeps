@@ -11,7 +11,7 @@ var pop = require( 'population' );
 var memoryController = require('memoryController');
 var log = require('logger');
 
-const room = _.head( _.values( Game.rooms ) );
+const room = Game.rooms[Memory.startRoom];
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 
 module.exports.loop = function () {
