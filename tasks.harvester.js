@@ -17,7 +17,7 @@ var harv = {
 			let sourceArr = _.toArray(roomMem.safeSourceIds);
 			utils.cL(`source array: ${sourceArr}`);
 			for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
-				(utils.cL(typeof (sourceArr[i])));
+				(utils.cL(JSON.stringify(sourceArr[i])));
 			}
 			
 			//utils.cL(_.size(Game.flags));
