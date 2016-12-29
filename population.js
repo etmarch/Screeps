@@ -16,16 +16,8 @@ const Pop = {
 	},
 	
 	spawn: function ( spawn, role ) {
-		// ToDo: THis is being called every tick, need to set params in main, wasteful
-		// first, check both are good
-		//if (/*check that role is string and spawn is object*/) {
-		//
-		//}
-		// check theres enough energy at spawn, and spawn can do it
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
-			//utils.cL(` ${spawn.room}`);  utils.cL(` big  - ${utils.jS(spawn)}`);
-			// todo: error checking and debugging here - make helper function
-		
+			
 			let creepName = `${role}-${Game.time}`;//`${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {
 				role: role,
@@ -52,7 +44,7 @@ const Pop = {
 		// Get number of harvs in closest source
 		let room = spawn.room;
 		//utils.cL(room);
-		utils.cL(utils.jS(room.memory));
+		//utils.cL(utils.jS(room.memory));
 		//utils.cL(_.size(room.memory.safeSourceIds));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
