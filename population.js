@@ -19,6 +19,7 @@ const Pop = {
 			let upgraderCount = utils.countRole( 'upgrader' );
 			let builderCount = utils.countRole( 'builder' );
 			let roomLevel = room.controller.level;
+			
 			//utils.cLC(`harv count: ${harvCount}`, `blue`);
 			let roomMaxHarvs = room.memory.maxHarvsTotal;
 			// todo: handle the whole loop in one shot
