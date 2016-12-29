@@ -130,8 +130,6 @@ const Utils = {
 					creep.moveTo(target);
 				}
 			}
-		} else {
-			creep.say('No dropped energy around!');
 		}
 	},
 	
