@@ -11,6 +11,7 @@ var utils = require( 'utils' );
 
 const Pop = {
 	spawn: function ( spawn, role ) {
+		utils.cL(`spawn: ${spawn}, role: ${role}`);
 		// first, check both are good
 		//if (/*check that role is string and spawn is object*/) {
 		//
