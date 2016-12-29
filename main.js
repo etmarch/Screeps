@@ -58,46 +58,8 @@ module.exports.loop = function () {
 		 }*/
 	}
 
-// population create phase
-	let harvCount = utils.countRole( 'harvester' );
-	let upgraderCount = utils.countRole( 'upgrader' );
-	//utils.cLC(`harv count: ${harvCount}`, `blue`);
-	// todo: handle the whole loop in one shot
-	if ( harvCount < 5 ) {
-		
-		pop.spawn( mainSpawn, 'harvester' );
-		/*if ( _.isString( result ) ) {
-			console.log( '(main.js)The name is: ' + result );
-		}
-		else {
-			console.log( '(main.js)Spawn error: ' + result );
-		}*/
-		
-	} else if ( (harvCount >= 5 && upgraderCount < 1) ) {
-		pop.spawn( mainSpawn, 'upgrader' );
-		/*if ( _.isString( result ) ) {
-			console.log( '(main.js)The name is: ' + result );
-		}
-		else {
-			console.log( '(main.js)Spawn error: ' + result );
-		}
-		*/
-	} else {
-		if (utils.countRole( 'builder' ) < 2 && room.controller.level >= 2 && harvCount >= 5) {
-			pop.spawn( mainSpawn, 'builder' );
-		} /*else if (utils.countRole( 'upgrader' ) < 3){
-			pop.spawn( mainSpawn, 'upgrader');
-		}*/ else if (harvCount < 5){
-			pop.spawn( mainSpawn, 'harvester');
-		}
-		/*if ( _.isString( result ) ) {
-			console.log( '(main.js)The name is: ' + result );
-		}
-		else {
-			console.log( '(main.js)Spawn error: ' + result );
-		}*/
-		
-	}
+	// pop loop
+	pop.mainPopLoop(room);
 	
 	if (harvCount >= 7 && room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
