@@ -58,12 +58,14 @@ module.exports.initMemory = function () {
 			
 			//todo: we need to get number of open spaces around source, to know how many to assign to harvest it
 			let harvSpaces = utils.countPlainsAroundSource( source );
-			let sourceObj = {
-				distance: distanceToSpawn,
-				id: source.id,
-				maxHarvs: harvSpaces
-			};
-			safeSourceIdList.push( sourceObj );
+			if (harvSpaces > 1) {
+				let sourceObj = {
+					distance: distanceToSpawn,
+					id: source.id,
+					maxHarvs: harvSpaces
+				};
+				safeSourceIdList.push( sourceObj );
+			}
 			//roomMem.safeSourceIds.push(source.id);
 		} );
 		utils.cL( `safe sources - ${JSON.stringify( safeSourceIdList )}` );
