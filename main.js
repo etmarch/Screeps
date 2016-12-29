@@ -14,6 +14,7 @@ var log = require('logger');
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 console.log(`Main Spawn: ${mainSpawn} `);
+
 module.exports.loop = function () {
 	
 	/*if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
@@ -24,7 +25,7 @@ module.exports.loop = function () {
 	if (Memory.init != true) {
 		initMemory.initMemory();
 	}
-	
+	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
 	
 	//memoryController.cycle(room);
