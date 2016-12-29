@@ -11,9 +11,12 @@ var roles = require( 'roles' );
 
 
 global.clearAllMemory = function() {
-	let memoryKeys = Object.keys(Memory);
+	/*let memoryKeys = Object.keys(Memory);
 	for (let i = memoryKeys.length; --i>=0;) {
 		delete Memory[memoryKeys[i]];
+	}*/
+	for (let key in Memory) {
+		delete Memory[key];
 	}
 };
 
