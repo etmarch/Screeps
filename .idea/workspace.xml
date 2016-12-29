@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.harvester.js" afterPath="$PROJECT_DIR$/tasks.harvester.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memoryController.js" afterPath="$PROJECT_DIR$/memoryController.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.harvester.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.harvester.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+            <state relative-caret-position="629">
+              <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memoryController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="memoryController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memoryController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="285">
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -194,12 +194,12 @@
         <option value="$PROJECT_DIR$/roomObj.js" />
         <option value="$PROJECT_DIR$/logger.js" />
         <option value="$PROJECT_DIR$/roomController.js" />
-        <option value="$PROJECT_DIR$/memoryController.js" />
         <option value="$PROJECT_DIR$/utils.js" />
         <option value="$PROJECT_DIR$/initMemory.js" />
         <option value="$PROJECT_DIR$/population.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/tasks.harvester.js" />
+        <option value="$PROJECT_DIR$/memoryController.js" />
       </list>
     </option>
   </component>
@@ -379,14 +379,7 @@
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
       <workItem from="1482252064156" duration="1108000" />
-      <workItem from="1482968122570" duration="17745000" />
-    </task>
-    <task id="LOCAL-00265" summary="Init Memory Updates">
-      <created>1481729142645</created>
-      <option name="number" value="00265" />
-      <option name="presentableId" value="LOCAL-00265" />
-      <option name="project" value="LOCAL" />
-      <updated>1481729142645</updated>
+      <workItem from="1482968122570" duration="17873000" />
     </task>
     <task id="LOCAL-00266" summary="Init Memory Updates">
       <created>1481729262749</created>
@@ -724,11 +717,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482994243069</updated>
     </task>
-    <option name="localTasksCounter" value="314" />
+    <task id="LOCAL-00314" summary="Init Memory Updates">
+      <created>1482994274392</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1482994274392</updated>
+    </task>
+    <option name="localTasksCounter" value="315" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172949000" />
+    <option name="totallyTimeSpent" value="173077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -928,18 +928,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memoryController.js">
+    <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="629">
+          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
+    <entry file="file://$PROJECT_DIR$/memoryController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        <state relative-caret-position="285">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="35" />
           <folding />
         </state>
       </provider>
