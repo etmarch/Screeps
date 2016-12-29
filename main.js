@@ -27,8 +27,6 @@ module.exports.loop = function () {
 	
 	log.roomEnergy(room, 5);
 	
-	
-	
 	//memoryController.cycle(room);
 	
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
@@ -63,7 +61,6 @@ module.exports.loop = function () {
 	//utils.cLC(`harv count: ${harvCount}`, `blue`);
 	// todo: handle the whole loop in one shot
 	if ( harvCount < room.memory.maxHarvsTotal ) {
-	
 		
 		pop.spawn( mainSpawn, 'harvester' );
 		/*if ( _.isString( result ) ) {

@@ -10,9 +10,10 @@ const memoryController = {
 	*  Handles removing dead creeps
 	*/
 	cleanUp: function( spawn ) {
+		utils.cL(`spawning? ${spawn.spawning}`);
 		if ( !spawn.spawning ) {
 			for ( var name in Memory.creeps ) {
-				//utils.cL((_.keys(Memory.creeps[ name ].assignedSource)[0]));
+				utils.cL((_.keys(Memory.creeps[ name ].assignedSource)[0]));
 				if ( !Game.creeps[ name ] ) {
 					
 					if ( Memory.creeps[ name ].role === 'harvester') {
