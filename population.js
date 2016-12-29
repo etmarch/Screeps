@@ -14,7 +14,7 @@ const Pop = {
 	mainPopLoop: function ( room ) {
 		// population create phase
 		let mainSpawn = Game.getObjectById( room.memory.spawnId );
-		if ( mainSpawn.spawning ) {
+		if ( !mainSpawn.spawning ) {
 			let harvCount = utils.countRole( 'harvester' );
 			let upgraderCount = utils.countRole( 'upgrader' );
 			let builderCount = utils.countRole( 'builder' );
