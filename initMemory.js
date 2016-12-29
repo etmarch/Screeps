@@ -36,7 +36,7 @@ module.exports.initMemory = function () {
 		roomMem.spawnId = firstSpawn.id;
 		roomMem.unsafeSourceIds = [];
 		roomMem.safeSourceIds = {};
-		utils.cL( utils.jS( firstSpawn ) );
+		//utils.cL( utils.jS( firstSpawn ) );
 		
 		firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id;
 		
@@ -57,10 +57,11 @@ module.exports.initMemory = function () {
 			utils.cL( `distance - ${distanceToSpawn}` );
 			
 			//todo: we need to get number of open spaces around source, to know how many to assign to harvest it
+			let harvSpaces = utils.countPlainsAroundSource( source );
 			let sourceObj = {
 				distance: distanceToSpawn,
 				id: source.id,
-				maxHarvs: utils.countPlainsAroundSource( source )
+				maxHarvs: harvSpaces
 			};
 			safeSourceIdList.push( sourceObj );
 			//roomMem.safeSourceIds.push(source.id);

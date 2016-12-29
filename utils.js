@@ -82,6 +82,8 @@ const Utils = {
 		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
 		if ( plainArray.length > 0 ) {
 			return plainArray.length;
+		} else {
+			return 0;
 		}
 		//cL(`${plainArray.length} - ${plainArray}`);
 	},
