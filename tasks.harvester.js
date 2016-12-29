@@ -12,15 +12,17 @@ var harv = {
 				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 				creep.suicide();
 			}
+			
+			let roomMem = creep.room.memory;
+			let sourceArr = roomMem.safeSourceIds;
+			utils.cL(`source array: ${sourceArr}`);
+			for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
+				utils.jS(sourceArr[i]);
+			}
+			
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1) { // no sources assigned!
 				
-				let roomMem = creep.room.memory;
-				let sourceArr = roomMem.safeSourceIds;
-				utils.cL(`source array: ${sourceArr}`);
-				for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
-					utils.jS(sourceArr[i]);
-				}
 				
 				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
