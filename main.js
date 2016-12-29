@@ -26,7 +26,7 @@ module.exports.loop = function () {
 		initMemory.initMemory();
 	}
 	
-	const room = Game.rooms[Memory.startRoom];
+	const room = _.first(Game.rooms); //[Memory.startRoom];
 	utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 	
