@@ -8,7 +8,7 @@ var utils = require('utils');
 const memoryController = {
 	/*
 	*  Handles removing dead creeps
-	*/
+	
 	cleanUp: function( spawn ) {
 		utils.cL(` ${spawn} spawning? ${spawn.spawning}`);
 		if ( !spawn.spawning ) {
@@ -34,7 +34,9 @@ const memoryController = {
 				}
 			}
 		}
-	},
+	},*/
+	
+	
 	/*
 	* Any memory stuff that needs to be updated in real time
 	*/

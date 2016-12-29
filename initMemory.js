@@ -11,17 +11,16 @@ module.exports.initMemory = function () {
 	
 	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
-	//Memory.isSim = false;
-	let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
+	//let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
 	global.clearAllMemory();
-	utils.jS(Memory);
+	utils.jS( Memory );
 	// Store the rooms in memory
-	for ( var room in Game.rooms ) {
-		var roomI = Game.rooms[ room ];
-		//utils.cL( `${roomI}  ${room}` );
-		roomI.memory.level = 0;
-		Memory.startRoom = roomI.name;
-	}
+	/*for ( var room in Game.rooms ) {
+	 var roomI = Game.rooms[ room ];
+	 //utils.cL( `${roomI}  ${room}` );
+	 roomI.memory.level = 0;
+	 Memory.startRoom = roomI.name;
+	 }*/
 	
 	// only start with 1 spawn...
 	for ( var name in Game.spawns ) {
@@ -32,7 +31,7 @@ module.exports.initMemory = function () {
 		roomMem.spawnId = firstSpawn.id;
 		roomMem.unsafeSourceIds = [];
 		roomMem.safeSourceIds = {};
-		//utils.cL(utils.jS(firstSpawn));
+		utils.cL( utils.jS( firstSpawn ) );
 		
 		firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id;
 		

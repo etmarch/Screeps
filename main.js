@@ -103,7 +103,7 @@ module.exports.loop = function () {
 		roomController.buildExtension(room);
 	}
 	
-	memoryController.cleanUp(mainSpawn);
+	//memoryController.cleanUp(mainSpawn);
 	
 	/*if (Game.time % 5 === 0) {
 		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
