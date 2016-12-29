@@ -13,34 +13,36 @@ const Pop = {
 	// will be called each tick, checks to make sure suitable for spawning
 	mainPopLoop: function ( room ) {
 		// population create phase
-		let mainSpawn = Game.getObjectById(room.memory.spawnId);
-		let harvCount = utils.countRole( 'harvester' );
-		let upgraderCount = utils.countRole( 'upgrader' );
-		let builderCount = utils.countRole( 'builder' );
-		let roomLevel = room.controller.level;
-		//utils.cLC(`harv count: ${harvCount}`, `blue`);
-		let roomMaxHarvs = room.memory.maxHarvsTotal;
-		// todo: handle the whole loop in one shot
-		
-		// start by making min amount of harvs needed
-		if ( harvCount < roomMaxHarvs ) {
-			this.spawn( mainSpawn, 'harvester' );
+		let mainSpawn = Game.getObjectById( room.memory.spawnId );
+		if ( mainSpawn.spawning ) {
+			let harvCount = utils.countRole( 'harvester' );
+			let upgraderCount = utils.countRole( 'upgrader' );
+			let builderCount = utils.countRole( 'builder' );
+			let roomLevel = room.controller.level;
+			//utils.cLC(`harv count: ${harvCount}`, `blue`);
+			let roomMaxHarvs = room.memory.maxHarvsTotal;
+			// todo: handle the whole loop in one shot
 			
-			// if we have all harvs, make one upgrader
-		} else if ( ( upgraderCount < 1) ) {
-			this.spawn( mainSpawn, 'upgrader' );
-		
-			// Have all harvs and one upgrader, make 2 builders
-		} else if ( builderCount < 2) {
-			this.spawn( mainSpawn, 'builder' );
-		
-		// Otherwise....
-		} else {
-			
-			// check room level is at least 2
-			// ToDo: check amount of storage avail (containers, extensions, etc..)
-			if (roomLevel >= 2 && builderCount < 3) {
+			// start by making min amount of harvs needed
+			if ( harvCount < roomMaxHarvs ) {
+				this.spawn( mainSpawn, 'harvester' );
+				
+				// if we have all harvs, make one upgrader
+			} else if ( ( upgraderCount < 1) ) {
+				this.spawn( mainSpawn, 'upgrader' );
+				
+				// Have all harvs and one upgrader, make 2 builders
+			} else if ( builderCount < 2 ) {
 				this.spawn( mainSpawn, 'builder' );
+				
+				// Otherwise....
+			} else {
+				
+				// check room level is at least 2
+				// ToDo: check amount of storage avail (containers, extensions, etc..)
+				if ( roomLevel >= 2 && builderCount < 3 ) {
+					this.spawn( mainSpawn, 'builder' );
+				}
 			}
 		}
 	},
@@ -83,7 +85,7 @@ const Pop = {
 		
 		for ( let i = 0; i < _.size( room.memory.safeSourceIds ); i++ ) {
 			let nameInd = `source${i}`;
-			utils.cL(` source Id test:  ${utils.jS(room.memory.safeSourceIds[nameInd])}`);
+			utils.cL( ` source Id test:  ${utils.jS( room.memory.safeSourceIds[ nameInd ] )}` );
 			let harvCount = _.size( room.memory.safeSourceIds[ nameInd ].harvs );
 			//utils.cL( `source count: ${harvCount}` );
 			if ( harvCount < room.memory.safeSourceIds[ nameInd ].maxHarvs ) {
