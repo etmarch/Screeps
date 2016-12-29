@@ -16,7 +16,7 @@ var log = require('logger');
 
 module.exports.loop = function () {
 	
-	if (Memory.init === undefined) {
+	if (!Memory.init) {
 		initMemory.initMemory();
 	}
 	
