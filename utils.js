@@ -102,8 +102,9 @@ const Utils = {
 	},
 	
 	findNearestStorage (creep) {
-		// get list of containers, extensions, and the spawn of the room.
 		const room = creep.room;
+		// get list of containers, extensions, and the spawn of the room.
+		
 	},
 	
 	cLC (content, color = greenLog) {
