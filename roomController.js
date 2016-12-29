@@ -30,8 +30,6 @@ const roomController = {
 	*  Should be upgrading controller? or prioritize building....
 	*/
 	
-	
-	
 	/*
 	*  Create extension -- check to make sure proper time to build them
 	*/
