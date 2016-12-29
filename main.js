@@ -16,6 +16,13 @@ var log = require('logger');
 
 module.exports.loop = function () {
 	
+	for (let room in Memory.rooms) {
+		if (!Game.rooms[room]) {
+			delete Memory.rooms[room];
+		}
+	}
+	
+	
 	/*if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
 		utils.cL('This is a simulation!');
 	} else {
@@ -26,17 +33,12 @@ module.exports.loop = function () {
 		initMemory.initMemory();
 	}*/
 	
-	for (let room in Memory.rooms) {
-		if (!Game.rooms[room]) {
-			delete Memory.rooms[room];
-		}
-	}
-	
+
 	const room = _.first(Game.rooms); //[Memory.startRoom];
-	utils.cL(`${room} Memory - ${Memory.startRoom}    `);
+	//utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 	
-	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
+	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
 	
 	
@@ -74,7 +76,7 @@ module.exports.loop = function () {
 	let upgraderCount = utils.countRole( 'upgrader' );
 	//utils.cLC(`harv count: ${harvCount}`, `blue`);
 	// todo: handle the whole loop in one shot
-	if ( harvCount < room.memory.maxHarvsTotal ) {
+	if ( harvCount < 5 ) {
 		
 		pop.spawn( mainSpawn, 'harvester' );
 		/*if ( _.isString( result ) ) {
@@ -84,7 +86,7 @@ module.exports.loop = function () {
 			console.log( '(main.js)Spawn error: ' + result );
 		}*/
 		
-	} else if ( (harvCount >= room.memory.maxHarvsTotal && upgraderCount < 1) ) {
+	} else if ( (harvCount >= 5 && upgraderCount < 1) ) {
 		pop.spawn( mainSpawn, 'upgrader' );
 		/*if ( _.isString( result ) ) {
 			console.log( '(main.js)The name is: ' + result );
@@ -94,11 +96,11 @@ module.exports.loop = function () {
 		}
 		*/
 	} else {
-		if (utils.countRole( 'builder' ) < 2 && room.memory.level >= 2 && harvCount >= room.memory.maxHarvsTotal) {
+		if (utils.countRole( 'builder' ) < 2 && room.controller.level >= 2 && harvCount >= 5) {
 			pop.spawn( mainSpawn, 'builder' );
 		} /*else if (utils.countRole( 'upgrader' ) < 3){
 			pop.spawn( mainSpawn, 'upgrader');
-		}*/ else if (harvCount < room.memory.maxHarvsTotal){
+		}*/ else if (harvCount < 5){
 			pop.spawn( mainSpawn, 'harvester');
 		}
 		/*if ( _.isString( result ) ) {

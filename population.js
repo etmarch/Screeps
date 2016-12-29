@@ -28,14 +28,14 @@ const Pop = {
 			};
 			
 			if ( role === 'harvester' ) {
-				creepMemory = _.merge( creepMemory, { assignedSource: Pop.assignHarvToSource( creepName ) } );
+				creepMemory = _.merge( creepMemory, { assignedSource: Pop.assignHarvToSource( creepName, spawn ) } );
 			}
 			
 			var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
 			utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost( role )}` );
 			if ( _.isString( result ) ) {
-				Memory[ role + 'Current' ]++;
-				Memory[ role ]++;
+				//Memory[ role + 'Current' ]++;
+				//Memory[ role ]++;
 				return result;
 			}
 		}
@@ -43,9 +43,10 @@ const Pop = {
 	},
 	
 	//
-	assignHarvToSource: function ( name ) {
+	assignHarvToSource: function ( name, spawn ) {
 		// Get number of harvs in closest source
-		let room = Game.rooms[ Memory.startRoom ];
+		let room = spawn.room;
+		utils.cL(room);
 		utils.cL(utils.jS(room.memory));
 		//utils.cL(_.size(room.memory.safeSourceIds));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
