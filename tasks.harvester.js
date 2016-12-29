@@ -14,7 +14,7 @@ var harv = {
 			}
 			
 			let roomMem = creep.room.memory;
-			let sourceArr = roomMem.safeSourceIds;
+			let sourceArr = _.toArray(roomMem.safeSourceIds);
 			utils.cL(`source array: ${sourceArr}`);
 			for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
 				(utils.cL(typeof (sourceArr[i])));
