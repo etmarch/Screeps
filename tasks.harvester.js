@@ -18,6 +18,9 @@ var harv = {
 				let roomMem = creep.room.memory;
 				let sourceArr = roomMem.safeSourceIds;
 				utils.cL(`source array: ${sourceArr}`);
+				for (let i = 0; i < _.size(sourceArr); i++ ) {
+					utils.jS(sourceArr[i]);
+				}
 				
 				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
