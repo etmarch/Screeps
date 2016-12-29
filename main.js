@@ -22,10 +22,10 @@ module.exports.loop = function () {
 	}*/
 	
 
-	const room = Game.rooms['W14N72']; //[Memory.startRoom];
+	//const room = Game.rooms['W14N72']; //[Memory.startRoom];
 	//utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = Game.spawns['Spawn1'];
-	
+	const room = mainSpawn.room;
 	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	//log.roomEnergy(room, 5);
 	
