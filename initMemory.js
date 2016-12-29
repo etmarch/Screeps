@@ -12,8 +12,6 @@ module.exports.initMemory = function () {
 	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
 	//let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
-	global.clearAllMemory();
-	utils.jS( Memory );
 	// Store the rooms in memory
 	/*for ( var room in Game.rooms ) {
 	 var roomI = Game.rooms[ room ];
@@ -23,6 +21,13 @@ module.exports.initMemory = function () {
 	 }*/
 	
 	// only start with 1 spawn...
+	
+	
+	for (let key in Memory) {
+		delete Memory[key];
+	}
+	
+	
 	for ( var name in Game.spawns ) {
 		var firstSpawn = Game.spawns[ name ];
 		
