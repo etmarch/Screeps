@@ -13,7 +13,6 @@ var log = require('logger');
 
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
-console.log(`Main Spawn: ${mainSpawn} `);
 
 module.exports.loop = function () {
 	
