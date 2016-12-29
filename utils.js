@@ -119,6 +119,22 @@ const Utils = {
 		
 	},
 	
+	// Input creep,
+	pickupDroppedEnergy (creep) {
+		const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
+		//utils.cL(droppedEnergy);
+		if (_.size(droppedEnergy) >= 1) {
+			const target = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
+			if(target) {
+				if(creep.pickup(target) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(target);
+				}
+			}
+		} else {
+			creep.say('No dropped energy around!');
+		}
+	},
+	
 	cLC (content, color = greenLog) {
 		if (color === 'blue') {
 			colorLog(content, blueLog);

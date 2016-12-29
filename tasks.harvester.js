@@ -21,17 +21,12 @@ var harv = {
 					}
 				}
 				//creep.say('I got no job!!');
-				const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
-				//utils.cL(droppedEnergy);
-				if (_.size(droppedEnergy) >= 1) {
-					const target = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
-					if(target) {
-						if(creep.pickup(target) == ERR_NOT_IN_RANGE) {
-							creep.moveTo(target);
-						}
-					}
-					
-				} else if (_.size(Game.flags) > 0) {
+				
+				// get dropped energy
+				utils.pickupDroppedEnergy(creep);
+				
+				
+				if (_.size(Game.flags) > 0) {
 					creep.moveTo(Game.flags['Flag1']);
 				}
 			}
