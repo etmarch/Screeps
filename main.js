@@ -29,13 +29,13 @@ module.exports.loop = function () {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
 	
-	/*if (Memory.init === undefined) {
+	if (Memory.init === undefined) {
 		initMemory.initMemory();
-	}*/
+	}
 	
 
 	const room = _.first(Game.rooms); //[Memory.startRoom];
-	//utils.cL(`${room} Memory - ${Memory.startRoom}    `);
+	utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 	
 	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
