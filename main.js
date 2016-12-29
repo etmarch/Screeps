@@ -33,6 +33,12 @@ module.exports.loop = function () {
 	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
 	
+	
+	for (let room in Memory.rooms) {
+		if (!Game.rooms[room]) {
+			delete Memory.rooms[room];
+		}
+	}
 	//memoryController.cycle(room);
 	
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
