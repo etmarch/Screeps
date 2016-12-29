@@ -7,26 +7,25 @@ var utils = require( 'utils' );
 
 // first check to see if memory has been initiated
 module.exports.initMemory = function () {
-	utils.cL(JSON.stringify(Game));
+	utils.cL( JSON.stringify( Game ) );
 	
 	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
 	//let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
 	
 	// Start Fresh with Memory
-	for (let key in Memory) {
-		delete Memory[key];
+	for ( let key in Memory ) {
+		delete Memory[ key ];
 	}
 	
 	// Store the rooms in memory
-	utils.cL(`Rooms num: ${_.size(Game.rooms)}`)
+	utils.cL( `Rooms num: ${_.size( Game.rooms )}` )
 	for ( var room in Game.rooms ) {
-	 var roomI = Game.rooms[ room ];
-	 //utils.cL( `${roomI}  ${room}` );
-	 roomI.memory.level = 0;
-	 Memory.startRoom = roomI.name;
-	 }
-	
+		var roomI = Game.rooms[ room ];
+		//utils.cL( `${roomI}  ${room}` );
+		roomI.memory.level = 0;
+		Memory.startRoom = roomI.name;
+	}
 	
 	
 	for ( var name in Game.spawns ) {
@@ -91,27 +90,9 @@ module.exports.initMemory = function () {
 		//utils.cL(maxRoomHarvs);
 		roomMem.maxHarvsTotal = maxRoomHarvs;
 		
-		//ToDo:
-		
 	}
-	
-	
-	// ToDo: This needs to be cleaned up, reused from another module or config file...
-	Memory.harvester = 0,
-			Memory.builder = 0,
-			Memory.guard = 0,
-			Memory.upgrader = 0,
-			Memory.ranger = 0,
-			Memory.healer = 0,
-			Memory.harvesterCurrent = 0,
-			Memory.builderCurrent = 0,
-			Memory.guardCurrent = 0,
-			Memory.upgraderCurrent = 0,
-			Memory.rangerCurrent = 0,
-			Memory.healerCurrent = 0,
-			Memory.deathsTotal = 0,
-			Memory.isSim = simTest,
-			Memory.init = true;
+	// Make sure to set the init to true for only once
+	Memory.init = true;
 	//}
 	
 	//utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
