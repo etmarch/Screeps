@@ -27,7 +27,7 @@ module.exports.loop = function () {
 	}
 	
 	const room = Game.rooms[Memory.startRoom];
-	utils.cL(room);
+	utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 	
 	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
