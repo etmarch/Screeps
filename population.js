@@ -10,6 +10,11 @@ var roles = require( 'roles' );
 var utils = require( 'utils' );
 
 const Pop = {
+	// will be called each tick, checks to make sure suitable for spawning
+	mainPopLoop: function (  ) {
+		
+	},
+	
 	spawn: function ( spawn, role ) {
 		// ToDo: THis is being called every tick, need to set params in main, wasteful
 		// first, check both are good
@@ -18,8 +23,6 @@ const Pop = {
 		//}
 		// check theres enough energy at spawn, and spawn can do it
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
-			//utils.cL(`spawn: ${spawn}, role: ${role}`);
-			//throw new Error('Cant create the creep!')
 			//utils.cL(` ${spawn.room}`);  utils.cL(` big  - ${utils.jS(spawn)}`);
 			// todo: error checking and debugging here - make helper function
 		

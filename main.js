@@ -29,20 +29,6 @@ module.exports.loop = function () {
 	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	//log.roomEnergy(room, 5);
 	
-	
-	/*for (let room in Memory.rooms) {
-		if (!Game.rooms[room]) {
-			delete Memory.rooms[room];
-		}
-	}
-	if (!mainSpawn.spawning) {
-		for (var name in Memory.creeps) {
-			if (!Game.creeps[name]) {
-				delete Memory.creeps[name];
-			}
-		}
-	}*/
-	
 	memoryController.cleanUp(mainSpawn);
 	//memoryController.cycle(room);
 	
