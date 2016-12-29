@@ -10,6 +10,13 @@ var _ = require( 'lodash' );
 var roles = require( 'roles' );
 
 
+global.clearAllMemory = function() {
+	let memoryKeys = Object.keys(Memory);
+	for (let i = memoryKeys.length; --i>=0;) {
+		delete Memory[memoryKeys[i]];
+	}
+}
+
 let cL = ( out ) => console.log( out );
 
 const partsCosts = {
@@ -160,6 +167,7 @@ const Utils = {
 	getCPUPercent: () => {
 		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
 	},
+	
 	
 	
 };
