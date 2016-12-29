@@ -10,7 +10,7 @@ const memoryController = {
 	*  Handles removing dead creeps
 	*/
 	cleanUp: function( spawn ) {
-		utils.cL(`spawning? ${spawn.spawning}`);
+		utils.cL(` ${spawn} spawning? ${spawn.spawning}`);
 		if ( !spawn.spawning ) {
 			for ( var name in Memory.creeps ) {
 				utils.cL((_.keys(Memory.creeps[ name ].assignedSource)[0]));
