@@ -15,9 +15,12 @@ var harv = {
 			
 			let roomMem = creep.room.memory;
 			let sourceArr = _.toArray(roomMem.safeSourceIds);
-			utils.cL(`source array: ${sourceArr}`);
+			//utils.cL(`source array: ${sourceArr}`);
 			for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
-				(utils.cL(JSON.stringify(sourceArr[i])));
+				//(utils.cL(JSON.stringify(sourceArr[i])));
+				let maxHarvs = sourceArr[i].maxHarvs;
+				let currentHarvs = _.size(sourceArr[i].harvs);
+				utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
 			}
 			
 			//utils.cL(_.size(Game.flags));
