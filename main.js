@@ -16,14 +16,15 @@ var log = require('logger');
 
 module.exports.loop = function () {
 	
-	if (!Memory.init) {
+	// Init Memory - Removing all Memory stuff
+	/*if (!Memory.init) {
 		initMemory.initMemory();
-	}
+	}*/
 	
 
 	const room = Game.rooms['W14N72']; //[Memory.startRoom];
-	utils.cL(`${room} Memory - ${Memory.startRoom}    `);
-	const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
+	//utils.cL(`${room} Memory - ${Memory.startRoom}    `);
+	const mainSpawn = Game.spawns['Spawn1'];
 	
 	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
