@@ -14,6 +14,7 @@ module.exports.initMemory = function () {
 	//Memory.isSim = false;
 	let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
 	global.clearAllMemory();
+	utils.jS(Memory);
 	// Store the rooms in memory
 	for ( var room in Game.rooms ) {
 		var roomI = Game.rooms[ room ];
