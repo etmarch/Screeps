@@ -22,8 +22,14 @@ module.exports.loop = function () {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
 	
-	if (Memory.init === undefined) {
+	/*if (Memory.init === undefined) {
 		initMemory.initMemory();
+	}*/
+	
+	for (let room in Memory.rooms) {
+		if (!Game.rooms[room]) {
+			delete Memory.rooms[room];
+		}
 	}
 	
 	const room = _.first(Game.rooms); //[Memory.startRoom];
@@ -34,11 +40,7 @@ module.exports.loop = function () {
 	log.roomEnergy(room, 5);
 	
 	
-	for (let room in Memory.rooms) {
-		if (!Game.rooms[room]) {
-			delete Memory.rooms[room];
-		}
-	}
+	
 	//memoryController.cycle(room);
 	
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
