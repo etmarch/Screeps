@@ -16,19 +16,6 @@ var log = require('logger');
 
 module.exports.loop = function () {
 	
-	for (let room in Memory.rooms) {
-		if (!Game.rooms[room]) {
-			delete Memory.rooms[room];
-		}
-	}
-	
-	
-	/*if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
-		utils.cL('This is a simulation!');
-	} else {
-		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
-	}*/
-	
 	if (Memory.init === undefined) {
 		initMemory.initMemory();
 	}
