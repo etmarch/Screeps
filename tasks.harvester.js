@@ -45,9 +45,9 @@ var harv = {
 			// level 2 = drop energy in place, spawn miners to come and gather
 			
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
-			utils.cL(`assigned source: ${_.keys(creep.memory.assignedSource)}`);
+			//utils.cL(`assigned source: ${_.keys(creep.memory.assignedSource)}`);
 			//let sourceId = Object.values(creep.memory.assignedSource)[0];
-			utils.cL(utils.jS((creep.memory.assignedSource)));
+			//utils.cL(utils.jS((creep.memory.assignedSource)));
 			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
