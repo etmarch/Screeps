@@ -13,7 +13,7 @@ var log = require('logger');
 
 const room = _.head( _.values( Game.rooms ) );
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
-
+console.log(mainSpawn);
 module.exports.loop = function () {
 	
 	/*if (isNaN(Game.cpu.getUsed() / Game.cpu.limit)) {
@@ -31,10 +31,10 @@ module.exports.loop = function () {
 	
 	memoryController.cycle(room);
 	
-	roomController.getEmptyTilesSpawn(mainSpawn.id);
+	//roomController.getEmptyTilesSpawn(mainSpawn.id);
 	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
-	utils.countConstructionInRoom(room);
-	utils.getTilesCloseToSpawn(mainSpawn, 2);
+	//utils.countConstructionInRoom(room);
+	//utils.getTilesCloseToSpawn(mainSpawn, 2);
 	//utils.cL(utils.countPlainsAroundSource(firstSource));
 	
 	for ( var i in Game.creeps ) {
