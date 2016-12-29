@@ -27,7 +27,7 @@ module.exports.loop = function () {
 	const mainSpawn = Game.spawns['Spawn1'];
 	
 	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
-	log.roomEnergy(room, 5);
+	//log.roomEnergy(room, 5);
 	
 	
 	
