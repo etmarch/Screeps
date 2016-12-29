@@ -61,9 +61,9 @@ module.exports.loop = function () {
 	// pop loop
 	pop.mainPopLoop(room);
 	
-	if (harvCount >= 7 && room.controller.level >= 2 ) {
+	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
-	}
+	}*/
 	
 
 	
