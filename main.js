@@ -11,6 +11,11 @@ var pop = require( 'population' );
 var memoryController = require('memoryController');
 var log = require('logger');
 
+
+if (Memory.init === undefined) {
+	initMemory.initMemory();
+}
+
 const room = Game.rooms[Memory.startRoom];
 const mainSpawn = room.find( FIND_MY_SPAWNS )[ 0 ];
 
@@ -21,9 +26,7 @@ module.exports.loop = function () {
 	} else {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
-	if (Memory.init === undefined) {
-		initMemory.initMemory();
-	}
+	
 	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
 	
