@@ -30,7 +30,7 @@ module.exports.loop = function () {
 	//log.roomEnergy(room, 5);
 	
 	
-	for (let room in Memory.rooms) {
+	/*for (let room in Memory.rooms) {
 		if (!Game.rooms[room]) {
 			delete Memory.rooms[room];
 		}
@@ -41,9 +41,9 @@ module.exports.loop = function () {
 				delete Memory.creeps[name];
 			}
 		}
-	}
+	}*/
 	
-	
+	memoryController.cleanUp(mainSpawn);
 	//memoryController.cycle(room);
 	
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
@@ -117,7 +117,7 @@ module.exports.loop = function () {
 		roomController.buildExtension(room);
 	}
 	
-	//memoryController.cleanUp(mainSpawn);
+
 	
 	/*if (Game.time % 5 === 0) {
 		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
