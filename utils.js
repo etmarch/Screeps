@@ -15,7 +15,7 @@ global.clearAllMemory = function() {
 	for (let i = memoryKeys.length; --i>=0;) {
 		delete Memory[memoryKeys[i]];
 	}
-}
+};
 
 let cL = ( out ) => console.log( out );
 
@@ -147,6 +147,15 @@ const Utils = {
 			return target;
 		}
 	},
+	
+	// Return boolean, if it is in range
+	sourceKeepersInRange(spawn, source) {
+		let keeperLair = spawn.room.find( FIND_HOSTILE_STRUCTURES );
+	  cL(`keeper stuff: ${keeperLair[0]}`);
+		let inRange = source.pos.inRangeTo(keeperLair[0], 5);
+		return inRange;
+	},
+	
 	
 	
 	// ToDo: Suicide checker and function
