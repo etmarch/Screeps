@@ -12,20 +12,21 @@ module.exports.initMemory = function () {
 	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
 	//let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
+	
+	// Start Fresh with Memory
+	for (let key in Memory) {
+		delete Memory[key];
+	}
+	
 	// Store the rooms in memory
-	/*for ( var room in Game.rooms ) {
+	utils.cL(`Rooms num: ${_.size(Game.rooms)}`)
+	for ( var room in Game.rooms ) {
 	 var roomI = Game.rooms[ room ];
 	 //utils.cL( `${roomI}  ${room}` );
 	 roomI.memory.level = 0;
 	 Memory.startRoom = roomI.name;
-	 }*/
+	 }
 	
-	// only start with 1 spawn...
-	
-	// remove all memory references
-	for (let key in Memory) {
-		delete Memory[key];
-	}
 	
 	
 	for ( var name in Game.spawns ) {

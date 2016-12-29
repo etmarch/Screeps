@@ -17,7 +17,7 @@ var log = require('logger');
 module.exports.loop = function () {
 	
 	// Init Memory - Removing all Memory stuff
-	if (!Memory.init) {
+	if (Memory.init === false) {
 		initMemory.initMemory();
 	}
 	
