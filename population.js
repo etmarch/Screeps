@@ -22,7 +22,7 @@ const Pop = {
 			//throw new Error('Cant create the creep!')
 			utils.cL(` ${spawn.room}`);  utils.cL(` big  - ${utils.jS(spawn)}`);
 			// todo: error checking and debugging here - make helper function
-			let creepName = `${role}-${Memory[ role ] + 1}`;
+			let creepName = undefined;//`${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {
 				role: role,
 				roomName: spawn.room.name
