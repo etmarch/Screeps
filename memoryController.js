@@ -19,7 +19,7 @@ const memoryController = {
 					if ( Memory.creeps[ name ].role === 'harvester') {
 						utils.cL('harvester dying!');
 						// ToDo: Remove this creep from the room.memory source assignment
-						let room = Game.rooms[0];
+						let room = Game.rooms['W14N72'];
 						//utils.cL(`room info - ${utils.jS(room.memory)}`);
 						let sourceName = _.keys(Memory.creeps[ name ].assignedSource)[0];
 						if (sourceName !== undefined) {
