@@ -48,7 +48,7 @@ const Pop = {
 	assignHarvToSource: function ( name, spawn ) {
 		// Get number of harvs in closest source
 		let room = spawn.room;
-		utils.cL(room);
+		//utils.cL(room);
 		utils.cL(utils.jS(room.memory));
 		//utils.cL(_.size(room.memory.safeSourceIds));
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
