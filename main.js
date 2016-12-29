@@ -21,9 +21,9 @@ module.exports.loop = function () {
 	} else {
 		utils.cL( `-------  START T:(${Game.time}) %:${((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ) } lvl:${room.controller.level} --------` );
 	}*/
-	/*if (Memory.init === undefined) {
+	if (Memory.init === undefined) {
 		initMemory.initMemory();
-	}*/
+	}
 	utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
 	log.roomEnergy(room, 5);
 	
