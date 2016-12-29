@@ -7,7 +7,7 @@ var utils = require( 'utils' );
 
 // first check to see if memory has been initiated
 module.exports.initMemory = function () {
-	//utils.cL(JSON.stringify(Game));
+	utils.cL(JSON.stringify(Game));
 	
 	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
@@ -22,7 +22,7 @@ module.exports.initMemory = function () {
 	
 	// only start with 1 spawn...
 	
-	
+	// remove all memory references
 	for (let key in Memory) {
 		delete Memory[key];
 	}
