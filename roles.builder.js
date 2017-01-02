@@ -8,8 +8,9 @@ const builder = {
 	/** @param {Creep} creep **/
 	run: function ( creep ) {
 		if ( utils.countRole( 'harvester' ) < creep.room.memory.maxHarvsTotal ) {
-			creep.say( 'Waiting' );
-			utils.cL( `need more harvs before resume building` );
+			//creep.say( 'Waiting' );
+			//utils.cL( `need more harvs before resume building` );
+			//ToDo: Set the memory status to waiting
 		} else {
 			if ( creep.memory.building && creep.carry.energy == 0 ) {
 				creep.memory.building = false;
