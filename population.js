@@ -58,7 +58,11 @@ const Pop = {
 			};
 			
 			if ( role === 'harvester' ) {
-				creepMemory = _.merge( creepMemory, { assignedSource: Pop.assignHarvToSource( creepName, spawn ) } );
+				creepMemory = _.merge( creepMemory, {
+					assignedSource: Pop.assignHarvToSource( creepName, spawn ),
+					assignedContainer: ''
+					
+				} );
 			}
 			
 			var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
