@@ -12,7 +12,7 @@ var memoryController = require('memoryController');
 var log = require('logger');
 
 
-Memory.init = false;
+//Memory.init = false;
 
 module.exports.loop = function () {
 	
