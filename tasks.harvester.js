@@ -96,7 +96,10 @@ var harv = {
 				
 				roomMem.safeSourceIds[ sourceArr[i].id ].harvs.push( creep.name ); // assign harv to source memory in room
 				creep.memory.assignedSourceId = sourceArr[i].id;
-				
+				break;
+			} else {
+				creep.say(`TOo many, bye cruel world!`);
+				creep.suicide();
 			}
 		}
 	}
