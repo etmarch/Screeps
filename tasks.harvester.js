@@ -28,7 +28,7 @@ var harv = {
 			
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1) { // no sources assigned!
-				
+				creep.say(`No source assigned!`);
 				
 				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
