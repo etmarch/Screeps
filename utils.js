@@ -119,7 +119,7 @@ const Utils = {
 		let containerList = room.find(FIND_MY_STRUCTURES, {
 			filter: (s) => (s.structureType == STRUCTURE_CONTAINER)// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
 		});
-		cL(JSON.stringify(containerList));
+		cL((containerList));
 	},
 	
 	// Input creep,
