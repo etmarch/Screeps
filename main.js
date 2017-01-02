@@ -69,8 +69,10 @@ module.exports.loop = function () {
 	}
 
 	// pop loop
-	pop.mainPopLoop(room);
-	log.roleCount(room, 5);
+	if (Memory.init === true) {
+		pop.mainPopLoop( room );
+		log.roleCount( room, 5 );
+	}
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
 	}*/
