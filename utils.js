@@ -119,7 +119,7 @@ const Utils = {
 		let containerList = room.find(FIND_STRUCTURES, {
 			filter: (s) => s.structureType == 'container'// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
 		});
-		cL((containerList));
+		//cL((containerList));
 		//cL(JSON.stringify(Game.getObjectById('586a36bedb1e726976708c2a')));
 	},
 	
