@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.js" afterPath="$PROJECT_DIR$/utils.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,11 +166,11 @@
       <file leaf-file-name="utils.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="121" column="4" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+            <state relative-caret-position="180">
+              <caret line="120" column="7" lean-forward="true" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1483359317000" expanded="true" signature="711:726" ph="..." />
+                <marker date="1483359483000" expanded="true" signature="711:726" ph="..." />
               </folding>
             </state>
           </provider>
@@ -415,14 +416,7 @@
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
       <workItem from="1482252064156" duration="1108000" />
-      <workItem from="1482968122570" duration="52202000" />
-    </task>
-    <task id="LOCAL-00370" summary="Init Memory Updates">
-      <created>1483021137098</created>
-      <option name="number" value="00370" />
-      <option name="presentableId" value="LOCAL-00370" />
-      <option name="project" value="LOCAL" />
-      <updated>1483021137098</updated>
+      <workItem from="1482968122570" duration="52357000" />
     </task>
     <task id="LOCAL-00371" summary="Init Memory Updates">
       <created>1483021190885</created>
@@ -760,11 +754,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483359323617</updated>
     </task>
-    <option name="localTasksCounter" value="419" />
+    <task id="LOCAL-00419" summary="Init Memory Updates">
+      <created>1483359328365</created>
+      <option name="number" value="00419" />
+      <option name="presentableId" value="LOCAL-00419" />
+      <option name="project" value="LOCAL" />
+      <updated>1483359328366</updated>
+    </task>
+    <option name="localTasksCounter" value="420" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207406000" />
+    <option name="totallyTimeSpent" value="207561000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1021,11 +1022,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="121" column="4" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="120" column="7" lean-forward="true" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1483359317000" expanded="true" signature="711:726" ph="..." />
+            <marker date="1483359483000" expanded="true" signature="711:726" ph="..." />
           </folding>
         </state>
       </provider>
