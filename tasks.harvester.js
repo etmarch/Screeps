@@ -26,7 +26,7 @@ var harv = {
 				}
 			}
 			
-			utils.jS(_.isEmpty(creep.memory));
+			//utils.jS(_.isEmpty(creep.memory));
 			
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
@@ -66,6 +66,10 @@ var harv = {
 			//let sourceId = Object.values(creep.memory.assignedSource)[0];
 			//utils.cL(utils.jS((creep.memory.assignedSource)));
 			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
+			
+			if (!sourceTarget) {
+				creep.say(`No source assigned!`);
+			}
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
 				//var sources = creep.room.find(FIND_SOURCES);
