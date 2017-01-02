@@ -167,10 +167,10 @@
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="122" column="52" lean-forward="false" selection-start-line="122" selection-start-column="52" selection-end-line="122" selection-end-column="52" />
+              <caret line="122" column="71" lean-forward="true" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1483359033000" expanded="true" signature="711:726" ph="..." />
+                <marker date="1483359265000" expanded="true" signature="711:726" ph="..." />
               </folding>
             </state>
           </provider>
@@ -416,14 +416,7 @@
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
       <workItem from="1482252064156" duration="1108000" />
-      <workItem from="1482968122570" duration="51911000" />
-    </task>
-    <task id="LOCAL-00367" summary="Init Memory Updates">
-      <created>1483020635260</created>
-      <option name="number" value="00367" />
-      <option name="presentableId" value="LOCAL-00367" />
-      <option name="project" value="LOCAL" />
-      <updated>1483020635260</updated>
+      <workItem from="1482968122570" duration="52145000" />
     </task>
     <task id="LOCAL-00368" summary="Init Memory Updates">
       <created>1483021036232</created>
@@ -761,11 +754,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483358950494</updated>
     </task>
-    <option name="localTasksCounter" value="416" />
+    <task id="LOCAL-00416" summary="Init Memory Updates">
+      <created>1483359036552</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
+      <option name="project" value="LOCAL" />
+      <updated>1483359036552</updated>
+    </task>
+    <option name="localTasksCounter" value="417" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207115000" />
+    <option name="totallyTimeSpent" value="207349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1023,10 +1023,10 @@
     <entry file="file://$PROJECT_DIR$/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="122" column="52" lean-forward="false" selection-start-line="122" selection-start-column="52" selection-end-line="122" selection-end-column="52" />
+          <caret line="122" column="71" lean-forward="true" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1483359033000" expanded="true" signature="711:726" ph="..." />
+            <marker date="1483359265000" expanded="true" signature="711:726" ph="..." />
           </folding>
         </state>
       </provider>
