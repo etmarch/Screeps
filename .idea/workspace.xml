@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.upgrader.js" afterPath="$PROJECT_DIR$/tasks.upgrader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.js" afterPath="$PROJECT_DIR$/utils.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -113,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.upgrader.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.upgrader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state relative-caret-position="405">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -163,14 +163,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="4" lean-forward="true" selection-start-line="45" selection-start-column="2" selection-end-line="50" selection-end-column="4" />
+            <state relative-caret-position="150">
+              <caret line="121" column="27" lean-forward="false" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1483012825000" expanded="true" signature="711:726" ph="..." />
+                <marker date="1483358458000" expanded="true" signature="711:726" ph="..." />
               </folding>
             </state>
           </provider>
@@ -225,13 +225,13 @@
         <option value="$PROJECT_DIR$/population.js" />
         <option value="$PROJECT_DIR$/controllerConstruction.js" />
         <option value="$PROJECT_DIR$/roomController.js" />
-        <option value="$PROJECT_DIR$/utils.js" />
         <option value="$PROJECT_DIR$/logger.js" />
         <option value="$PROJECT_DIR$/prototype.room.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/tasks.harvester.js" />
         <option value="$PROJECT_DIR$/roles.builder.js" />
         <option value="$PROJECT_DIR$/tasks.upgrader.js" />
+        <option value="$PROJECT_DIR$/utils.js" />
       </list>
     </option>
   </component>
@@ -416,14 +416,7 @@
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
       <workItem from="1482252064156" duration="1108000" />
-      <workItem from="1482968122570" duration="50137000" />
-    </task>
-    <task id="LOCAL-00360" summary="Init Memory Updates">
-      <created>1483011765440</created>
-      <option name="number" value="00360" />
-      <option name="presentableId" value="LOCAL-00360" />
-      <option name="project" value="LOCAL" />
-      <updated>1483011765440</updated>
+      <workItem from="1482968122570" duration="51338000" />
     </task>
     <task id="LOCAL-00361" summary="Init Memory Updates">
       <created>1483011775823</created>
@@ -761,11 +754,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483356635274</updated>
     </task>
-    <option name="localTasksCounter" value="409" />
+    <task id="LOCAL-00409" summary="Init Memory Updates">
+      <created>1483357051385</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1483357051385</updated>
+    </task>
+    <option name="localTasksCounter" value="410" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205341000" />
+    <option name="totallyTimeSpent" value="206542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -948,17 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="4" lean-forward="true" selection-start-line="45" selection-start-column="2" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1483012825000" expanded="true" signature="711:726" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1025,9 +1014,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks.upgrader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="121" column="27" lean-forward="false" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1483358458000" expanded="true" signature="711:726" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
