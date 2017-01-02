@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.harvester.js" afterPath="$PROJECT_DIR$/tasks.harvester.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles.builder.js" afterPath="$PROJECT_DIR$/roles.builder.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.harvester.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.harvester.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks.harvester.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-722">
@@ -103,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roles.builder.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roles.builder.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roles.builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="418">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -208,7 +208,6 @@
         <option value="$PROJECT_DIR$/roles.guard.js" />
         <option value="$PROJECT_DIR$/constants.js" />
         <option value="$PROJECT_DIR$/tasks.upgrader.js" />
-        <option value="$PROJECT_DIR$/roles.builder.js" />
         <option value="$PROJECT_DIR$/roles.js" />
         <option value="$PROJECT_DIR$/roomObj.js" />
         <option value="$PROJECT_DIR$/prototype.spawn.js" />
@@ -222,6 +221,7 @@
         <option value="$PROJECT_DIR$/prototype.room.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/tasks.harvester.js" />
+        <option value="$PROJECT_DIR$/roles.builder.js" />
       </list>
     </option>
   </component>
@@ -406,14 +406,7 @@
       <workItem from="1481697476003" duration="31611000" />
       <workItem from="1481934453046" duration="659000" />
       <workItem from="1482252064156" duration="1108000" />
-      <workItem from="1482968122570" duration="49298000" />
-    </task>
-    <task id="LOCAL-00357" summary="Init Memory Updates">
-      <created>1483009365630</created>
-      <option name="number" value="00357" />
-      <option name="presentableId" value="LOCAL-00357" />
-      <option name="project" value="LOCAL" />
-      <updated>1483009365630</updated>
+      <workItem from="1482968122570" duration="49669000" />
     </task>
     <task id="LOCAL-00358" summary="Init Memory Updates">
       <created>1483011475266</created>
@@ -751,11 +744,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483356040111</updated>
     </task>
-    <option name="localTasksCounter" value="406" />
+    <task id="LOCAL-00406" summary="Init Memory Updates">
+      <created>1483356173109</created>
+      <option name="number" value="00406" />
+      <option name="presentableId" value="LOCAL-00406" />
+      <option name="project" value="LOCAL" />
+      <updated>1483356173109</updated>
+    </task>
+    <option name="localTasksCounter" value="407" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204502000" />
+    <option name="totallyTimeSpent" value="204873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,14 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllerConstruction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1017,6 +1009,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-722">
           <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles.builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding />
         </state>
       </provider>
