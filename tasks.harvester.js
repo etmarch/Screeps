@@ -26,7 +26,7 @@ var harv = {
 				}
 			}
 			
-			utils.jS(creep.memory);
+			utils.jS(_.isEmpty(creep.memory));
 			
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
