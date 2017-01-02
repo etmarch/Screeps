@@ -117,9 +117,9 @@ const Utils = {
 		const room = creep.room;
 		// get list of containers that have storage available
 		let containerList = room.find(FIND_MY_STRUCTURES, {
-			filter: (s) => s.structureType == STRUCTURE_CONTAINER// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
+			filter: (s) => s.structureType == 'container'// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
 		});
-		//cL((containerList));
+		cL((containerList));
 		cL(JSON.stringify(Game.getObjectById('586a36bedb1e726976708c2a')));
 	},
 	
