@@ -19,6 +19,7 @@ const roomController = {
 		
 		//console.log(spawnX+2, spawnY-2, spawnX-2, spawnY+2);
 		
+		// ToDo: to get range of coords, add inputs coords abs(y1) + abs(y2), and loop down array
 		//const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray:
 		// true});
 		//let isAreaClear = _.every(terrainArray, 'terrain', 'plain');
@@ -69,6 +70,15 @@ module.exports = roomController;
 	let fastestPath = spawn.pos.findPathTo(source0);
 	
 	*/
+	
+	
+	/* do dynamically require files -
+	 var moduleName = "task." + task.taskType;
+	 var taskModule = require(moduleName);
+	 result = taskModule.prototype.doTask(creep, task);
+	
+	 */
+	
 	
 	/*utils.cL( `Totals - Active Sources: ${activeSourceArr.length}, Spawns: ${spawnArr.length}, Hostile Creeps: ${hostCreepsArr.length}, My Creeps: ${myCreepsArr.length}` );
 	utils.cL( `Spawn Energy: ${spawnArr[ 0 ].energy}, Spawning? ${(!spawnArr[ 0 ].spawning ? 'N' : 'Y')}` );*/
