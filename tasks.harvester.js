@@ -59,6 +59,9 @@ var harv = {
 			
 			if (!sourceTarget) {
 				creep.say(`Need to assignsource`);
+				this.assignToSource(creep);
+				sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
+				utils.cL(`new source: ${sourceTarget}`);
 			}
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
@@ -77,7 +80,7 @@ var harv = {
 			}
 		},
 	
-	assignToSourceAfter(creep) {
+	assignToSource(creep) {
 		let roomMem = creep.room.memory;
 		let sourceArr = _.toArray(roomMem.safeSourceIds);
 		//utils.cL(`source array: ${sourceArr}`);
