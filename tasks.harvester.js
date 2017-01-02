@@ -75,7 +75,7 @@ var harv = {
 			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
 			
 			if (!sourceTarget) {
-				creep.say(`No source assigned!`);
+				creep.say(`Need to assignsource`);
 			}
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
