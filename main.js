@@ -44,6 +44,12 @@ module.exports.loop = function () {
 	
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
+		//ToDo: Check if creep actually has memory, if not, set memory.
+		//ToDo for now, auto assign to harvester
+		if (_.isEmpty(creep.memory)) {
+			creep.say(' I got no memory, ah shit!');
+			creep.memory.role = 'harvester';
+		}
 		//utils.cL(`room: ${creep.room.name}   or   ${JSON.stringify(Memory.rooms[creep.room.name])}`);
 		if ( creep.memory.role == 'harvester' ) {
 				harv.run( creep );

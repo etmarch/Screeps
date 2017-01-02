@@ -3,6 +3,7 @@
  */
 var _ = require('lodash');
 var utils = require('utils');
+let population = require('population');
 
 var harv = {
 	
@@ -23,6 +24,12 @@ var harv = {
 				//utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
 				if (currentHarvs < maxHarvs) {
 					// Assign the harvester to this source;
+					// ToDO: eventually make this modular population.assignHarvToSource(creep.name, )
+					
+					
+					room.memory.safeSourceIds[ nameInd ].harvs.push( name ); // assign harv to source memory in room
+					creep.memory.assignedSource
+					
 				}
 			}
 			
