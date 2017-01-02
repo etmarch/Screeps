@@ -12,7 +12,11 @@ var memoryController = require('memoryController');
 var log = require('logger');
 
 
-//Memory.init = false;
+if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
+	utils.cL(`Memory not updated, restarting!`);
+	Memory.init = false;
+}
+
 
 module.exports.loop = function () {
 	
