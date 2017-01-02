@@ -14,24 +14,7 @@ var harv = {
 				creep.suicide();
 			}
 			
-			let roomMem = creep.room.memory;
-			let sourceArr = _.toArray(roomMem.safeSourceIds);
-			//utils.cL(`source array: ${sourceArr}`);
-			for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
-				//(utils.cL(JSON.stringify(sourceArr[i])));
-				let maxHarvs = sourceArr[i].maxHarvs;
-				let currentHarvs = _.size(sourceArr[i].harvs);
-				//utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
-				if (currentHarvs < maxHarvs) {
-					// Assign the harvester to this source;
-					// ToDO: eventually make this modular population.assignHarvToSource(creep.name, )
-					
-					
-					//room.memory.safeSourceIds[ nameInd ].harvs.push( name ); // assign harv to source memory in room
-					//creep.memory.assignedSource
-					
-				}
-			}
+			
 			
 			//utils.jS(_.isEmpty(creep.memory));
 			
@@ -92,7 +75,28 @@ var harv = {
 				creep.say(`Spawn full, dropping here!`);
 				creep.drop(RESOURCE_ENERGY);
 			}
+		},
+	
+	assignToSourceAfter(creep) {
+		let roomMem = creep.room.memory;
+		let sourceArr = _.toArray(roomMem.safeSourceIds);
+		//utils.cL(`source array: ${sourceArr}`);
+		for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
+			(utils.cL(JSON.stringify(sourceArr[i])));
+			let maxHarvs = sourceArr[i].maxHarvs;
+			let currentHarvs = _.size(sourceArr[i].harvs);
+			//utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
+			if (currentHarvs < maxHarvs) {
+				// Assign the harvester to this source;
+				// ToDO: eventually make this modular population.assignHarvToSource(creep.name, )
+				// ToDo: roomMem.safeSourceIds[ nameInd ].harvs.push( creep.name );
+				
+				roomMem.safeSourceIds[ sourceArr[i].id ].harvs.push( creep.name ); // assign harv to source memory in room
+				creep.memory.assignedSourceId = sourceArr[i].id;
+				
+			}
 		}
+	}
 		
 		
 	//}
