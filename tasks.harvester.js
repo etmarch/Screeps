@@ -27,8 +27,8 @@ var harv = {
 					// ToDO: eventually make this modular population.assignHarvToSource(creep.name, )
 					
 					
-					room.memory.safeSourceIds[ nameInd ].harvs.push( name ); // assign harv to source memory in room
-					creep.memory.assignedSource
+					//room.memory.safeSourceIds[ nameInd ].harvs.push( name ); // assign harv to source memory in room
+					//creep.memory.assignedSource
 					
 				}
 			}
@@ -37,7 +37,7 @@ var harv = {
 			
 			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
-				creep.say(`No source assigned!`);
+				//creep.say(`No source assigned!`);
 				
 				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
