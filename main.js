@@ -10,7 +10,7 @@ var roomController = require( 'roomController' );
 var pop = require( 'population' );
 var memoryController = require('memoryController');
 var log = require('logger');
-require('prototype.room');
+require('prototype.room')();
 
 
 if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
