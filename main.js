@@ -78,7 +78,7 @@ module.exports.loop = function () {
 		roomController.buildExtension(room);
 	}*/
 	
-	utils.cL(`this many construction sites: ${room.countConstructionSites()}`);
+	//utils.cL(`this many construction sites: ${room.countConstructionSites()}`);
 	
 	/*if (Game.time % 5 === 0) {
 		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
