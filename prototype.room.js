@@ -13,8 +13,12 @@ module.exports = function () {
 		return true;
 	};
 	Room.prototype.countConstructionSites = function () {
-		utils.cL(`this - ${this}`);
+		//utils.cL(`this - ${this}`);
 		const allSites = this.find( FIND_MY_CONSTRUCTION_SITES );
+		/*if (!allSites || !allSites.length || allSites === null) {
+			utils.cL('count construction sites err - cant find construction sites~');
+			return 'Error';
+		}*/
 		//Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
 		return _.size( allSites );
 	};

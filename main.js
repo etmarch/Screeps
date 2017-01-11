@@ -30,14 +30,17 @@ module.exports.loop = function () {
 	const room = mainSpawn.room;
 	
 	memoryController.cleanUp(mainSpawn);
-	//memoryController.cycle(room);
 	
+	//ToDo: check if need to update the room level yet based on params
+	
+
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
 	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
 	//utils.countConstructionInRoom(room);
 	//utils.getTilesCloseToSpawn(mainSpawn, 2);
 	//utils.cL(utils.countPlainsAroundSource(firstSource));
 	
+	let constructionCount = room.countConstructionSites();
 	for ( var i in Game.creeps ) {
 		var creep = Game.creeps[ i ];
 		//ToDo: Check if creep actually has memory, if not, set memory.
@@ -53,17 +56,22 @@ module.exports.loop = function () {
 			upgrader.run( creep );
 		}
 		else if ( creep.memory.role == 'guard' ) {
-			guard.run( creep );
+				guard.run( creep );
 		}
 		else if ( creep.memory.role == 'builder' ) {
-			builder.run( creep );
+			if (constructionCount > 0) { // if no construction sites, just make upgrader
+				builder.run( creep );
+			} else {
+				upgrader.run(creep);
+			}
 		}
 	}
 
 	// pop loop
 	if (Memory.init === true) {
 		pop.mainPopLoop( room );
-		//log.roleCount( room, 20 );
+		log.roomEnergy( room, 20 );
+		log.roleCount( room, 20);
 	}
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
