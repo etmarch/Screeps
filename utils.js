@@ -112,6 +112,9 @@ const Utils = {
 	},
 	
 	findNearestNotFullStorage (creep) {
+		// ToDo: Should be called in room controller, not every creep**
+		
+		
 		const room = creep.room;
 		// get list of containers that have storage available
 		let containerList = room.find(FIND_STRUCTURES, {
@@ -210,9 +213,6 @@ module.exports.fightersInRange = function ( creep, range, bodyParts ) {
 	/*if (!isNumber(range)) {
 	 return "ERR: Range must be number!";
 	 } else {
-	 
-	 
-	 
 	 return creep.pos.findInRange(FIND_MY_CREEPS, range, {
 	 filter: function(c) {
 	 return (c.memory.fighter === true);

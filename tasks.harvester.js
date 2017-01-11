@@ -8,56 +8,48 @@ let population = require('population');
 var harv = {
 	
 		run: function(creep) {
-			// ToDo: helper function for Suicides
+			const mainSpawn = Game.getObjectById(Memory.initialSpawnId);
+			// ToDo: helper function for Suicides - move to screep prototype
 			if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
 				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 				creep.suicide();
 			}
 			
-			
-			
-			//utils.jS(_.isEmpty(creep.memory));
-			
-			//utils.cL(_.size(Game.flags));
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
 				creep.say(`No source assigned!`);
 				
 				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
-					if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-						creep.moveTo(Game.spawns['Spawn1']);
+					if(creep.transfer(mainSpawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+						creep.moveTo(mainSpawn);
 					}
 				}
-				//creep.say('I got no job!!');
-				
 				// Get count of harvs assigned to each active source in room
-				
 				// if less than maximum, assign this harv to the source
-				
 				// get dropped energy
 				utils.pickupDroppedEnergy(creep);
 				
 				
-				if (_.size(Game.flags) > 0) {
+				if (_.size(Game.flags) > 0) { // Flag check
 					creep.moveTo(Game.flags['Flag1']);
 				}
 			}
 			
-			// Check for any dropped energy on floor
-			
-			// first check what level the room is
 			
 			// level 1 = standard delivery
-			
 			// level 2 = drop energy in place, spawn miners to come and gather
 			
 			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
 			//utils.cL(`assigned source: ${_.keys(creep.memory.assignedSource)}`);
 			//let sourceId = Object.values(creep.memory.assignedSource)[0];
 			//utils.cL(utils.jS((creep.memory.assignedSource)));
-			utils.findNearestNotFullStorage(creep);
+			
+			// ToDo: This needs to reference an Id in memory...
+			//utils.findNearestNotFullStorage(creep);
 			
 			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
+			
+			//utils.cL(`mainspawn:  ${mainSpawn}`);
 			
 			if (!sourceTarget) {
 				creep.say(`Need to assignsource`);
@@ -72,9 +64,9 @@ var harv = {
 					creep.moveTo(sourceTarget);
 				}
 			}
-			else if(Game.spawns['Spawn1'].energy < Game.spawns['Spawn1'].energyCapacity) {
-				if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-					creep.moveTo(Game.spawns['Spawn1']);
+			else if(mainSpawn.energy < mainSpawn.energyCapacity) {
+				if(creep.transfer(mainSpawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(mainSpawn);
 				}
 			} else {
 				creep.say(`Spawn full, dropping here!`);
@@ -87,7 +79,7 @@ var harv = {
 		let sourceArr = _.toArray(roomMem.safeSourceIds);
 		//utils.cL(`source array: ${sourceArr}`);
 		for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
-			(utils.cL(JSON.stringify(sourceArr[i])));
+			//(utils.cL(JSON.stringify(sourceArr[i])));
 			let maxHarvs = sourceArr[i].maxHarvs;
 			let currentHarvs = _.size(sourceArr[i].harvs);
 			//utils.cL(`max: ${maxHarvs}, current: ${currentHarvs}`);
