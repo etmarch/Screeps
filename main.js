@@ -26,13 +26,8 @@ module.exports.loop = function () {
 		initMemory.initMemory();
 	}
 	
-
-	//const room = Game.rooms['W14N72']; //[Memory.startRoom];
-	//utils.cL(`${room} Memory - ${Memory.startRoom}    `);
 	const mainSpawn = Game.spawns['Spawn1'];
 	const room = mainSpawn.room;
-	//utils.cL(`harvsTotal: ${room.memory.maxHarvsTotal}`);
-	//log.roomEnergy(room, 5);
 	
 	memoryController.cleanUp(mainSpawn);
 	//memoryController.cycle(room);
@@ -51,7 +46,6 @@ module.exports.loop = function () {
 			creep.say(' I got no memory, ah shit!');
 			creep.memory.role = 'harvester';
 		}
-		//utils.cL(`room: ${creep.room.name}   or   ${JSON.stringify(Memory.rooms[creep.room.name])}`);
 		if ( creep.memory.role == 'harvester' ) {
 				harv.run( creep );
 		}
@@ -64,9 +58,6 @@ module.exports.loop = function () {
 		else if ( creep.memory.role == 'builder' ) {
 			builder.run( creep );
 		}
-		/*else if (creep.memory.role == "healer") {
-		 healer(creep);
-		 }*/
 	}
 
 	// pop loop
@@ -78,10 +69,5 @@ module.exports.loop = function () {
 		roomController.buildExtension(room);
 	}*/
 	
-	//utils.cL(`this many construction sites: ${room.countConstructionSites()}`);
-	
-	/*if (Game.time % 5 === 0) {
-		utils.cL( `----- TICK:END T:(${Game.time}) %: ${ Memory.isSim ? `Sim!` : utils.getCPUPercent() }--------------` );
-	}*/
 };
 

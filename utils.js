@@ -10,11 +10,7 @@ var _ = require( 'lodash' );
 var roles = require( 'roles' );
 
 
-global.clearAllMemory = function() {
-	/*let memoryKeys = Object.keys(Memory);
-	for (let i = memoryKeys.length; --i>=0;) {
-		delete Memory[memoryKeys[i]];
-	}*/
+global.clearAllMemory = function() { // helper function to type in console.
 	for (let key in Memory) {
 		delete Memory[key];
 	}
@@ -66,6 +62,15 @@ const Utils = {
 		return cL( out );
 	},
 	jS: ( out ) => JSON.stringify( out ),
+	
+	cLC (content, color = greenLog) {
+		if (color === 'blue') {
+			colorLog(content, blueLog);
+		} else {
+			colorLog( content, color );
+		}
+		return 0;
+	},
 	
 	isAreaAllPlains: ( ...cords ) => { //topY, leftX, bottomY, rightX
 		const spawn = Game.getObjectById( Memory.initialSpawnId );
@@ -136,15 +141,6 @@ const Utils = {
 				}
 			}
 		}
-	},
-	
-	cLC (content, color = greenLog) {
-		if (color === 'blue') {
-			colorLog(content, blueLog);
-		} else {
-			colorLog( content, color );
-		}
-		return 0;
 	},
 	
 	findEnemies: ( obj ) => {

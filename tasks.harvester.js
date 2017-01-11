@@ -35,21 +35,10 @@ var harv = {
 				}
 			}
 			
-			
-			// level 1 = standard delivery
-			// level 2 = drop energy in place, spawn miners to come and gather
-			
-			//utils.cL(` ${creep.pos.findClosestByRange( FIND_SOURCES_ACTIVE )} `);
-			//utils.cL(`assigned source: ${_.keys(creep.memory.assignedSource)}`);
-			//let sourceId = Object.values(creep.memory.assignedSource)[0];
-			//utils.cL(utils.jS((creep.memory.assignedSource)));
-			
 			// ToDo: This needs to reference an Id in memory...
 			//utils.findNearestNotFullStorage(creep);
 			
 			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
-			
-			//utils.cL(`mainspawn:  ${mainSpawn}`);
 			
 			if (!sourceTarget) {
 				creep.say(`Need to assignsource`);
@@ -92,7 +81,6 @@ var harv = {
 				creep.memory.assignedSourceId = sourceArr[i].id;
 				break;
 			} else {
-				creep.say(`TOo many, bye cruel world!`);
 				creep.suicide();
 			}
 		}
