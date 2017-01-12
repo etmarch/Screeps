@@ -10,9 +10,9 @@ var _ = require( 'lodash' );
 var roles = require( 'roles' );
 
 
-global.clearAllMemory = function() { // helper function to type in console.
-	for (let key in Memory) {
-		delete Memory[key];
+global.clearAllMemory = function () { // helper function to type in console.
+	for ( let key in Memory ) {
+		delete Memory[ key ];
 	}
 };
 
@@ -31,8 +31,8 @@ const partsCosts = {
 
 const greenLog = `rgba(39, 174, 96,1.0)`, blueLog = `rgba(52, 152, 219,1.0)`;
 
-const colorLog = (content, color) => {
-	console.log(`<span style="color:${color};">${content}</span>`);
+const colorLog = ( content, color ) => {
+	console.log( `<span style="color:${color};">${content}</span>` );
 };
 
 // Cache the spawn to be used
@@ -63,9 +63,9 @@ const Utils = {
 	},
 	jS: ( out ) => JSON.stringify( out ),
 	
-	cLC (content, color = greenLog) {
-		if (color === 'blue') {
-			colorLog(content, blueLog);
+	cLC ( content, color = greenLog ) {
+		if ( color === 'blue' ) {
+			colorLog( content, blueLog );
 		} else {
 			colorLog( content, color );
 		}
@@ -93,9 +93,6 @@ const Utils = {
 		//cL(`${plainArray.length} - ${plainArray}`);
 	},
 	
-	countConstructionInRoom: function ( room ) {
-		
-	},
 	
 	getTilesCloseToSpawn: function ( spawn, sizeOffset ) {
 		const sourceY = spawn.pos.y, sourceX = spawn.pos.x;
@@ -104,43 +101,75 @@ const Utils = {
 		//Utils.cL(Utils.jS(plainArray));
 		
 		// sort by distance to spawn (so it starts from inside and goes out
-		let testSort = _.map(plainArray, function(value, index, collection){
-			const distance = spawn.pos.getRangeTo(plainArray[index].x, plainArray[index].y);
-			plainArray[index].distance = distance;
-			return plainArray[index];
-		});
+		let testSort = _.map( plainArray, function ( value, index, collection ) {
+			const distance = spawn.pos.getRangeTo( plainArray[ index ].x, plainArray[ index ].y );
+			plainArray[ index ].distance = distance;
+			return plainArray[ index ];
+		} );
 		
-		let sorted = _.sortByOrder(plainArray, ['distance'], ['asc']); // Sorting correctly!
-		let sortedList = _.rest(sorted); // removed location of spawn itself
+		let sorted = _.sortByOrder( plainArray, [ 'distance' ], [ 'asc' ] ); // Sorting correctly!
+		let sortedList = _.rest( sorted ); // removed location of spawn itself
 		//Utils.cL(`test sort - ${(testSort) }`);
 		//Utils.cL(Utils.jS(sortedList));
 	},
 	
-	findNearestNotFullStorage (creep) {
+	findNearestNotFullStorage ( creep ) {
 		// ToDo: Should be called in room controller, not every creep**
-		
-		
 		const room = creep.room;
 		// get list of containers that have storage available
-		let containerList = room.find(FIND_STRUCTURES, {
-			filter: (s) => s.structureType == 'container'// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
-		});
+		let containerList = room.find( FIND_STRUCTURES, {
+			filter: ( s ) => s.structureType == 'container'// && (s.store[RESOURCE_ENERGY] < s.storeCapacity ) )
+		} );
 		//cL((containerList));
 		//cL(JSON.stringify(Game.getObjectById('586a36bedb1e726976708c2a')));
 	},
 	
 	// Input creep,
-	pickupDroppedEnergy (creep) {
-		const droppedEnergy = creep.room.find(FIND_DROPPED_ENERGY);
+	pickupDroppedEnergy ( creep ) {
+		const droppedEnergy = creep.room.find( FIND_DROPPED_ENERGY );
 		//utils.cL(droppedEnergy);
-		if (_.size(droppedEnergy) >= 1) {
-			const target = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
-			if(target) {
-				if(creep.pickup(target) == ERR_NOT_IN_RANGE) {
-					creep.moveTo(target);
+		if ( _.size( droppedEnergy ) >= 1 ) {
+			const target = creep.pos.findClosestByRange( FIND_DROPPED_ENERGY );
+			if ( target ) {
+				if ( creep.pickup( target ) == ERR_NOT_IN_RANGE ) {
+					creep.moveTo( target );
 				}
 			}
 		}
+	},
+	// plug in source, return pos to make construction site on
+	getSourceInitialContainerCoords: ( source, spawn ) => {
+		if (Memory.firstConstruction !== true) { // just a test for the main decision tree
+		let sourcePos = source.pos;
+		let spawnPos = spawn.pos;
+		const room = spawn.room;
+		
+		// check terrain via coordinates for available place for container
+		
+		// if available, return the coords for the container
+		let pathArray = room.findPath( sourcePos, spawnPos, { ignoreCreeps: true } );
+		let pos = {
+			x: pathArray[ 1 ].x,
+			y: pathArray[ 1 ].y
+		};
+		
+		// Check to make sure its clear and can build
+		let listAtPos = room.lookAt(pos.x, pos.y);
+		
+		// if its okay,
+		let result = room.createConstructionSite(pos.x, pos.y, STRUCTURE_CONTAINER);
+		if (result != 0) { //Not good, error - print out error
+		 cL(`error: ${error}`);
+		} else {
+			//ToDo: Update the memory of the sources (for container field)
+			//room.memory.safeSourceIds[''].container = 'construction';
+			cL(`creating container was success! ${result}`);
+		}
+		//cL( JSON.stringify( listAtPos ) );
+			Memory.firstConstruction = true;
+	}
+	
+	
 	},
 	
 	findEnemies: ( obj ) => {
@@ -169,13 +198,12 @@ const Utils = {
 	},
 	
 	// Return boolean, if it is in range
-	sourceKeepersInRange(spawn, source) {
+	sourceKeepersInRange( spawn, source ) {
 		let keeperLair = spawn.room.find( FIND_HOSTILE_STRUCTURES );
-	  cL(`keeper stuff: ${keeperLair[0]}`);
-		let inRange = source.pos.inRangeTo(keeperLair[0], 5);
+		cL( `keeper stuff: ${keeperLair[ 0 ]}` );
+		let inRange = source.pos.inRangeTo( keeperLair[ 0 ], 5 );
 		return inRange;
 	},
-	
 	
 	
 	// ToDo: Suicide checker and function
@@ -196,7 +224,6 @@ const Utils = {
 	getCPUPercent: () => {
 		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
 	},
-	
 	
 	
 };

@@ -52,9 +52,26 @@ const roomController = {
 			} else {
 				utils.cL(` Error!! - ${result}`);
 			}
+		}
+	},
+	
+	roomLevelCheck: function ( room ) {
+		// Get current memory level
+		// get number of harvs
+		// get number of construction sites
+		// get number of extensions and containers
+		// get the controller level
+		const contLevel = room.controller.level;
+		//utils.cL(contLevel);
+		// if contLevel is 1, means cant build anything anyways starting
+		if (contLevel === 1) {
+			utils.cL(contLevel);
+			room.memory.level = 1;
+		} else if (contLevel === 2) { // controller upgraded, can build stuff now
+			room.memory.level = 2;
+		} else { // controller level is higher
 			
 		}
-		
 	}
 	
 };

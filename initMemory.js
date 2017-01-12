@@ -56,8 +56,8 @@ module.exports.initMemory = function () {
 			let distanceToSpawn = source.pos.getRangeTo( firstSpawn );
 			utils.cL( `distance - ${distanceToSpawn}` );
 			
-			//todo: we need to get number of open spaces around source, to know how many to assign to harvest it
-			let harvSpaces = utils.countPlainsAroundSource( source );
+			let harvSpaces = utils.countPlainsAroundSource( source ); // get amount of spaces around source
+			// need to get the location of where to build the container
 			if (harvSpaces > 1) {
 				let sourceObj = {
 					distance: distanceToSpawn,
@@ -79,7 +79,11 @@ module.exports.initMemory = function () {
 			let sourceData = {
 				id: value.id,
 				harvs: [],
-				maxHarvs: value.maxHarvs
+				maxHarvs: value.maxHarvs,
+				container: {
+					isBuilt: false,
+					id: undefined
+				}
 			};
 			maxRoomHarvs += value.maxHarvs;
 			roomMem.safeSourceIds[ `source${index}` ] = sourceData;
@@ -100,3 +104,12 @@ module.exports.initMemory = function () {
 	
 	//utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
 };
+
+
+// For setting up heirarchy of memory....
+/*
+* room.memory
+*   - sources: array of objects
+*
+*
+* */

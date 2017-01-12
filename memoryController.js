@@ -23,8 +23,6 @@ const memoryController = {
 						}
 					} // Otherwise, not harvester
 					console.log( "DEL: " + name );
-					//Memory[ Memory.creeps[ name ].role + 'Current' ]--;
-					//Memory.deathsTotal++;
 					delete Memory.creeps[ name ];
 				}
 			}

@@ -30,10 +30,14 @@ module.exports.loop = function () {
 	const room = mainSpawn.room;
 	
 	memoryController.cleanUp(mainSpawn);
-	
+	//utils.cL(`room level: ${room.getRoomlevel()}`);
 	//ToDo: check if need to update the room level yet based on params
-	
+	roomController.roomLevelCheck(room);
 
+	let memId = room.memory.safeSourceIds['source1'].id;
+	let source = Game.getObjectById(memId);
+	//utils.cL(`source, mem Id:   ${memId}    ${source}`);
+	utils.getSourceInitialContainerCoords( source, mainSpawn);
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
 	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
 	//utils.countConstructionInRoom(room);

@@ -48,13 +48,14 @@ const Pop = {
 		}
 	},
 	
-	spawn: function ( spawn, role ) {
+	spawn: function ( spawn, role, level = 0 ) {
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
 			
 			let creepName = `${role}-${Game.time}`;//`${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {
 				role: role,
-				roomName: spawn.room.name
+				roomName: spawn.room.name,
+				level: level
 			};
 			
 			if ( role === 'harvester' ) {

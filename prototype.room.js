@@ -22,4 +22,8 @@ module.exports = function () {
 		//Utils.cL(`allSites: ${allSites} --- ${Utils.jS(allSites)}`);
 		return _.size( allSites );
 	};
+	Room.prototype.getRoomlevel = function () {
+		const currentLevel = this.memory.level;
+		return currentLevel;
+	}
 };
