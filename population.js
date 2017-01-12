@@ -13,7 +13,10 @@ const Pop = {
 	// will be called each tick, checks to make sure suitable for spawning
 	mainPopLoop: function ( room ) {
 		// population create phase
-		let mainSpawn = Game.getObjectById( room.memory.spawnId );
+		let possSpawn = Game.getObjectById( room.memory.spawnId );
+		let mainSpawn = (possSpawn ? possSpawn : Game.spawns['Spawn1']); //error being generated here
+		
+		
 		if ( !mainSpawn.spawning ) {
 			let harvCount = utils.countRole( 'harvester' );
 			let upgraderCount = utils.countRole( 'upgrader' );
@@ -78,6 +81,7 @@ const Pop = {
 	},
 	
 	//ToDO: convert to ID based lookup now
+	// Needs to change room -> source memory, and creep memory
 	assignHarvToSource: function ( name, spawn ) {
 		// Get number of harvs in closest source
 		let room = spawn.room;
@@ -89,18 +93,32 @@ const Pop = {
 		
 		let nameToGo = {};
 		
-		for ( let i = 0; i < _.size( room.memory.safeSourceIds ); i++ ) {
+		// ToDo: declaritive loop, iterate through each source
+		_.forEach(room.memory.sources, function ( value, index, collection ) {
+			let harvCount = _.size(value.harvs); // get count of harvs on this source
+			
+			if ( harvCount < value.maxHarvs ) {
+				//utils.cL( `Assigning Harv ti souurce!` );
+				nameToGo[ `${value.id}` ] = value.id;
+				room.memory.sources[ `${value.id}` ].harvs.push( name );
+				//return;
+			}
+			
+		});
+			
+		/*
+		for ( let i = 0; i < _.size( room.memory.sources ); i++ ) {
 			let nameInd = `source${i}`;
 			//utils.cL( ` source Id test:  ${utils.jS( room.memory.safeSourceIds[ nameInd ] )}` );
-			let harvCount = _.size( room.memory.safeSourceIds[ nameInd ].harvs );
+			let harvCount = _.size( room.memory.sources[ nameInd ].harvs );
 			//utils.cL( `source count: ${harvCount}` );
-			if ( harvCount < room.memory.safeSourceIds[ nameInd ].maxHarvs ) {
+			if ( harvCount < room.memory.sources[ nameInd ].maxHarvs ) {
 				//utils.cL( `Assigning Harv ti souurce!` );
-				nameToGo[ nameInd ] = room.memory.safeSourceIds[ nameInd ].id;
-				room.memory.safeSourceIds[ nameInd ].harvs.push( name );
+				nameToGo[ nameInd ] = room.memory.sources[ nameInd ].id;
+				room.memory.sources[ nameInd ].harvs.push( name );
 				break;
 			}
-		}
+		}*/
 		//utils.cL(`name: ---  ${utils.jS(nameToGo)}`);
 		return nameToGo;
 	},

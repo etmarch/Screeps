@@ -65,7 +65,7 @@ var harv = {
 	
 	assignToSource(creep) {
 		let roomMem = creep.room.memory;
-		let sourceArr = _.toArray(roomMem.safeSourceIds);
+		let sourceArr = _.toArray(roomMem.sources);
 		//utils.cL(`source array: ${sourceArr}`);
 		for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
 			//(utils.cL(JSON.stringify(sourceArr[i])));
@@ -77,7 +77,7 @@ var harv = {
 				// ToDO: eventually make this modular population.assignHarvToSource(creep.name, )
 				// ToDo: roomMem.safeSourceIds[ nameInd ].harvs.push( creep.name );
 				
-				roomMem.safeSourceIds[ sourceArr[i].id ].harvs.push( creep.name ); // assign harv to source memory in room
+				roomMem.sources[ sourceArr[i].id ].harvs.push( creep.name ); // assign harv to source memory in room
 				creep.memory.assignedSourceId = sourceArr[i].id;
 				break;
 			} else {

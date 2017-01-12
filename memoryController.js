@@ -19,7 +19,7 @@ const memoryController = {
 						let sourceName = _.keys(Memory.creeps[ name ].assignedSource)[0];
 						if (sourceName !== undefined) {
 							//utils.cL( sourceName );
-							room.memory.safeSourceIds[ sourceName ].harvs = _.pull( room.memory.safeSourceIds[ sourceName ].harvs, name );
+							room.memory.sources[ sourceName ].harvs = _.pull( room.memory.sources[ sourceName ].harvs, name );
 						}
 					} // Otherwise, not harvester
 					console.log( "DEL: " + name );

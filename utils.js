@@ -138,8 +138,7 @@ const Utils = {
 		}
 	},
 	// plug in source, return pos to make construction site on
-	getSourceInitialContainerCoords: ( source, spawn ) => {
-		if (Memory.firstConstruction !== true) { // just a test for the main decision tree
+	getSourceInitialContainerPos: ( source, spawn ) => {
 		let sourcePos = source.pos;
 		let spawnPos = spawn.pos;
 		const room = spawn.room;
@@ -152,24 +151,21 @@ const Utils = {
 			x: pathArray[ 1 ].x,
 			y: pathArray[ 1 ].y
 		};
-		
+		//cL(`pos: ${pos}`);
+		return pos;
 		// Check to make sure its clear and can build
-		let listAtPos = room.lookAt(pos.x, pos.y);
+		//let listAtPos = room.lookAt(pos.x, pos.y);
 		
 		// if its okay,
-		let result = room.createConstructionSite(pos.x, pos.y, STRUCTURE_CONTAINER);
+	/*	let result = room.createConstructionSite(pos.x, pos.y, STRUCTURE_CONTAINER);
 		if (result != 0) { //Not good, error - print out error
 		 cL(`error: ${error}`);
 		} else {
 			//ToDo: Update the memory of the sources (for container field)
 			//room.memory.safeSourceIds[''].container = 'construction';
 			cL(`creating container was success! ${result}`);
-		}
+		}*/
 		//cL( JSON.stringify( listAtPos ) );
-			Memory.firstConstruction = true;
-	}
-	
-	
 	},
 	
 	findEnemies: ( obj ) => {

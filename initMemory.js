@@ -29,87 +29,79 @@ module.exports.initMemory = function () {
 	
 	
 	for ( var name in Game.spawns ) {
-		var firstSpawn = Game.spawns[ name ];
+		const firstSpawn = Game.spawns[ name ];
+		firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id; // adding room Id to spawn memory
+		firstSpawn.memory.extensionSpots = [];
+		firstSpawn.memory.id = firstSpawn.id;
+		
+		Memory.initialSpawnId = firstSpawn.id;
 		
 		let roomMem = Memory.rooms[ firstSpawn.room.name ];
 		
 		roomMem.spawnId = firstSpawn.id;
-		roomMem.unsafeSourceIds = [];
-		roomMem.safeSourceIds = {};
+		//roomMem.safeSourceIds = {};
 		//utils.cL( utils.jS( firstSpawn ) );
-		
-		firstSpawn.memory.roomId = Game.rooms[ firstSpawn.room.name ].id;
-		
-		
-		Memory.spawns[ name ].extensionSpots = [];
-		Memory.spawns[ name ].id = firstSpawn.id;
-		
-		Memory.initialSpawnId = Game.spawns[ name ].id;
+		roomMem.sources = {};
 		
 		let unfilteredSourceIds = firstSpawn.room.find( FIND_SOURCES_ACTIVE );
 		
 		let safeSourceIdList = [];
 		_.forEach( unfilteredSourceIds, function ( source ) {
-			//utils.cL(source.pos);
-			
-			// get distance of source to spawn
-			let distanceToSpawn = source.pos.getRangeTo( firstSpawn );
-			utils.cL( `distance - ${distanceToSpawn}` );
-			
-			let harvSpaces = utils.countPlainsAroundSource( source ); // get amount of spaces around source
-			// need to get the location of where to build the container
-			if (harvSpaces > 1) {
-				let sourceObj = {
-					distance: distanceToSpawn,
-					id: source.id,
-					maxHarvs: harvSpaces
-				};
-				safeSourceIdList.push( sourceObj );
-			}
-			//roomMem.safeSourceIds.push(source.id);
-		} );
-		utils.cL( `safe sources - ${JSON.stringify( safeSourceIdList )}` );
-		let sortedIds = _.sortBy( safeSourceIdList, 'distance' );
-		//utils.cL(`sorted - ${JSON.stringify(sortedIds)}`);
+					let distanceToSpawn = source.pos.getRangeTo( firstSpawn ); // get distance of source to spawn
+					let harvSpaces = utils.countPlainsAroundSource( source ); // get amount of spaces around source
+					let containerPos = utils.getSourceInitialContainerPos( source, firstSpawn ); // get coords for container
+					let sourceId = `${source.id}`;
+					utils.cL( `sourceId: ${harvSpaces}` );
+					if ( harvSpaces > 1 ) {
+						let sourceObj = {
+							distance: distanceToSpawn,
+							id: source.id,
+							maxHarvs: harvSpaces,
+							containerPos: containerPos,
+							containerId: null
+						};
+						safeSourceIdList.push( sourceObj );
+						//safeSourceIdList.push({[sourceId]: sourceObj});
+					}
+				}
+		);
+		
+		//utils.cL( `safe sources - ${JSON.stringify( safeSourceIdList )}` );
+		let sortedIds = _.sortBy( safeSourceIdList, 'distance' ); // sort by distance
 		
 		let maxRoomHarvs = 0;
 		
 		_.forEach( sortedIds, function ( value, index, collection ) {
-			//utils.cL(`val: ${utils.jS(value)} --- index:  ${index}`);
+			utils.cL( `val: ${utils.jS( value )} --- index:  ${index}` );
 			let sourceData = {
 				id: value.id,
 				harvs: [],
+				distance: value.distance,
 				maxHarvs: value.maxHarvs,
 				container: {
 					isBuilt: false,
-					id: undefined
+					id: null,
+					pos: value.containerPos
 				}
 			};
 			maxRoomHarvs += value.maxHarvs;
-			roomMem.safeSourceIds[ `source${index}` ] = sourceData;
+			roomMem.sources[ `${value.id}` ] = sourceData;
 		} );
-		roomMem.numActiveSources = _.size( unfilteredSourceIds );
-		roomMem.numActiveSafeSources = _.size( safeSourceIdList );
-		roomMem.spawnPos = {
-			x: firstSpawn.pos.x,
-			y: firstSpawn.pos.y
-		};
-		//utils.cL(maxRoomHarvs);
-		roomMem.maxHarvsTotal = maxRoomHarvs;
 		
+		roomMem.maxHarvsTotal = maxRoomHarvs;
+		roomMem.initialContainerSitesPlaced = false; // flag for initial containers
+		roomMem.initialExtensionsPlaced = false; // flag for initial extensions
 	}
 	// Make sure to set the init to true for only once
 	Memory.init = true;
-	//}
-	
-	//utils.cL( `Init complete! - ${JSON.stringify( Memory )}` );
 };
 
 
 // For setting up heirarchy of memory....
 /*
-* room.memory
-*   - sources: array of objects
-*
-*
-* */
+ * room.memory
+ *   - sources: object with each source as property
+ *      - container
+ *
+ *
+ * */

@@ -65,10 +65,45 @@ const roomController = {
 		//utils.cL(contLevel);
 		// if contLevel is 1, means cant build anything anyways starting
 		if (contLevel === 1) {
-			utils.cL(contLevel);
+			//utils.cL(contLevel);
 			room.memory.level = 1;
 		} else if (contLevel === 2) { // controller upgraded, can build stuff now
 			room.memory.level = 2;
+			
+			
+			
+			
+			//ToDo: place this into the room prototype
+			let constructionCount = room.countConstructionSites();
+			if (constructionCount === 0) {
+				
+				if (!room.memory.initialExtensionsPlaced) {
+					room.placeInitialExtensionSites();
+				}
+				
+				if (room.memory.initialContainerSitesPlaced === true) { //check flag to see if done already
+					return;
+				}
+				
+				//ToDo Loop through each source and put construction site on the container positions
+				let sourcesArray = room.memory.sources;
+				//utils.cL(`sources array: ${JSON.stringify(sourcesArray)}`);
+				_.forEach(sourcesArray, function ( value, index, collection ) {
+					let conSite = value.container.pos; // x and y coords
+					//utils.cL(`consite: ${conSite}`);
+					const result = room.createConstructionSite(conSite.x, conSite.y, STRUCTURE_CONTAINER);
+					if (result === 0) {
+						utils.cL(`Con site is working`);
+						room.memory.initialContainerSitesPlaced = true;
+					} else if (result === -7) {
+						utils.cL(`something already here!`);
+						room.memory.initialContainerSitesPlaced = true;
+						return;
+					}
+				});
+			} else { // already construction sites
+				
+			}
 		} else { // controller level is higher
 			
 		}

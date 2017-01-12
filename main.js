@@ -33,11 +33,14 @@ module.exports.loop = function () {
 	//utils.cL(`room level: ${room.getRoomlevel()}`);
 	//ToDo: check if need to update the room level yet based on params
 	roomController.roomLevelCheck(room);
-
-	let memId = room.memory.safeSourceIds['source1'].id;
-	let source = Game.getObjectById(memId);
+	
+	
+	//utils.cL(`memory debugging: ${JSON.stringify(room.memory.sourceArray)}`);
+	//utils.cL(`memory more debugging: ${Object.keys(room.memory.sourceArray[0])}`);
+//	let memId = room.memory.safeSourceIds['source1'].id;
+	//let source = Game.getObjectById(memId);
 	//utils.cL(`source, mem Id:   ${memId}    ${source}`);
-	utils.getSourceInitialContainerCoords( source, mainSpawn);
+	//utils.getSourceInitialContainerCoords( source, mainSpawn);
 	//roomController.getEmptyTilesSpawn(mainSpawn.id);
 	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
 	//utils.countConstructionInRoom(room);
@@ -45,8 +48,8 @@ module.exports.loop = function () {
 	//utils.cL(utils.countPlainsAroundSource(firstSource));
 	
 	let constructionCount = room.countConstructionSites();
-	for ( var i in Game.creeps ) {
-		var creep = Game.creeps[ i ];
+	for ( let i in Game.creeps ) {
+		let creep = Game.creeps[ i ];
 		//ToDo: Check if creep actually has memory, if not, set memory.
 		//ToDo for now, auto assign to harvester
 		if (_.isEmpty(creep.memory)) {
@@ -76,6 +79,13 @@ module.exports.loop = function () {
 		pop.mainPopLoop( room );
 		log.roomEnergy( room, 20 );
 		log.roleCount( room, 20);
+		
+		// ToDo: count enemy creeps in room, if any, activate the safe mode
+		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
+			if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
+				room.controller.activateSafeMode();
+			}
+		}
 	}
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
