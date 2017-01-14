@@ -47,6 +47,8 @@ const Pop = {
 				// ToDo: check amount of storage avail (containers, extensions, etc..)
 				if ( roomLevel >= 2 && builderCount < 3 ) {
 					this.spawn( mainSpawn, 'builder' );
+				} else if (upgraderCount < 2) {
+					this.spawn( mainSpawn, 'upgrader' );
 				}
 			}
 		}
