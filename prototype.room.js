@@ -47,7 +47,7 @@ module.exports = function () {
 		// making 5 extensions (first level)
 		for ( let i = -2; i < 3; i++ ) { // start 2 to the left (-2)
 			let newX = spawnX + i;
-			utils.cL( newX );
+			utils.cL( `new X axis: ${newX}` );
 			const result = this.createConstructionSite( newX, spawnY, STRUCTURE_EXTENSION );
 			if ( result === 0 ) {
 				utils.cL( `Con site is working` );

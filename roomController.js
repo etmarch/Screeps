@@ -78,7 +78,7 @@ const roomController = {
 			if (constructionCount === 0) {
 				
 				if (!room.memory.initialExtensionsPlaced) {
-					room.placeInitialExtensionSites();
+					//room.placeInitialExtensionSites();
 				}
 				
 				if (room.memory.initialContainerSitesPlaced === true) { //check flag to see if done already

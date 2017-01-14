@@ -2,6 +2,8 @@
  * Created by evanmarchand on 1/11/17.
  */
 
+let _ = require('lodash');
+let utils = require('utils');
 
 module.exports = function () {
 	// Repeatable action for screeps, either do the action or move to it.
@@ -12,6 +14,11 @@ module.exports = function () {
 		if ( creep[ action ]( Game.getObjectById( objectId ), args ) == ERR_NOT_IN_RANGE ) {
 			creep.moveTo( Game.getObjectById( objectId ) );
 		}
+	};
+	
+	Creep.prototype.findLargestDroppedEnergy = function () {
+		let biggestResourceDropped = _.max( this.room.find( FIND_DROPPED_RESOURCES ), 'amount' );
+		utils.cL(`largest dropped resource - ${biggestResourceDropped}`);
 	}
 	
 };
