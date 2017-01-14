@@ -21,8 +21,8 @@ const memoryController = {
 						if ( room.memory ) {
 							//utils.cL(JSON.stringify(room.memory));
 							//utils.cL(`room info - ${utils.jS(room.memory)}`);
-							let sourceId = _.keys( Memory.creeps[ name ].assignedSource )[ 0 ];
-							utils.cL( sourceId );
+							let sourceId = ( Memory.creeps[ name ].assignedSource );
+							//utils.cL( sourceId );
 							if ( sourceId !== undefined ) {
 								//utils.cL( sourceName );
 								//utils.cL( `Before:  ${utils.jS( room.memory.sources[ sourceId ].harvs )}`);

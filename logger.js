@@ -20,7 +20,7 @@ const log = {
 			let harvCount = utils.countRole( 'harvester' );
 			let upgraderCount = utils.countRole( 'upgrader' );
 			let builderCount = utils.countRole( 'builder' );
-			utils.cLC(`Harvs: ${harvCount}, Ups: ${upgraderCount}, Builds: ${ builderCount }`);
+			utils.cLC(`Harvs: ${harvCount}, Ups: ${upgraderCount}, Builds: ${ builderCount }, Construction: ${_.size(Game.constructionSites)}`);
 		}
 	}
 };

@@ -35,7 +35,6 @@ module.exports.loop = function () {
 	const mainSpawn = Game.spawns['Spawn1'];
 	const room = mainSpawn.room;
 	
-	//utils.cL(`All construction sites: ${JSON.stringify(Game.constructionSites)}`);
 	
 	memoryController.cleanUp(mainSpawn);
 	//utils.cL(`room level: ${room.getRoomlevel()}`);
