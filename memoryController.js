@@ -26,7 +26,7 @@ const memoryController = {
 							if ( sourceId !== undefined ) {
 								//utils.cL( sourceName );
 								//utils.cL( `Before:  ${utils.jS( room.memory.sources[ sourceId ].harvs )}`);
-								//room.memory.sources[ sourceId ].harvs = _.pull( room.memory.sources[ sourceId ].harvs, name );
+								room.memory.sources[ sourceId ].harvs = _.pull( room.memory.sources[ sourceId ].harvs, name );
 								//utils.cL( `After:  ${utils.jS( room.memory.sources[ sourceId ].harvs )}`);
 							}
 							
