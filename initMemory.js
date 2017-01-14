@@ -42,6 +42,7 @@ module.exports.initMemory = function () {
 		//roomMem.safeSourceIds = {};
 		//utils.cL( utils.jS( firstSpawn ) );
 		roomMem.sources = {};
+		roomMem.maxHarvsTotal = 0;
 		
 		let unfilteredSourceIds = firstSpawn.room.find( FIND_SOURCES_ACTIVE );
 		

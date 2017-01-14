@@ -11,7 +11,7 @@ var pop = require( 'population' );
 var memoryController = require('memoryController');
 var log = require('logger');
 require('prototype.room')();
-
+require('prototype.source');
 
 if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
 	utils.cL(`Memory not updated, restarting!`);
@@ -21,6 +21,12 @@ if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
 
 module.exports.loop = function () {
 	
+	// Hopefully fix the spawning start issue
+	if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
+		utils.cL(`Memory not updated, restarting!`);
+		Memory.init = false;
+	}
+	
 	// Init Memory - Removing all Memory stuff
 	if (!Memory.init) {
 		initMemory.initMemory();
@@ -28,6 +34,8 @@ module.exports.loop = function () {
 	
 	const mainSpawn = Game.spawns['Spawn1'];
 	const room = mainSpawn.room;
+	
+	//utils.cL(`All construction sites: ${JSON.stringify(Game.constructionSites)}`);
 	
 	memoryController.cleanUp(mainSpawn);
 	//utils.cL(`room level: ${room.getRoomlevel()}`);

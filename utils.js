@@ -39,12 +39,23 @@ const colorLog = ( content, color ) => {
 const spawn = Game.getObjectById( Memory.initialSpawnId );
 
 const Utils = {
+	
+	/**
+	 * Gets a count of creeps with the passed in role.
+	 * @param creepRole - role to filter creep memory on
+	 * @returns number of creeps with that role
+	 */
+	
 	countRole: ( creepRole ) => {
 		var total = _.filter( Game.creeps, {
 			memory: { role: creepRole }
 		} );
 		return _.size( total );
 	},
+	
+	
+	
+	
 	countBodyCost: ( roleName ) => {
 		const parts = roles()[ roleName ][ 'parts' ];
 		//const partNames = _.keysIn( partsCosts );
@@ -142,14 +153,12 @@ const Utils = {
 		let sourcePos = source.pos;
 		let spawnPos = spawn.pos;
 		const room = spawn.room;
-		
 		// check terrain via coordinates for available place for container
-		
 		// if available, return the coords for the container
 		let pathArray = room.findPath( sourcePos, spawnPos, { ignoreCreeps: true } );
 		let pos = {
-			x: pathArray[ 1 ].x,
-			y: pathArray[ 1 ].y
+			x: pathArray[ 0 ].x,
+			y: pathArray[ 0 ].y
 		};
 		//cL(`pos: ${pos}`);
 		return pos;

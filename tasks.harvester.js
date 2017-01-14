@@ -18,7 +18,6 @@ var harv = {
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
 				creep.say(`No source assigned!`);
 				
-				
 				if (creep.carry['RESOURCE_ENERGY'] > 0) {
 					if(creep.transfer(mainSpawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 						creep.moveTo(mainSpawn);
@@ -38,13 +37,14 @@ var harv = {
 			// ToDo: This needs to reference an Id in memory...
 			//utils.findNearestNotFullStorage(creep);
 			
-			let sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
-			
+			let sourceTarget = Game.getObjectById(creep.memory.assignedSource);
+			//utils.cL(`assigned Source: ${JSON.stringify(creep.memory.assignedSource)}, sourceTarget: ${sourceTarget}`);
 			if (!sourceTarget) {
 				creep.say(`Need to assignsource`);
 				this.assignToSource(creep);
-				sourceTarget = Game.getObjectById(_.values(creep.memory.assignedSource));
-				utils.cL(`new source: ${sourceTarget}`);
+				//utils.cL(`${creep} - inner assigned source: ${creep.memory.assignedSource}`);
+				sourceTarget = Game.getObjectById(creep.memory.assignedSource);
+				//utils.cL(`new source: ${sourceTarget.memory}`);
 			}
 			//utils.cL(utils.jS(sourceTarget));
 			if(creep.carry.energy < creep.carryCapacity) {
@@ -64,9 +64,12 @@ var harv = {
 		},
 	
 	assignToSource(creep) {
+			//ToDo: THis needs to happen higher level
 		let roomMem = creep.room.memory;
 		let sourceArr = _.toArray(roomMem.sources);
+		utils.cL(`in AssigntoSource - sourceArr: ${JSON.stringify(sourceArr)}`);
 		//utils.cL(`source array: ${sourceArr}`);
+		// ToDo: THis also needs to be done declatievly not iteratively.... use forEach if possible
 		for (let i = 0; i < _.size(sourceArr); i++ ) { //loop through all sources, stop if find not full one
 			//(utils.cL(JSON.stringify(sourceArr[i])));
 			let maxHarvs = sourceArr[i].maxHarvs;
@@ -78,9 +81,10 @@ var harv = {
 				// ToDo: roomMem.safeSourceIds[ nameInd ].harvs.push( creep.name );
 				
 				roomMem.sources[ sourceArr[i].id ].harvs.push( creep.name ); // assign harv to source memory in room
-				creep.memory.assignedSourceId = sourceArr[i].id;
+				creep.memory.assignedSource = sourceArr[i].id;
 				break;
 			} else {
+				utils.cL(`${creep} couldnt assign to source and is dying!`);
 				creep.suicide();
 			}
 		}

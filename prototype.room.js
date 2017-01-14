@@ -28,6 +28,8 @@ module.exports = function () {
 	};
 	Room.prototype.placeInitialExtensionSites = function () {
 		let initCheck = this.memory.initialExtensionsPlaced; // check to make sure its not initialized yet
+		
+		//ToDo: count current amount of extensions (and construction sites with extensions)
 		if (initCheck === true) {
 			utils.cL(`init extensions already placed!`);
 			return;

@@ -131,6 +131,13 @@ module.exports = roomController;
 	
 	 */
 	
+	/*
+	* how to find path into another room
+	 var route = Game.map.findRoute(this.room.room, creep.memory.goToRoom)
+	 // another way to get terrain
+	 Game.map.getTerrainAt()
+	 */
+	
 	
 	/*utils.cL( `Totals - Active Sources: ${activeSourceArr.length}, Spawns: ${spawnArr.length}, Hostile Creeps: ${hostCreepsArr.length}, My Creeps: ${myCreepsArr.length}` );
 	utils.cL( `Spawn Energy: ${spawnArr[ 0 ].energy}, Spawning? ${(!spawnArr[ 0 ].spawning ? 'N' : 'Y')}` );*/

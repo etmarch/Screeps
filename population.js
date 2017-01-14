@@ -18,6 +18,7 @@ const Pop = {
 		
 		
 		if ( !mainSpawn.spawning ) {
+			//utils.cL('MainPOp Loop!');
 			let harvCount = utils.countRole( 'harvester' );
 			let upgraderCount = utils.countRole( 'upgrader' );
 			let builderCount = utils.countRole( 'builder' );
@@ -52,6 +53,7 @@ const Pop = {
 	},
 	
 	spawn: function ( spawn, role, level = 0 ) {
+		//utils.cL('spawn function!');
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
 			
 			let creepName = `${role}-${Game.time}`;//`${role}-${Memory[ role ] + 1}`;
@@ -83,6 +85,7 @@ const Pop = {
 	//ToDO: convert to ID based lookup now
 	// Needs to change room -> source memory, and creep memory
 	assignHarvToSource: function ( name, spawn ) {
+		utils.cL('assign harv to source function!');
 		// Get number of harvs in closest source
 		let room = spawn.room;
 		//utils.cL(room);
@@ -91,23 +94,27 @@ const Pop = {
 		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
-		let nameToGo = {};
-		
+		// This should store the source ID
+		let sourceId = '';
 		// ToDo: declaritive loop, iterate through each source
 		_.forEach(room.memory.sources, function ( value, index, collection ) {
 			let harvCount = _.size(value.harvs); // get count of harvs on this source
 			
 			if ( harvCount < value.maxHarvs ) {
 				//utils.cL( `Assigning Harv ti souurce!` );
-				nameToGo[ `${value.id}` ] = value.id;
+				sourceId = value.id;
 				room.memory.sources[ `${value.id}` ].harvs.push( name );
-				//return;
+				return false;
+				//break;
 			}
 			
 		});
 			
-		/*
-		for ( let i = 0; i < _.size( room.memory.sources ); i++ ) {
+		//for (let key of room.memory.sources)
+		
+		
+		/*for ( let i = 0; i < _.size( room.memory.sources ); i++ ) {
+			utils.cL(`keys of sources: ${Object.keys(room.memory.sources)}`);
 			let nameInd = `source${i}`;
 			//utils.cL( ` source Id test:  ${utils.jS( room.memory.safeSourceIds[ nameInd ] )}` );
 			let harvCount = _.size( room.memory.sources[ nameInd ].harvs );
@@ -119,8 +126,7 @@ const Pop = {
 				break;
 			}
 		}*/
-		//utils.cL(`name: ---  ${utils.jS(nameToGo)}`);
-		return nameToGo;
+		return sourceId;
 	},
 	//ToDo: Count through all creeps and return object with key:role val:count
 	getAllCounts: function () {
