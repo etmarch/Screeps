@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af705918-4e66-46a2-9741-07054dc81ae0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/population.js" afterPath="$PROJECT_DIR$/population.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memoryController.js" afterPath="$PROJECT_DIR$/memoryController.js" />
     </list>
     <ignored path="default.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memoryController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="memoryController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memoryController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+            <state relative-caret-position="298">
+              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -143,7 +143,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="population.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="population.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/population.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="553">
@@ -231,11 +231,11 @@
         <option value="$PROJECT_DIR$/prototype.room.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/logger.js" />
-        <option value="$PROJECT_DIR$/memoryController.js" />
         <option value="$PROJECT_DIR$/prototype.source.js" />
         <option value="$PROJECT_DIR$/tasks.upgrader.js" />
         <option value="$PROJECT_DIR$/roles.builder.js" />
         <option value="$PROJECT_DIR$/population.js" />
+        <option value="$PROJECT_DIR$/memoryController.js" />
       </list>
     </option>
   </component>
@@ -422,14 +422,7 @@
       <workItem from="1482252064156" duration="1108000" />
       <workItem from="1482968122570" duration="54056000" />
       <workItem from="1483689765647" duration="1776000" />
-      <workItem from="1484116452642" duration="47490000" />
-    </task>
-    <task id="LOCAL-00387" summary="Init Memory Updates">
-      <created>1483350966562</created>
-      <option name="number" value="00387" />
-      <option name="presentableId" value="LOCAL-00387" />
-      <option name="project" value="LOCAL" />
-      <updated>1483350966562</updated>
+      <workItem from="1484116452642" duration="47621000" />
     </task>
     <task id="LOCAL-00388" summary="Init Memory Updates">
       <created>1483351145730</created>
@@ -767,11 +760,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484403590247</updated>
     </task>
-    <option name="localTasksCounter" value="436" />
+    <task id="LOCAL-00436" summary="fixed one more bug related to removing harvs after death">
+      <created>1484409361911</created>
+      <option name="number" value="00436" />
+      <option name="presentableId" value="LOCAL-00436" />
+      <option name="project" value="LOCAL" />
+      <updated>1484409361911</updated>
+    </task>
+    <option name="localTasksCounter" value="437" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258526000" />
+    <option name="totallyTimeSpent" value="258657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1241,14 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memoryController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prototype.source.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1277,6 +1269,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="553">
           <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memoryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
         </state>
       </provider>
