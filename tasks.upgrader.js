@@ -18,8 +18,8 @@ var upgrader = {
 		// get the constants and memory stuff
 		const mainSpawn = Game.getObjectById( Memory.initialSpawnId );
 		
-		if ( utils.countRole( 'harvester' ) < creep.room.memory.maxHarvsTotal ) { // First, check if enough harvs around
-			//do nothing
+		if ( (utils.countRole( 'harvester' ) < creep.room.memory.maxHarvsTotal) && creep.carry.energy === 0 ) {
+			//TODO: Check if spawn has more energy than 250
 			creep.say('NeedHarvs');
 			return;
 		}

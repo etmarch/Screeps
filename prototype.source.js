@@ -18,6 +18,7 @@ if ( !Source.prototype.memory ) {
 
 
 Source.prototype.cleanHarvMemory = function () {
+	// ToDO: make this function only happen very rarely, to make sure all data is looking proper
 	//utils.cL(`memory: ${JSON.stringify(this.memory)}`);
 	utils.cL(`this ID: ${(this.memory.sources)}   ------ ${utils.jS(this.room.memory.sources)}`);
 	for ( var harvName in this.room.memory.sources[ this.id ].harvs ) {
