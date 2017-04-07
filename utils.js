@@ -96,17 +96,16 @@ const Utils = {
 		cL(pos);
 		// make sure no objects occupying the space
 		let objectsList = pos.look(); // array of objects at space
-		cL(JSON.stringify(objectsList, {indent: true}));
+		//cL(JSON.stringify(objectsList, {indent: true}));
 
 		// filter out constructionSite, structure, source, mineral, resource
-		let listO = ['structure', 'creep'];
 		const filteredArray = _.filter( objectsList, function(singleObject) {
 			return (singleObject.type == "structure" ||
 			 				singleObject.type == "creep" ||
 							singleObject.type == "constructionSite"
 						);
 		} );
-		cL(JSON.stringify(filteredArray, {indent: true}));
+		//cL(JSON.stringify(filteredArray, {indent: true}));
 		//cL(filteredArray);
 		if (filteredArray.length > 0) {
 			return false;
