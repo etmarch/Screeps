@@ -41,7 +41,7 @@ module.exports.loop = function () {
 	//ToDo: check if need to update the room level yet based on params
 	roomController.roomLevelCheck(room);
 
-  utils.cL( utils.isTileClear(mainSpawn.position) );
+  utils.cL( utils.isTileClear(mainSpawn.pos) );
 
 	//utils.cL(`memory debugging: ${JSON.stringify(room.memory.sourceArray)}`);
 	//utils.cL(`memory more debugging: ${Object.keys(room.memory.sourceArray[0])}`);

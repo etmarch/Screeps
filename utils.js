@@ -93,6 +93,7 @@ const Utils = {
 			cL('Tile not clear!');
 			return 'tile not clear';
 		}*/
+		cL(pos);
 		// make sure no objects occupying the space
 		let objectsList = pos.look(); // array of objects at space
 		cL(JSON.stringify(objectsList, {indent: true}));
