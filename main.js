@@ -97,7 +97,7 @@ module.exports.loop = function () {
 				         room.controller.activateSafeMode();
 			     }
 		  }
-// To DO**** Need to adjust this to check for the presence of a tower already
+      // To DO**** Need to adjust this to check for the presence of a tower already
       if (room.controller.level === 3 ) {
       // check if spot is clear
         if (utils.isTileClear(towerPos)) {
