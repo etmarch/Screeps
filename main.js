@@ -88,7 +88,8 @@ module.exports.loop = function () {
 		log.roomEnergy( room, 20 );
 		log.roleCount( room, 20);
 
-    if (Game.time % 10 === 0) {
+
+    if (Game.time % 10 === 0) { // only execute code every 10 ticks
 
 		// ToDo: count enemy creeps in room, if any, activate the safe mode
 		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
@@ -96,6 +97,13 @@ module.exports.loop = function () {
 				room.controller.activateSafeMode();
 			}
 		}
+
+    if (room.controller.level >= 3 ) {
+      let tileCheck = utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) );
+      if (tileCheck === true) {
+        // build the tower there
+      }
+    }
 
   }
 
