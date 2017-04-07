@@ -102,7 +102,7 @@ module.exports.loop = function () {
       filter: { structureType: STRUCTURE_TOWER }
     });
 
-    if (room.controller.level >= 3 && towerList.length > 0) {
+    if (room.controller.level >= 3 && towerList.length < 1) {
       utils.cL('check');
       let tileCheck = utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) );
       if (tileCheck === true) {
