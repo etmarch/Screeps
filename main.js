@@ -81,7 +81,7 @@ module.exports.loop = function () {
 		}
 	}
 
-  let towerPos = room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2);
+  //let towerPos = room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2);
 
 	// pop loop
 	if (Memory.init === true) {
