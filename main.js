@@ -82,6 +82,8 @@ module.exports.loop = function () {
 		}
 	}
 
+  let towerPos = room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2);
+
 	// pop loop
 	if (Memory.init === true) {
 		pop.mainPopLoop( room );
@@ -90,19 +92,19 @@ module.exports.loop = function () {
 
     if (Game.time % 10 === 0) {
 		// ToDo: count enemy creeps in room, if any, activate the safe mode
-		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
-			if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
-				room.controller.activateSafeMode();
-			}
-		}
+		  if (room.find(FIND_HOSTILE_CREEPS) > 0) {
+			     if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
+				         room.controller.activateSafeMode();
+			     }
+		  }
 // To DO**** Need to adjust this to check for the presence of a tower already
-    if (room.controller.level === 3 ) {
+      if (room.controller.level === 3 ) {
       // check if spot is clear
-      if (utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) ) ) {
+        if (utils.isTileClear(towerPos)) {
         // place the construction site
+        }
       }
-    }
-	}
+	  }
 
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
