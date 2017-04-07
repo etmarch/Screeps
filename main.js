@@ -41,6 +41,7 @@ module.exports.loop = function () {
 	//ToDo: check if need to update the room level yet based on params
 	roomController.roomLevelCheck(room);
 
+  //utils.cL( utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) ) );
 
 	//utils.cL(`memory debugging: ${JSON.stringify(room.memory.sourceArray)}`);
 	//utils.cL(`memory more debugging: ${Object.keys(room.memory.sourceArray[0])}`);
@@ -81,34 +82,23 @@ module.exports.loop = function () {
 		}
 	}
 
-  //let towerPos = room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2);
-
 	// pop loop
 	if (Memory.init === true) {
 		pop.mainPopLoop( room );
 		log.roomEnergy( room, 20 );
 		log.roleCount( room, 20);
 
-    /*if (Game.time % 10 === 0) {
 		// ToDo: count enemy creeps in room, if any, activate the safe mode
-		  if (room.find(FIND_HOSTILE_CREEPS) > 0) {
-			     if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
-				         room.controller.activateSafeMode();
-			     }
-		  }
-      // To DO**** Need to adjust this to check for the presence of a tower already
-      if (room.controller.level === 3 ) {
-      // check if spot is clear
-        if (utils.isTileClear(towerPos)) {
-        // place the construction site
-        }
-      }
-	  }*/
-
+		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
+			if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
+				room.controller.activateSafeMode();
+			}
+		}
+	}
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
-   Next - check area near the mainspawn and build a tower if conditions are right
-    utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) )
+
+    // Next - check area near the mainspawn and build a tower if conditions are rightX
 	}*/
 
 };
