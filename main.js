@@ -20,28 +20,29 @@ if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
 
 
 module.exports.loop = function () {
-	
+
 	// Hopefully fix the spawning start issue
 	if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
 		utils.cL(`Memory not updated, restarting!`);
 		Memory.init = false;
 	}
-	
+
 	// Init Memory - Removing all Memory stuff
 	if (!Memory.init) {
 		initMemory.initMemory();
 	}
-	
+
 	const mainSpawn = Game.spawns['Spawn1'];
 	const room = mainSpawn.room;
-	
-	
+
+
 	memoryController.cleanUp(mainSpawn);
 	//utils.cL(`room level: ${room.getRoomlevel()}`);
 	//ToDo: check if need to update the room level yet based on params
 	roomController.roomLevelCheck(room);
-	
-	
+
+  utils.cL( utils.isTileClear(mainSpawn.position) );
+
 	//utils.cL(`memory debugging: ${JSON.stringify(room.memory.sourceArray)}`);
 	//utils.cL(`memory more debugging: ${Object.keys(room.memory.sourceArray[0])}`);
 //	let memId = room.memory.safeSourceIds['source1'].id;
@@ -53,7 +54,7 @@ module.exports.loop = function () {
 	//utils.countConstructionInRoom(room);
 	//utils.getTilesCloseToSpawn(mainSpawn, 2);
 	//utils.cL(utils.countPlainsAroundSource(firstSource));
-	
+
 	let constructionCount = room.countConstructionSites();
 	for ( let i in Game.creeps ) {
 		let creep = Game.creeps[ i ];
@@ -86,7 +87,7 @@ module.exports.loop = function () {
 		pop.mainPopLoop( room );
 		log.roomEnergy( room, 20 );
 		log.roleCount( room, 20);
-		
+
 		// ToDo: count enemy creeps in room, if any, activate the safe mode
 		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
 			if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
@@ -97,6 +98,5 @@ module.exports.loop = function () {
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
 	}*/
-	
-};
 
+};
