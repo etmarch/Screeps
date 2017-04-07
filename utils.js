@@ -39,23 +39,23 @@ const colorLog = ( content, color ) => {
 const spawn = Game.getObjectById( Memory.initialSpawnId );
 
 const Utils = {
-	
+
 	/**
 	 * Gets a count of creeps with the passed in role.
 	 * @param creepRole - role to filter creep memory on
 	 * @returns number of creeps with that role
 	 */
-	
+
 	countRole: ( creepRole ) => {
 		var total = _.filter( Game.creeps, {
 			memory: { role: creepRole }
 		} );
 		return _.size( total );
 	},
-	
-	
-	
-	
+
+
+
+
 	countBodyCost: ( roleName ) => {
 		const parts = roles()[ roleName ][ 'parts' ];
 		//const partNames = _.keysIn( partsCosts );
@@ -68,12 +68,12 @@ const Utils = {
 		} );
 		return sumCost;
 	},
-	
+
 	cL: ( out ) => {
 		return cL( out );
 	},
 	jS: ( out ) => JSON.stringify( out ),
-	
+
 	cLC ( content, color = greenLog ) {
 		if ( color === 'blue' ) {
 			colorLog( content, blueLog );
@@ -82,7 +82,27 @@ const Utils = {
 		}
 		return 0;
 	},
-	
+
+
+	// Is this tile taken? check if tile is plains and also nothing on it
+	// will be used to create the tower construction site
+	// input - position
+	isTileClear: (pos) => {
+		// First make sure its a plain (not swamp or mountain)
+		/*if ( Game.map.getTerrainAt(pos) != 'plain') {
+			cL('Tile not clear!');
+			return 'tile not clear';
+		}*/
+		// make sure no objects occupying the space
+		let objectsList = pos.look(); // array of objects at space
+		cL(JSON.stringify(objectsList, {indent: true}));
+
+		// filter out constructionSite, structure, source, mineral, resource
+		const plainArray = _.filter( objectsList, 'terrain', 'plain' );
+		return true;
+
+	},
+
 	isAreaAllPlains: ( ...cords ) => { //topY, leftX, bottomY, rightX
 		const spawn = Game.getObjectById( Memory.initialSpawnId );
 		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, ...cords, { asArray: true } );
@@ -90,7 +110,7 @@ const Utils = {
 			return _.every( terrainArray, 'terrain', 'plain' );
 		}
 	},
-	
+
 	countPlainsAroundSource: ( source ) => { // Searches immediate tiles around the source
 		//cL(`source: ${source} -- ${Utils.jS(source.pos)}`);
 		const sourceY = source.pos.y, sourceX = source.pos.x;
@@ -103,27 +123,27 @@ const Utils = {
 		}
 		//cL(`${plainArray.length} - ${plainArray}`);
 	},
-	
-	
+
+
 	getTilesCloseToSpawn: function ( spawn, sizeOffset ) {
 		const sourceY = spawn.pos.y, sourceX = spawn.pos.x;
 		const terrainArray = spawn.room.lookForAtArea( LOOK_TERRAIN, sourceY - sizeOffset, sourceX - sizeOffset, sourceY + sizeOffset, sourceX + sizeOffset, { asArray: true } );
 		const plainArray = _.filter( terrainArray, 'terrain', 'plain' );
 		//Utils.cL(Utils.jS(plainArray));
-		
+
 		// sort by distance to spawn (so it starts from inside and goes out
 		let testSort = _.map( plainArray, function ( value, index, collection ) {
 			const distance = spawn.pos.getRangeTo( plainArray[ index ].x, plainArray[ index ].y );
 			plainArray[ index ].distance = distance;
 			return plainArray[ index ];
 		} );
-		
+
 		let sorted = _.sortByOrder( plainArray, [ 'distance' ], [ 'asc' ] ); // Sorting correctly!
 		let sortedList = _.rest( sorted ); // removed location of spawn itself
 		//Utils.cL(`test sort - ${(testSort) }`);
 		//Utils.cL(Utils.jS(sortedList));
 	},
-	
+
 	findNearestNotFullStorage ( creep ) {
 		// ToDo: Should be called in room controller, not every creep**
 		const room = creep.room;
@@ -134,7 +154,7 @@ const Utils = {
 		//cL((containerList));
 		//cL(JSON.stringify(Game.getObjectById('586a36bedb1e726976708c2a')));
 	},
-	
+
 	// Input creep,
 	pickupDroppedEnergy ( creep ) {
 		const droppedEnergy = creep.room.find( FIND_DROPPED_ENERGY );
@@ -164,7 +184,7 @@ const Utils = {
 		return pos;
 		// Check to make sure its clear and can build
 		//let listAtPos = room.lookAt(pos.x, pos.y);
-		
+
 		// if its okay,
 	/*	let result = room.createConstructionSite(pos.x, pos.y, STRUCTURE_CONTAINER);
 		if (result != 0) { //Not good, error - print out error
@@ -176,7 +196,7 @@ const Utils = {
 		}*/
 		//cL( JSON.stringify( listAtPos ) );
 	},
-	
+
 	findEnemies: ( obj ) => {
 		let target = obj.room.find( FIND_HOSTILE_CREEPS, {
 			filter: function ( object ) {
@@ -190,7 +210,7 @@ const Utils = {
 			return -1;
 		}
 	},
-	
+
 	enemiesInRange: ( obj, distance ) => {
 		// Get the room pos of the object being checked
 		cL( obj );
@@ -201,7 +221,7 @@ const Utils = {
 			return target;
 		}
 	},
-	
+
 	// Return boolean, if it is in range
 	sourceKeepersInRange( spawn, source ) {
 		let keeperLair = spawn.room.find( FIND_HOSTILE_STRUCTURES );
@@ -209,11 +229,31 @@ const Utils = {
 		let inRange = source.pos.inRangeTo( keeperLair[ 0 ], 5 );
 		return inRange;
 	},
-	
-	
+
+
 	// ToDo: Suicide checker and function
-	
-	
+
+	// returns and translates the error code
+	translateErrorCode(code) {
+	        return {
+	            0: 'OK',
+	            1: 'ERR_NOT_OWNER',
+	            2: 'ERR_NO_PATH',
+	            3: 'ERR_NAME_EXISTS',
+	            4: 'ERR_BUSY',
+	            5: 'ERR_NOT_FOUND',
+	            6: 'ERR_NOT_ENOUGH_RESOURCES',
+	            7: 'ERR_INVALID_TARGET',
+	            8: 'ERR_FULL',
+	            9: 'ERR_NOT_IN_RANGE',
+	            10: 'ERR_INVALID_ARGS',
+	            11: 'ERR_TIRED',
+	            12: 'ERR_NO_BODYPART',
+	            14: 'ERR_RCL_NOT_ENOUGH',
+	            15: 'ERR_GCL_NOT_ENOUGH',
+	        }[code * -1];
+	},
+
 	// Attach action functions to this wrapper (ex attack, move, etc...)
 	debugWrap: ( fnToExec ) => {
 		cL( fnToExec );
@@ -225,12 +265,12 @@ const Utils = {
 		}
 		return result;
 	},
-	
+
 	getCPUPercent: () => {
 		return (((Game.cpu.getUsed() / Game.cpu.limit) * 100).toFixed( 2 ));
 	},
-	
-	
+
+
 };
 
 module.exports = Utils;
@@ -248,6 +288,12 @@ module.exports.fightersInRange = function ( creep, range, bodyParts ) {
 	 });
 	 }*/
 };
+
+
+// Link to decorators for wrapping functions in log calls
+
+// returns the error
+
 
 
 const errorConstList = {

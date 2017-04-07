@@ -16,9 +16,9 @@ const roomController = {
 		// Start with just the 4 corners for now
 		let spawnX = spawn.pos.x;
 		let spawnY = spawn.pos.y;
-		
+
 		//console.log(spawnX+2, spawnY-2, spawnX-2, spawnY+2);
-		
+
 		// ToDo: to get range of coords, add inputs coords abs(y1) + abs(y2), and loop down array
 		//const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray:
 		// true});
@@ -30,7 +30,7 @@ const roomController = {
 	/*
 	*  Should be upgrading controller? or prioritize building....
 	*/
-	
+
 	/*
 	*  Create extension -- check to make sure proper time to build them
 	*/
@@ -54,7 +54,9 @@ const roomController = {
 			}
 		}
 	},
-	
+
+	// function checks for what level the room is currently.
+	// Ideas - can probably run this function every X ticks
 	roomLevelCheck: function ( room ) {
 		// Get current memory level
 		// get number of harvs
@@ -69,22 +71,20 @@ const roomController = {
 			room.memory.level = 1;
 		} else if (contLevel === 2) { // controller upgraded, can build stuff now
 			room.memory.level = 2;
-			
-			
-			
-			
+
+
 			//ToDo: place this into the room prototype
 			let constructionCount = room.countConstructionSites();
 			if (constructionCount === 0) {
-				
+
 				if (!room.memory.initialExtensionsPlaced) {
 					//room.placeInitialExtensionSites();
 				}
-				
+
 				if (room.memory.initialContainerSitesPlaced === true) { //check flag to see if done already
 					return;
 				}
-				
+
 				//ToDo Loop through each source and put construction site on the container positions
 				let sourcesArray = room.memory.sources;
 				//utils.cL(`sources array: ${JSON.stringify(sourcesArray)}`);
@@ -102,42 +102,42 @@ const roomController = {
 					}
 				});
 			} else { // already construction sites
-				
+
 			}
 		} else { // controller level is higher
-			
+
 		}
 	}
-	
+
 };
 
 module.exports = roomController;
 
 
-	
+
 	/*
 	To get the path to a source from a spawn
 	const spawn = Game.getObjectById(room.memory.spawnId);
 	let source0 = Game.getObjectById(room.memory.safeSourceIds['source0'].id);
 	let fastestPath = spawn.pos.findPathTo(source0);
-	
+
 	*/
-	
-	
+
+
 	/* do dynamically require files -
 	 var moduleName = "task." + task.taskType;
 	 var taskModule = require(moduleName);
 	 result = taskModule.prototype.doTask(creep, task);
-	
+
 	 */
-	
+
 	/*
 	* how to find path into another room
 	 var route = Game.map.findRoute(this.room.room, creep.memory.goToRoom)
 	 // another way to get terrain
 	 Game.map.getTerrainAt()
 	 */
-	
-	
+
+
 	/*utils.cL( `Totals - Active Sources: ${activeSourceArr.length}, Spawns: ${spawnArr.length}, Hostile Creeps: ${hostCreepsArr.length}, My Creeps: ${myCreepsArr.length}` );
 	utils.cL( `Spawn Energy: ${spawnArr[ 0 ].energy}, Spawning? ${(!spawnArr[ 0 ].spawning ? 'N' : 'Y')}` );*/
