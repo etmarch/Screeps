@@ -99,7 +99,8 @@ const Utils = {
 		cL(JSON.stringify(objectsList, {indent: true}));
 
 		// filter out constructionSite, structure, source, mineral, resource
-		const plainArray = _.filter( objectsList, 'terrain', 'plain' );
+		const filteredArray = _.filter( objectsList, ['type', 'structure'] );
+		cL(JSON.stringify(filteredArray, {indent: true}))
 		return true;
 
 	},
