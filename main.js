@@ -90,7 +90,7 @@ module.exports.loop = function () {
 		log.roomEnergy( room, 20 );
 		log.roleCount( room, 20);
 
-    if (Game.time % 10 === 0) {
+    /*if (Game.time % 10 === 0) {
 		// ToDo: count enemy creeps in room, if any, activate the safe mode
 		  if (room.find(FIND_HOSTILE_CREEPS) > 0) {
 			     if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
@@ -104,13 +104,11 @@ module.exports.loop = function () {
         // place the construction site
         }
       }
-	  }
+	  }*/
 
 	/*if (room.controller.level >= 2 ) {
 		roomController.buildExtension(room);
-
-    // Next - check area near the mainspawn and build a tower if conditions are right
-
+   Next - check area near the mainspawn and build a tower if conditions are right
     utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) )
 	}*/
 
