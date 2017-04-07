@@ -72,7 +72,7 @@ const Utils = {
 	cL: ( out ) => {
 		return cL( out );
 	},
-	jS: ( out ) => JSON.stringify( out ),
+	jS: ( out ) => JSON.stringify( out,  null, 2 ),
 
 	cLC ( content, color = greenLog ) {
 		if ( color === 'blue' ) {
