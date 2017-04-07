@@ -96,7 +96,7 @@ module.exports.loop = function () {
 			}
 		}
 // To DO**** Need to adjust this to check for the presence of a tower already
-    if (room.controller.level = 3 ) {
+    if (room.controller.level === 3 ) {
       // check if spot is clear
       if (utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) ) ) {
         // place the construction site
