@@ -98,7 +98,12 @@ module.exports.loop = function () {
 			}
 		}
 
-    if (room.controller.level >= 3 ) {
+    let towerList = room.find(FIND_MY_STRUCTURES, {
+      filter: { structureType: STRUCTURE_TOWER }
+    });
+
+    if (room.controller.level >= 3 && towerList.length > 0) {
+      utils.cL('check');
       let tileCheck = utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) );
       if (tileCheck === true) {
         // build the tower there
