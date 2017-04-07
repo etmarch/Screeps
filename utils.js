@@ -100,9 +100,11 @@ const Utils = {
 
 		// filter out constructionSite, structure, source, mineral, resource
 		let listO = ['structure', 'creep'];
-		const filteredArray = _.filter( objectsList, listO );
+		const filteredArray = _.filter( objectsList, function(singleObject) {
+			return (singleObject.type == "structure");
+		} );
 		cL(JSON.stringify(filteredArray, {indent: true}));
-		cL(filteredArray);
+		//cL(filteredArray);
 		return true;
 
 	},
