@@ -168,10 +168,10 @@ const Utils = {
 
 	// Input creep,
 	pickupDroppedEnergy ( creep ) {
-		const droppedEnergy = creep.room.find( FIND_DROPPED_ENERGY );
+		const droppedEnergy = creep.room.find( FIND_DROPPED_RESOURCES );
 		//utils.cL(droppedEnergy);
 		if ( _.size( droppedEnergy ) >= 1 ) {
-			const target = creep.pos.findClosestByRange( FIND_DROPPED_ENERGY );
+			const target = creep.pos.findClosestByRange( FFIND_DROPPED_RESOURCES );
 			if ( target ) {
 				if ( creep.pickup( target ) == ERR_NOT_IN_RANGE ) {
 					creep.moveTo( target );
