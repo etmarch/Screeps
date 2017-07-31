@@ -11,7 +11,7 @@ var pop = require( 'population' );
 var memoryController = require( 'memoryController' );
 var log = require( 'logger' );
 require( 'prototype.room' )();
-require( 'prototype.source' );
+//require( 'prototype.source' );
 require( 'prototype.creep' )();
 
 // Checking to see that Spawn Id matches Spawn Id in memory, before main loop
