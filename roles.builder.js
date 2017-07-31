@@ -11,11 +11,10 @@ const builder = {
 		let mainSpawn = Game.getObjectById( Memory.initialSpawnId );
 		
 		// ToDo: move this check out of the behavior, also make them do stuff helpful rather than just nothing and waiting
+		// ToDo: Use role count in memory instead of checking again
 		if ( (utils.countRole( 'harvester' ) < creep.room.memory.maxHarvsTotal) && creep.carry.energy === 0 ) {
 			//ToDo: function to check if enough energy to build missing harvs, if so, continue back to work
 			creep.say( 'Waiting' );
-			//utils.cL( `need more harvs before resume building` );
-			//ToDo: Set the memory status to waiting
 			creep.memory.waiting = true;
 			return;
 		}
@@ -25,11 +24,11 @@ const builder = {
 		
 		if ( creep.memory.building && creep.carry.energy == 0 ) {
 			creep.memory.building = false;
-			creep.say( 'harvesting' );
+			//creep.say( 'harvesting' );
 		}
 		if ( !creep.memory.building && creep.carry.energy == creep.carryCapacity ) {
 			creep.memory.building = true;
-			creep.say( 'building' );
+			//creep.say( 'building' );
 		}
 		
 		if ( creep.memory.building ) {

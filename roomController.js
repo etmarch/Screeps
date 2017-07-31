@@ -18,21 +18,11 @@ const roomController = {
 		let spawnY = spawn.pos.y;
 
 		//console.log(spawnX+2, spawnY-2, spawnX-2, spawnY+2);
-
 		// ToDo: to get range of coords, add inputs coords abs(y1) + abs(y2), and loop down array
-		//const terrainArray = spawn.room.lookForAtArea(LOOK_TERRAIN, spawnY-2, spawnX-2, spawnY+2, spawnX+2, {asArray:
-		// true});
-		//let isAreaClear = _.every(terrainArray, 'terrain', 'plain');
-		//console.log(utils.jS(terrainArray));
-		//utils.cL(isAreaClear);
-		//utils.cL(utils.isAreaAllPlains(spawnY-2, spawnX-2, spawnY+2, spawnX+2));
 	},
+	
 	/*
-	*  Should be upgrading controller? or prioritize building....
-	*/
-
-	/*
-	*  Create extension -- check to make sure proper time to build them
+	*  EXTENSION building automated
 	*/
 	buildExtension: function ( room ) {
 		const countActiveSites = utils.countConstructionInRoom(room);
@@ -40,23 +30,25 @@ const roomController = {
 		const spawnX = room.memory.spawnPos.x, spawnY = room.memory.spawnPos.y;
 		if (countActiveSites === 0 && room.memory.level >= 2) {
 			// first check coordinates to make sure no sites are there
-			const isTaken = room.lookForAt(LOOK_CONSTRUCTION_SITES, spawnX, spawnY);
+			const isTaken = room.lookForAt(LOOK_CONSTRUCTION_SITES, spawnX, spawnY); // check if tile taken
 			if (isTaken.length > 0) {
 				utils.cL(`This tile is already being built!`);
 			}
-			const result = room.createConstructionSite(spawnX-2, spawnY, STRUCTURE_EXTENSION);
+			const result = room.createConstructionSite(spawnX-2, spawnY, STRUCTURE_EXTENSION); // create construction site
 			if (result === 0) {
 				utils.cL(`Con site is working`);
 			} else if (result === -7) {
-				const result = room.createConstructionSite(spawnX-2, spawnY+2, STRUCTURE_EXTENSION);
+				const result = room.createConstructionSite(spawnX-2, spawnY+2, STRUCTURE_EXTENSION); // other location site
 			} else {
 				utils.cL(` Error!! - ${result}`);
 			}
 		}
 	},
 
-	// function checks for what level the room is currently.
-	// Ideas - can probably run this function every X ticks
+	
+	/*
+	Analyzing the status of room and assign level
+	 */
 	roomLevelCheck: function ( room ) {
 		// Get current memory level
 		// get number of harvs
@@ -64,7 +56,6 @@ const roomController = {
 		// get number of extensions and containers
 		// get the controller level
 		const contLevel = room.controller.level;
-		//utils.cL(contLevel);
 		// if contLevel is 1, means cant build anything anyways starting
 		if (contLevel === 1) {
 			//utils.cL(contLevel);

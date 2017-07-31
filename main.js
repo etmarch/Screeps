@@ -8,116 +8,100 @@ let guard = require( 'roles.guard' );
 let builder = require( 'roles.builder' );
 var roomController = require( 'roomController' );
 var pop = require( 'population' );
-var memoryController = require('memoryController');
-var log = require('logger');
-require('prototype.room')();
-require('prototype.source');
+var memoryController = require( 'memoryController' );
+var log = require( 'logger' );
+require( 'prototype.room' )();
+require( 'prototype.source' );
 
-if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
-	utils.cL(`Memory not updated, restarting!`);
+// Checking to see that Spawn Id matches Spawn Id in memory, before main loop
+if ( Memory.initialSpawnId !== Game.spawns[ 'Spawn1' ].id ) {
+	utils.cL( `Memory not updated, restarting!` );
 	Memory.init = false;
 }
 
 
 module.exports.loop = function () {
-
+	
 	// Hopefully fix the spawning start issue
-	if (Memory.initialSpawnId !== Game.spawns['Spawn1'].id) {
-		utils.cL(`Memory not updated, restarting!`);
+	if ( Memory.initialSpawnId !== Game.spawns[ 'Spawn1' ].id ) {
+		utils.cL( `Memory not updated, restarting!` );
 		Memory.init = false;
 	}
-
-	// Init Memory - Removing all Memory stuff
-	if (!Memory.init) {
+	
+	/*
+	Init Memory
+	*/
+	if ( !Memory.init ) {
 		initMemory.initMemory();
 	}
+	
+	const mainSpawn = Game.spawns[ 'Spawn1' ]; //assign first spawn
+	const room = mainSpawn.room; // assign first main room
+	
+	
+	memoryController.cleanUp( mainSpawn ); // clean up dead from memory
 
-	const mainSpawn = Game.spawns['Spawn1'];
-	const room = mainSpawn.room;
+	roomController.roomLevelCheck( room ); // room level controller
 
-
-	memoryController.cleanUp(mainSpawn);
-	//utils.cL(`room level: ${room.getRoomlevel()}`);
-	//ToDo: check if need to update the room level yet based on params
-	roomController.roomLevelCheck(room);
-
-  //utils.cL( utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) ) );
-
-	//utils.cL(`memory debugging: ${JSON.stringify(room.memory.sourceArray)}`);
-	//utils.cL(`memory more debugging: ${Object.keys(room.memory.sourceArray[0])}`);
-//	let memId = room.memory.safeSourceIds['source1'].id;
-	//let source = Game.getObjectById(memId);
-	//utils.cL(`source, mem Id:   ${memId}    ${source}`);
-	//utils.getSourceInitialContainerCoords( source, mainSpawn);
-	//roomController.getEmptyTilesSpawn(mainSpawn.id);
-	//const firstSource = Game.getObjectById(room.memory.safeSourceIds.source0.id);
-	//utils.countConstructionInRoom(room);
-	//utils.getTilesCloseToSpawn(mainSpawn, 2);
-	//utils.cL(utils.countPlainsAroundSource(firstSource));
-
-	let constructionCount = room.countConstructionSites();
+	let constructionCount = room.countConstructionSites(); // get all construction sites
+	
+	/*
+	Role Assignment Loop
+	*/
 	for ( let i in Game.creeps ) {
 		let creep = Game.creeps[ i ];
 		//ToDo: Check if creep actually has memory, if not, set memory.
 		//ToDo for now, auto assign to harvester
-		if (_.isEmpty(creep.memory)) {
-			creep.say(' I got no memory, ah shit!');
+		if ( _.isEmpty( creep.memory ) ) {
+			creep.say( ' I got no memory, ah shit!' );
 			creep.memory.role = 'harvester';
 		}
 		if ( creep.memory.role == 'harvester' ) {
-				harv.run( creep );
+			harv.run( creep );
 		}
 		else if ( creep.memory.role == 'upgrader' ) {
 			upgrader.run( creep );
 		}
 		else if ( creep.memory.role == 'guard' ) {
-				guard.run( creep );
+			guard.run( creep );
 		}
 		else if ( creep.memory.role == 'builder' ) {
-			if (constructionCount > 0) { // if no construction sites, just make upgrader
+			if ( constructionCount > 0 ) { // if no construction sites, just make upgrader
 				builder.run( creep );
 			} else {
-				upgrader.run(creep);
+				upgrader.run( creep );
 			}
 		}
 	}
-
+	
 	// pop loop
-	if (Memory.init === true) {
+	if ( Memory.init === true ) {
 		pop.mainPopLoop( room );
-		log.roomEnergy( room, 20 );
-		log.roleCount( room, 20);
-
-
-    if (Game.time % 10 === 0) { // only execute code every 10 ticks
-
-		// ToDo: count enemy creeps in room, if any, activate the safe mode
-		if (room.find(FIND_HOSTILE_CREEPS) > 0) {
-			if (room.controller.safeModeAvailable && !room.controller.safeMode) { // check to make sure not already in safe
-				room.controller.activateSafeMode();
+		//log.roomEnergy( room, 20 ); // logging room energy every 20 seconds
+		log.roleCount( room, 20 ); // logging number of roles every 20 seconds
+		
+		
+		if ( Game.time % 10 === 0 ) { // only execute code every 10 ticks
+			
+			// ToDo: count enemy creeps in room, if any, activate the safe mode
+			if ( room.find( FIND_HOSTILE_CREEPS ) > 0 ) {
+				if ( room.controller.safeModeAvailable && !room.controller.safeMode ) { // check to make sure not already in safe
+					room.controller.activateSafeMode();
+				}
+			}
+			
+			let towerList = room.find( FIND_MY_STRUCTURES, {
+				filter: { structureType: STRUCTURE_TOWER }
+			} );
+			
+			if ( room.controller.level >= 3 && towerList.length < 1 ) {
+				utils.cL( 'check' );
+				let tileCheck = utils.isTileClear( room.getPositionAt( mainSpawn.pos.x, mainSpawn.pos.y - 2 ) );
+				if ( tileCheck === true ) {
+					// build the tower there
+				}
 			}
 		}
-
-    let towerList = room.find(FIND_MY_STRUCTURES, {
-      filter: { structureType: STRUCTURE_TOWER }
-    });
-
-    if (room.controller.level >= 3 && towerList.length < 1) {
-      utils.cL('check');
-      let tileCheck = utils.isTileClear(room.getPositionAt(mainSpawn.pos.x, mainSpawn.pos.y - 2) );
-      if (tileCheck === true) {
-        // build the tower there
-      }
-    }
-
-  }
-
-
 	}
-	/*if (room.controller.level >= 2 ) {
-		roomController.buildExtension(room);
-
-    // Next - check area near the mainspawn and build a tower if conditions are rightX
-	}*/
-
+	
 };

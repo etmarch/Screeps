@@ -4,6 +4,7 @@
 
 let _ = require('lodash');
 let utils = require('utils');
+let roles = require( 'roles' );
 
 module.exports = function () {
 	// Repeatable action for screeps, either do the action or move to it.
@@ -17,10 +18,25 @@ module.exports = function () {
 	};
 	
 	Creep.prototype.findLargestDroppedEnergy = function () {
-		let biggestResourceDropped = _.max( this.room.find( FIND_DROPPED_RESOURCES ), 'amount' );
+		let biggestResourceDropped = _.max( this.room.find( FIND_DROPPED_RESOURCES ), 'amount' ); // !!Expensive
 		utils.cL(`largest dropped resource - ${biggestResourceDropped}`);
+	};
+	/*
+	Check if creep should kill itself due to missing parts
+	- roleName: Name of the role
+	 */
+	Creep.prototype.suicideCheck = function ( creep, roleName ) {
+		utils.cL(roleName);
+		let creep = this;
+		const parts = roles()[ roleName ][ 'parts' ]; // retrieve list of parts supposed to be there
+		//const partNames = _.keysIn( partsCosts );
+		_.forEach( parts, function ( part ) { // loop through parts and check if they exist
+			//cL( `part - ${part}, ${partsCosts[part]}` );
+			if ( creep.getActiveBodyparts( part ) == 0 ) { // no active body part, kill it
+				creep.suicide();
+			}
+		} );
 	}
-	
 };
 
 

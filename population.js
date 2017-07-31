@@ -16,9 +16,12 @@ const Pop = {
 		let possSpawn = Game.getObjectById( room.memory.spawnId );
 		let mainSpawn = (possSpawn ? possSpawn : Game.spawns['Spawn1']); //error being generated here
 		
-		
+		/*
+		MAIN POP LOGIC
+		*/
 		if ( !mainSpawn.spawning ) {
 			//utils.cL('MainPOp Loop!');
+			// ToDo: Move these counting functions outside and store the number
 			let harvCount = utils.countRole( 'harvester' );
 			let upgraderCount = utils.countRole( 'upgrader' );
 			let builderCount = utils.countRole( 'builder' );
@@ -57,7 +60,6 @@ const Pop = {
 	spawn: function ( spawn, role, level = 0 ) {
 		//utils.cL('spawn function!');
 		if ( (spawn.canCreateCreep( roles()[ role ][ 'parts' ] ) == OK) && !spawn.spawning ) {
-			
 			let creepName = `${role}-${Game.time}`;//`${role}-${Memory[ role ] + 1}`;
 			let creepMemory = {
 				role: role,
@@ -69,13 +71,12 @@ const Pop = {
 				creepMemory = _.merge( creepMemory, {
 					assignedSource: Pop.assignHarvToSource( creepName, spawn ),
 					assignedContainer: ''
-					
 				} );
 			}
 			
 			var result = spawn.createCreep( roles()[ role ][ 'parts' ], creepName, creepMemory );
 			utils.cL( `Name of new screep - ${result}..... Cost is: ${utils.countBodyCost( role )}` );
-			if ( _.isString( result ) ) {
+			if ( _.isString( result ) ) { // check that creep has name and was created successfully
 				//Memory[ role + 'Current' ]++;
 				//Memory[ role ]++;
 				return result;
@@ -90,10 +91,6 @@ const Pop = {
 		utils.cL('assign harv to source function!');
 		// Get number of harvs in closest source
 		let room = spawn.room;
-		//utils.cL(room);
-		//utils.cL(utils.jS(room.memory));
-		//utils.cL(_.size(room.memory.safeSourceIds));
-		//utils.cL(`${utils.jS(room.memory.safeSourceIds)}`);
 		//utils.cL(`size: ${_.size(room.memory.safeSourceIds)}`);
 		
 		// This should store the source ID
@@ -107,7 +104,6 @@ const Pop = {
 				sourceId = value.id;
 				room.memory.sources[ `${value.id}` ].harvs.push( name );
 				return false;
-				//break;
 			}
 			
 		});

@@ -1,5 +1,6 @@
 /**
  * Room prototype.
+ * ToDo: store the postions of the sources and their distances to spawn
  */
 
 let utils = require( 'utils' );
@@ -28,7 +29,7 @@ module.exports = function () {
 	};
 	Room.prototype.placeInitialExtensionSites = function () {
 		let initCheck = this.memory.initialExtensionsPlaced; // check to make sure its not initialized yet
-		
+
 		//ToDo: count current amount of extensions (and construction sites with extensions)
 		if ( initCheck === true ) {
 			utils.cL( `init extensions already placed!` );
@@ -38,12 +39,12 @@ module.exports = function () {
 		if ( !spawn ) { // check to make sure correct spawn is found
 			utils.cL( `no spawn found for memory ID: ${this.memory.spawnId}` );
 		}
-		
+
 		// get list of coordinates to place buildings
 		let spawnY = spawn.pos.y, spawnX = spawn.pos.x;
-		
+
 		// ToDo: check area make sure no other objects in the way
-		
+
 		// making 5 extensions (first level)
 		for ( let i = -2; i < 3; i++ ) { // start 2 to the left (-2)
 			let newX = spawnX + i;
@@ -57,9 +58,9 @@ module.exports = function () {
 				return;
 			}
 		}
-		
+
 	};
-	
+
 	/**
 	 * Creates construction sites for a path leading from spawn to controller
 	 * @returns error if the construction sites werent placed properly
@@ -67,22 +68,22 @@ module.exports = function () {
 	Room.prototype.placeRoadsToController = function () {
 		let spawn = Game.getObjectById(Memory.initialSpawnId);
 		let controller = this.controller;
-		
+
 		if ( !spawn ) { // check to make sure correct spawn and controller found
 			utils.cL( `placeRoadsToController: no spawn found: ${spawn}` );
 		}
 		if (!controller) {
 			utils.cL( `placeRoadsToController: no controller found: ${controller}` );
 		}
-		
-		
+
+
 		utils.cL(`spawn: ${spawn}    , controller: ${controller}`);
-		
+
 		// get the path coords in array
-		
+
 		// heck distance of path, if above certain length, dont make them all at once
-		
+
 		// Iterate through array and create road construction site at each coordinate
-		
+
 	};
 };

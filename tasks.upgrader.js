@@ -9,15 +9,16 @@ var upgrader = {
 	/** @param {Creep} creep **/
 	run: function ( creep ) {
 		
+		creep.suicideCheck(creep, 'upgrader'); // check to see if creep needs to die
 		
-		if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
+		/*if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
 			utils.cL( `Bad parts, creep: ${creep.name} going to commit suicide` );
 			creep.suicide();
-		}
+		}*/
 		
-		// get the constants and memory stuff
 		const mainSpawn = Game.getObjectById( Memory.initialSpawnId );
 		
+		// ToDo: Replace countRole with the number from memory
 		if ( (utils.countRole( 'harvester' ) < creep.room.memory.maxHarvsTotal) && creep.carry.energy === 0 ) {
 			//TODO: Check if spawn has more energy than 250
 			creep.say('NeedHarvs');

@@ -9,11 +9,13 @@ var harv = {
 	
 		run: function(creep) {
 			const mainSpawn = Game.getObjectById(Memory.initialSpawnId);
-			// ToDo: helper function for Suicides - move to screep prototype
-			if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
+			
+			creep.suicideCheck(creep, 'harvester');
+			
+			/*if ( creep.getActiveBodyparts( MOVE ) == 0 || creep.getActiveBodyparts( CARRY ) == 0 || creep.getActiveBodyparts( WORK ) == 0 ) {
 				utils.cL( `Fareweel brothers, I am useless! ${creep.name}` );
 				creep.suicide();
-			}
+			}*/
 			
 			if (_.size(creep.memory.assignedSource) < 1 || (Object.keys(creep.memory).length == 0)) { // no sources assigned!
 				creep.say(`No source assigned!`);

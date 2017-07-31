@@ -20,25 +20,13 @@ const memoryController = {
 						//debugging
 						if ( room.memory ) {
 							//utils.cL(JSON.stringify(room.memory));
-							//utils.cL(`room info - ${utils.jS(room.memory)}`);
 							let sourceId = ( Memory.creeps[ name ].assignedSource );
 							//utils.cL( sourceId );
 							if ( sourceId !== undefined ) {
-								//utils.cL( sourceName );
 								//utils.cL( `Before:  ${utils.jS( room.memory.sources[ sourceId ].harvs )}`);
 								room.memory.sources[ sourceId ].harvs = _.pull( room.memory.sources[ sourceId ].harvs, name );
 								//utils.cL( `After:  ${utils.jS( room.memory.sources[ sourceId ].harvs )}`);
 							}
-							
-							
-							// clean any dead harvs from the source memory
-							/*for( let source in room.memory.sources) {
-							 let sourceObj = Game.getObjectById(source);
-							 utils.cL(
-							 `cleaning source memory now!: ${(sourceObj)}`
-							 );
-							 sourceObj.cleanHarvMemory();
-							 }*/
 						}
 					} // Otherwise, not harvester
 					console.log( "DEL: " + name );

@@ -7,13 +7,11 @@ var utils = require( 'utils' );
 
 // first check to see if memory has been initiated
 module.exports.initMemory = function () {
-	utils.cL( JSON.stringify( Game ) );
+	// utils.cL( JSON.stringify( Game ) );
 	
-	/*if ( !Memory.init ) {*/ // Initializer
 	utils.cL( 'STARTING MEMORY INIT!' );
-	//let simTest = _.isNaN( Game.cpu.getUsed() / Game.cpu.limit );
 	
-	// Start Fresh with Memory
+	// Erase memory
 	for ( let key in Memory ) {
 		delete Memory[ key ];
 	}
@@ -67,13 +65,12 @@ module.exports.initMemory = function () {
 				}
 		);
 		
-		//utils.cL( `safe sources - ${JSON.stringify( safeSourceIdList )}` );
 		let sortedIds = _.sortBy( safeSourceIdList, 'distance' ); // sort by distance
 		
 		let maxRoomHarvs = 0;
 		
 		_.forEach( sortedIds, function ( value, index, collection ) {
-			utils.cL( `val: ${utils.jS( value )} --- index:  ${index}` );
+			//utils.cL( `val: ${utils.jS( value )} --- index:  ${index}` );
 			let sourceData = {
 				id: value.id,
 				harvs: [],
