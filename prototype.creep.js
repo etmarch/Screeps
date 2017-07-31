@@ -10,7 +10,7 @@ module.exports = function () {
 	// Repeatable action for screeps, either do the action or move to it.
 	Creep.prototype.doOrMove = function ( creep, action, objectId, args ) {
 		// action has to be one of...
-		let creep = this;
+		//let creep = this;
 		// objectId can probably be replaced with the object itself
 		if ( creep[ action ]( Game.getObjectById( objectId ), args ) == ERR_NOT_IN_RANGE ) {
 			creep.moveTo( Game.getObjectById( objectId ) );
