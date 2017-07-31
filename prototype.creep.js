@@ -26,8 +26,7 @@ module.exports = function () {
 	- roleName: Name of the role
 	 */
 	Creep.prototype.suicideCheck = function ( creep, roleName ) {
-		utils.cL(roleName);
-		
+		//utils.cL(roleName);
 		const parts = roles()[ roleName ][ 'parts' ]; // retrieve list of parts supposed to be there
 		//const partNames = _.keysIn( partsCosts );
 		_.forEach( parts, function ( part ) { // loop through parts and check if they exist
