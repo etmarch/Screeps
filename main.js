@@ -12,6 +12,7 @@ var memoryController = require( 'memoryController' );
 var log = require( 'logger' );
 require( 'prototype.room' )();
 require( 'prototype.source' );
+require( 'prototype.creep' );
 
 // Checking to see that Spawn Id matches Spawn Id in memory, before main loop
 if ( Memory.initialSpawnId !== Game.spawns[ 'Spawn1' ].id ) {
