@@ -47,7 +47,7 @@ module.exports.loop = function() {
     roomController.roomLevelCheck(room); // room level controller
 
     let constructionCount = room.countConstructionSites(); // get all construction sites
-
+    Game.profiler.profile(20);
     /*
     Role Assignment Loop
     */
