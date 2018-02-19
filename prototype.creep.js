@@ -2,7 +2,7 @@
  * Created by evanmarchand on 1/11/17.
  */
 
-// let _ = require('lodash');
+var _ = require('lodash');
 let utils = require('utils');
 let roles = require('roles');
 
